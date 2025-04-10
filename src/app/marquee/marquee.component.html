@@ -1,0 +1,12 @@
+<div class="marquee-wrapper">
+    <div class="marquee-track" #track>
+      <ng-container *ngFor="let _ of [].constructor(repeatCount)">
+        <ul class="marquee-content">
+          <li *ngFor="let item of itemsWithDots" [class.dot]="item.isDot">
+            {{ item.text }}
+          </li>
+        </ul>
+      </ng-container>
+    </div>
+  </div>
+  

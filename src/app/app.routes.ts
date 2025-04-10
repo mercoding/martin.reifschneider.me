@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
-import { StartScreenComponent } from './start-screen/start-screen.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { StartComponent } from './start/start.component';
+import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
-    { path: '', component: StartScreenComponent },
-    { path: 'nav-bar', component: NavBarComponent}
+    { path: '', component: StartComponent },
+    { path: 'about', component: AboutComponent }
 ];

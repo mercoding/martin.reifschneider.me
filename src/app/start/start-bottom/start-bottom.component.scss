@@ -1,0 +1,72 @@
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 96px;
+    margin-top: 80px;
+
+    button {
+        border-color: #3DCFB6;
+        color: white;
+        --mdc-outlined-button-container-shape: 24px;
+        width: 16px;
+        height: 32px;
+        rotate: 90deg;
+    }
+}
+
+.left-line {
+    width: 1px;
+    /* dünn wie eine Linie */
+    height: 280px;
+    /* gewünschte Höhe */
+    background-color: #3DCFB6;
+    margin-top: 40px;
+}
+
+.right {
+    display: grid;
+    grid-template-rows: 250px 40px 40px 200px;
+    grid-template-columns: 32px;
+    justify-content: center;
+    align-items: center;
+    right: 1312px;
+    bottom: 0px;
+    margin-right: 96px;
+    margin-top: -100px;
+
+    span {
+        display: flex;
+        justify-content: center;
+        rotate: -90deg;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+.right-line {
+    width: 1px;
+    /* dünn wie eine Linie */
+    height: 190px;
+    /* gewünschte Höhe */
+    background-color: white;
+    margin-top: 14px;
+    margin-left: 16px;
+}
+
+.marquee {
+    display: block;
+    height: 0;
+}

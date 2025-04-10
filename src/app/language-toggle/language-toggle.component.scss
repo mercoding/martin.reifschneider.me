@@ -1,0 +1,55 @@
+.language-toggle {
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #3dcfb6;
+    border-radius: 34px;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+  
+    .thumb {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background-color: #3dcfb6;
+      border-radius: 34px;
+      z-index: 1;
+      transition: transform 0.3s ease;
+      transform: translateX(0%);
+    }
+  
+    .thumb.right {
+      transform: translateX(100%);
+    }
+  
+    .option {
+      flex: 1;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #3dcfb6;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+  
+    .option:nth-child(2) {
+      color: white; // EN default aktiv
+    }
+  
+    .thumb.right ~ .option:nth-child(2) {
+      color: #3dcfb6; // EN wird inaktiv
+    }
+  
+    .thumb.right ~ .option:nth-child(3) {
+      color: white; // DE wird aktiv
+      font-weight: 700;
+    }
+  }
+  

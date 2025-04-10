@@ -1,0 +1,120 @@
+nav {
+    width: 100%;
+    height: 98px;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+
+    button {
+        border-color: white;
+        border-radius: 34px;
+        border-color: #3DCFB6;
+        color: white;
+    }
+
+}
+
+.en-btn {
+    border-radius: 34px;
+    border-color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    height: 98px;
+    padding-right: 96px;
+    padding-left: 96px;
+
+    div {
+        padding-right: 32px;
+    }
+}
+
+.logo {
+    padding-right: 96px;
+    display: flex;
+    margin-top: -16px;
+
+    img {
+        width: auto;
+        height: 80px;
+    }
+
+    .logo-name {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        margin-left: -26px;
+    }
+}
+
+
+
+.lang-toggle {
+    position: relative;
+    width: 90px;
+    height: 40px;
+  
+    .mat-slide-toggle-bar {
+      height: 100%;
+      border-radius: 34px;
+      background-color: #3dcfb6 !important;
+    }
+  
+    .mat-slide-toggle-thumb {
+      background-color: white !important;
+      width: 36px;
+      height: 36px;
+      top: 2px;
+      left: 2px;
+      z-index: 2;
+      box-shadow: none !important;
+    }
+  
+    .thumb-label {
+      position: absolute;
+      top: 6px;
+      left: 8px;
+      width: 36px;
+      height: 28px;
+      line-height: 28px;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+      color: #3dcfb6;
+      z-index: 3;
+      pointer-events: none;
+      transition: left 0.3s ease;
+    }
+  
+    &.mat-checked .thumb-label {
+      left: 48px;
+    }
+  
+    .label-left,
+    .label-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 13px;
+      font-weight: 500;
+      color: white;
+      pointer-events: none;
+    }
+  
+    .label-left {
+      left: 12px;
+    }
+  
+    .label-right {
+      right: 12px;
+    }
+  }
+  

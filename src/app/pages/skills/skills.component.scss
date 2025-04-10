@@ -1,0 +1,42 @@
+.skills {
+    width: 100vw;
+    height: 695px;
+    top: 1896px;
+    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.85) 0%, #1C1C1C 100%);
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
+    
+    /*background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);*/
+    display: flex;
+
+
+}
+
+.skills-description {
+
+}
+
+.skills-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 4;
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        img {
+            width: 64px;
+            height: 64px;
+        }
+
+        span {
+            font-family: Fira Code;
+            font-size: 18px;
+            color: white;
+            padding-left: 12px;
+        }
+    }
+
+}

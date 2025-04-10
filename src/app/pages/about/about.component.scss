@@ -1,0 +1,66 @@
+.about {
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    height: 900px;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+
+    img {
+        height: 500px;
+        width: auto;
+        padding-left: 64px;
+    }
+
+    h3 {
+        font-family: Karla;
+        color: #3DCFB6;
+    }
+}
+
+.about-me {
+    margin-top: 256px;
+    padding-right: 64px;
+
+}
+
+.about-me-box {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3DCFB6;
+    backdrop-filter: blur(4px);
+    background: #3DCFB61A;
+    border-radius: 24px;
+    justify-content: center;
+    width: 568;
+    height: 540;
+    border-radius: 30px;
+    gap: 40px;
+    border-width: 1px;
+    padding: 32px;
+
+
+
+    h1 {
+        font-family: Fira Code;
+        color: #3DCFB6;
+    }
+
+    span {
+        font-family: Karla;
+        color: white;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        margin-left: -64px;
+    }
+
+    img {
+        height: 32px;
+        width: 32px;
+    }
+}

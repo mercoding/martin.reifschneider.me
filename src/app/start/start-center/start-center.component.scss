@@ -1,0 +1,41 @@
+.start-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 400px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 256px;
+
+    h3 {
+        font-family: Fira Code, sans-serif;
+        font-size: 32px;
+    }
+
+    h1 {
+        font-family: Karla, sans-serif;
+        font-size: 64px;
+        font-weight: bold;
+        margin-top: 8px;
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin-top: 32px;
+
+    button {
+        border-color: white;
+        color: white;
+        --mdc-outlined-button-container-shape: 24px;
+    }
+}
