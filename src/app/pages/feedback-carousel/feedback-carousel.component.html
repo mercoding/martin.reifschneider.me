@@ -1,0 +1,33 @@
+<div class="carousel-container">
+    <div class="carousel-track">
+      <div
+        class="carousel-card"
+        *ngFor="let feedback of feedbacks; let i = index"
+        [ngClass]="getCardPosition(i)"
+        (click)="setIndex(i)"
+      >
+        <p class="message">"{{ feedback.message }}"</p>
+        <p class="author">– {{ feedback.author }}</p>
+      </div>
+    </div>
+  
+    <div class="carousel-controls">
+      <button mat-icon-button (click)="setIndex(prevIndex)">
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+  
+      <div class="dots">
+        <span
+          *ngFor="let _ of feedbacks; let i = index"
+          class="dot"
+          [class.active]="i === currentIndex"
+          (click)="setIndex(i)"
+        ></span>
+      </div>
+  
+      <button mat-icon-button (click)="setIndex(nextIndex)">
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+  

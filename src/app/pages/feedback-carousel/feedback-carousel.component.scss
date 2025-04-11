@@ -1,0 +1,104 @@
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 2rem;
+    background-color: rgb(28, 28, 28);
+
+  }
+  
+  .carousel-track {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 260px;
+  }
+  
+  .carousel-card {
+    position: absolute;
+    width: 280px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    background: rgba(61, 207, 182, 1);
+    backdrop-filter: blur(6px);
+
+    backdrop-filter: blur(4px);
+    background: rgba(61, 207, 182, 0.56);
+
+    color: white;
+    text-align: center;
+    font-style: italic;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .carousel-card.left {
+    transform: translateX(-320px) scale(0.9);
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  
+  .carousel-card.center {
+    transform: translateX(0) scale(1.05);
+    opacity: 1;
+    z-index: 2;
+    pointer-events: auto;
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  .carousel-card.right {
+    transform: translateX(320px) scale(0.9);
+    opacity: 0.6;
+    z-index: 1;
+    pointer-events: auto;
+  }
+  
+  .carousel-card.hidden {
+    display: none;
+  }
+  
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  
+    .dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+  
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transition: background 0.2s ease;
+      cursor: pointer;
+  
+      &.active {
+        background: #3dcfb6;
+      }
+    }
+  
+    button {
+      color: white;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      transition: background 0.2s ease;
+  
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+  
