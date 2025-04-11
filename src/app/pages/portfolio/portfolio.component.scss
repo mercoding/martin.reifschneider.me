@@ -1,0 +1,84 @@
+.portfolio {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 800px;
+    top: 2591px;
+    background-color: rgb(28, 28, 28);
+    padding-left: 64px;
+
+    div {
+        width: 880px;
+        height: 565px;
+    }
+
+
+    h1 {
+        font-family: Fira Code;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: -3%;
+        color: rgba(61, 207, 182, 1);
+        padding-top: 16px;
+
+    }
+
+    h3 {
+        font-family: Karla;
+        font-size: 24px;
+        color: rgba(61, 207, 182, 1);
+        padding-top: 16px;
+
+    }
+
+    span {
+        display: block;
+        font-family: Karla;
+        font-size: 18px;
+        color: white;
+        width: 500px;
+        padding-top: 16px;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        width: 680px;
+        height: 64px;
+        margin-top: 16px;
+        border-bottom: 1px solid rgba(61, 207, 182, 1);
+
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            height: 64px;
+            width: 400px;
+        }
+
+        h3 {
+            font-family: Fira Code;
+            color: white;
+            width: 400px;
+        }
+
+        span {
+            font-family: Karla;
+            color: white;
+            width: fit-content;
+            height: 24px;
+            padding: 0 16px 0 16px;
+            display: flex;
+            justify-content: flex-end;
+            text-align: center;
+            border-right: 1px solid rgba(61, 207, 182, 1);
+
+            &:last-child {
+                border-right: none; // ✅ letzter bekommt keinen Border
+            }
+        }
+    }
+}
