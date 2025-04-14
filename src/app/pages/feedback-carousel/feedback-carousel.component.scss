@@ -1,10 +1,19 @@
+.feedback {
+    background-color: rgb(28, 28, 28);
+    h1 {
+        font-family: Fira Code;
+        font-size: 32px;
+        text-align: center;
+        color: rgba(61, 207, 182, 1);
+    }
+}
+
 .carousel-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: hidden;
     padding: 2rem;
-    background-color: rgb(28, 28, 28);
 
   }
   

@@ -1,0 +1,122 @@
+.contact {
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    justify-content: center;
+}
+
+.headline {
+    width: 568px;
+
+    h1 {
+        font-family: Fira Code;
+        font-size: 64px;
+        color: rgba(61, 207, 182, 1);
+        height: 64px;
+
+    }
+
+    h2 {
+        font-family: Fira Code;
+        font-size: 24px;
+        color: rgba(61, 207, 182, 1);
+
+    }
+
+    h3 {
+        font-family: Karla;
+        font-size: 24px;
+        color: rgba(61, 207, 182, 1);
+        padding-bottom: 16px;
+    }
+
+    span {
+        font-family: Karla;
+        font-size: 16px;
+        color: white;
+    }
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #3dcfb6;
+    padding-bottom: 1rem;
+  
+    label {
+      color: #3dcfb6;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    input,
+    textarea {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      resize: none;
+      font-family: inherit;
+      padding: 0.25rem 0;
+  
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  
+    textarea {
+      min-height: 60px;
+    }
+  }
+  
+  .checkbox-group {
+    border: none;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.9);
+    label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+  
+      input[type='checkbox'] {
+        accent-color: #3dcfb6;
+        width: 18px;
+        height: 18px;
+      }
+  
+      a {
+        color: #3dcfb6;
+        text-decoration: none;
+        font-weight: 500;
+      }
+    }
+  }
+  
+  .submit-btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+    background: transparent;
+    color: white;
+    border: 1px solid #3dcfb6;
+    padding: 0.6rem 1.6rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  
+    &:hover {
+      background: #3dcfb6;
+      color: black;
+    }
+  }
+  

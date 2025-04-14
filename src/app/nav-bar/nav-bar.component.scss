@@ -55,7 +55,10 @@ nav {
     }
 }
 
-
+.left {
+  display: flex;
+  flex-direction: row;
+}
 
 .lang-toggle {
     position: relative;

@@ -1,0 +1,80 @@
+.end {
+    background-color: rgb(28, 28, 28);
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 1fr;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        font-family: Karla;
+
+        span {
+            color: white;
+            padding-left: 24px;
+            padding-top: -16px;
+        }
+    }
+}
+
+
+.logo {
+    padding-right: 96px;
+    display: flex;
+    margin-top: -16px;
+
+    img {
+        width: auto;
+        height: 80px;
+    }
+
+    .logo-name {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        margin-left: -26px;
+    }
+
+    span {
+        color: white;
+    }
+}
+
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Fira Code;
+    font-size: 18px;
+    color: #3DCFB6;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+
+    button {
+        color: white;
+        text-align: end;
+        width: 200px;
+        
+    }
+
+    .mdc-button {
+        justify-content: flex-start !important;
+    }
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

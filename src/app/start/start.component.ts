@@ -6,11 +6,17 @@ import { AboutComponent } from '../pages/about/about.component';
 import { SkillsComponent } from '../pages/skills/skills.component';
 import { PortfolioComponent } from '../pages/portfolio/portfolio.component';
 import { FeedbackCarouselComponent } from '../pages/feedback-carousel/feedback-carousel.component';
+import { ContactComponent } from '../pages/contact/contact.component';
+import { EndComponent } from '../end/end.component';
 
 @Component({
   selector: 'app-start',
   standalone: true,
-  imports: [StartTopComponent, StartCenterComponent, StartBottomComponent, AboutComponent, SkillsComponent, PortfolioComponent, FeedbackCarouselComponent],
+  imports: [StartTopComponent, StartCenterComponent, 
+    StartBottomComponent, AboutComponent, 
+    SkillsComponent, PortfolioComponent, 
+    FeedbackCarouselComponent, ContactComponent,
+    EndComponent],
   templateUrl: './start.component.html',
   styleUrl: './start.component.scss'
 })
