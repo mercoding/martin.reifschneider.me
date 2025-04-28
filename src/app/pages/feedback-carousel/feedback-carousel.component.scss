@@ -27,7 +27,8 @@
   
   .carousel-card {
     position: absolute;
-    width: 280px;
+    width: 480px;
+    height: 150px;
     padding: 20px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.08);
@@ -37,18 +38,22 @@
     backdrop-filter: blur(4px);
     background: rgba(61, 207, 182, 0.56);
 
+    border: 1px solid #3DCFB6;
+    backdrop-filter: blur(4px);
+    background: rgba(61, 207, 182, 0.1019607843);
+
     color: white;
     text-align: center;
     font-style: italic;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.6s ease, opacity 0.4s ease;
+    transition: transform 0.6s ease, opacity 0.2s ease;
     opacity: 0;
     pointer-events: none;
     z-index: 0;
   }
   
   .carousel-card.left {
-    transform: translateX(-320px) scale(0.9);
+    transform: translateX(-550px) scale(0.9);
     opacity: 0.6;
     z-index: 1;
     pointer-events: auto;
@@ -61,10 +66,15 @@
     pointer-events: auto;
     font-style: normal;
     font-weight: 500;
+
+    backdrop-filter: blur(4px);
+    background: rgba(61, 207, 182, 0.26);
+
+    border: 1px solid #3DCFB6;
   }
   
   .carousel-card.right {
-    transform: translateX(320px) scale(0.9);
+    transform: translateX(550px) scale(0.9);
     opacity: 0.6;
     z-index: 1;
     pointer-events: auto;

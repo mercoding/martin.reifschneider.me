@@ -6,32 +6,51 @@
         <h2>Got a problem to solve?</h2>
         <span>Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. </span>
     </div>
-    <div class="contact-form">
-        <form class="contact-form">
-            <div class="form-group">
-              <label>What's your name?</label>
-              <input type="text" placeholder="Your name goes here" />
-            </div>
-          
-            <div class="form-group">
-              <label>What's your email?</label>
-              <input type="email" placeholder="youremail@email.com" />
-            </div>
-          
-            <div class="form-group">
-              <label>How can I help you?</label>
-              <textarea placeholder="Hello Lukas, I am interested in…"></textarea>
-            </div>
-          
-            <div class="form-group checkbox-group">
-              <label>
-                <input type="checkbox" />
-                I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
-              </label>
-            </div>
-          
-            <button type="submit" class="submit-btn">Say Hello ;)</button>
-          </form>
-          
-    </div>
+
+    <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="form-group">
+          <label>What's your name?</label>
+          <input
+            type="text"
+            [(ngModel)]="contactData.name"
+            name="name"
+            placeholder="Your name goes here"
+            minlength="3"
+            required
+          />
+        </div>
+      
+        <div class="form-group">
+          <label>What's your email?</label>
+          <input
+            type="email"
+            [(ngModel)]="contactData.email"
+            name="email"
+            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            required
+            placeholder="youremail@email.com"
+          />
+        </div>
+      
+        <div class="form-group">
+          <label>How can I help you?</label>
+          <textarea
+            [(ngModel)]="contactData.message"
+            name="message"
+            placeholder="Hello Martin, I am interested in..."
+            minlength="4"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label>
+              <input [(ngModel)]="policyChecked" name="policyChecked" type="checkbox" required/>
+              I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
+            </label>
+          </div>
+      
+        <button class="submit-btn" mat-stroked-button type="submit" value="Submit">Say Hello ;)</button>
+      </form>
+      
 </div>
