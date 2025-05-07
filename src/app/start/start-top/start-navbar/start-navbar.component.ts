@@ -19,4 +19,14 @@ export class StartNavbarComponent {
     console.log('Sprache geändert zu:', lang);
     // Optional: i18nService.setLanguage(lang)
   }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
+  
+  scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  }
+  
 }

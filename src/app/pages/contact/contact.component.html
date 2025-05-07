@@ -1,4 +1,4 @@
-<div class="contact">
+<div id="contact" class="contact">
     <div class="headline">
         <h3>Contact me</h3>
         <h1>Let's work</h1>
@@ -26,7 +26,7 @@
             type="email"
             [(ngModel)]="contactData.email"
             name="email"
-            pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
             required
             placeholder="youremail@email.com"
           />

@@ -1,12 +1,12 @@
 <div class="bottom">
     <div class="left">
-        <button mat-stroked-button></button>
+        <button (click)="scrollTo('about-me')" mat-stroked-button><img class="bounce-img" src="assets/img/arrows-down.png" alt=""></button>
         <div class="left-line"></div>
     </div>
     <div class="right">
-        <span>martin&#64;reifschneider.me</span>
-        <img src="assets/img/github.png" alt="">
-        <img src="assets/img/linkedin.png" alt="">
+        <span (click)="scrollTo('contact')" class="set-pointer">martin&#64;reifschneider.me</span>
+        <img class="set-pointer" (click)="openGitHub()" src="assets/img/github.png" alt="">
+        <img class="set-pointer" (click)="openLinkedin()" src="assets/img/linkedin.png" alt="">
         <div class="right-line"></div>
     </div>
 </div>

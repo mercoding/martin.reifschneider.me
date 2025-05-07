@@ -8,6 +8,9 @@ body {
 
 }
 
+.set-pointer {
+    cursor: pointer;
+}
 
 @font-face {
     font-family: Karla;
@@ -32,5 +35,13 @@ body {
     line-height: 100%;
     letter-spacing: 0%;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

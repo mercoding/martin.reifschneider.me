@@ -1,24 +1,16 @@
-<div class="portfolio">
+<div id="portfolio" class="portfolio">
     <div>
         <h3>Portfolio</h3>
         <h1>Featured Projects</h1>
         <span>Explore a selection of my work here - Interact with projects to see my skills in action.</span>
-        <section>
-            <h3>Join</h3>
-            <div>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Firebase</span>
-            </div>
-        </section>
-        <section>
-            <h3>El Pollo Loco</h3>
-            <div>
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-            </div>
-        </section>
+
+        <div class="projects">
+            <section><app-join></app-join></section>
+            <section><app-el-pollo-loco></app-el-pollo-loco></section>
+        </div>
+
+    </div>
+    <div *ngIf="preview.showPreview" [ngStyle]="{ top: preview.previewTop + 'px' }" class="preview preview-wrapper">
+        <img [src]="preview.loadImage" alt="">
     </div>
 </div>

@@ -3,16 +3,16 @@
         <app-language-toggle [value]="selectedLang" (langChange)="onLangChange($event)">
         </app-language-toggle>
 
-        <div>About Me</div>
-        <div>Skills</div>
-        <div>Projects</div>
+        <div class="set-pointer" (click)="scrollTo('about-me')">About Me</div>
+        <div class="set-pointer" (click)="scrollTo('skills')">Skills</div>
+        <div class="set-pointer" (click)="scrollTo('portfolio')">Projects</div>
         <div></div>
     </div>
     <div class="logo">
-        <img src="assets/img/logo.png" alt="">
-        <div class="logo-name">
-            <span>artin</span>
-            <span>eifschneider</span>
+        <img class="set-pointer" (click)="reloadPage()" src="assets/img/logo.png" alt="">
+        <div (click)="reloadPage()" class="logo-name">
+            <span class="set-pointer">artin</span>
+            <span class="set-pointer">eifschneider</span>
         </div>
     </div>
 </nav>

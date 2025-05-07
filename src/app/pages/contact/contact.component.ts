@@ -3,6 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http'; // Import hinzufügen
 import { HttpClientModule } from '@angular/common/http';
+import { log } from 'console';
 
 @Component({
   selector: 'app-contact',
@@ -48,7 +49,8 @@ export class ContactComponent {
           complete: () => console.info('send post complete'),
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
+      console.log("send");
+      
       ngForm.resetForm();
     }
   }

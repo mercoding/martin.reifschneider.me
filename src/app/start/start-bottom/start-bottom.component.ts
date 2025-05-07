@@ -12,5 +12,16 @@ import { MarqueeComponent } from '../../marquee/marquee.component';
   styleUrl: './start-bottom.component.scss'
 })
 export class StartBottomComponent {
+  scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  }
 
+  openGitHub(): void {
+    window.open('https://github.com/mercoding', '_blank');
+  }
+  
+  openLinkedin(): void {
+    window.open('https://linkedin.com/in/martin-reifschneider', '_blank');
+  }
 }

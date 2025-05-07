@@ -19,6 +19,15 @@
         width: 16px;
         height: 32px;
         rotate: 90deg;
+
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -32px;
+            rotate: -90deg;
+            width: 8px;
+        }
     }
 }
 
@@ -70,3 +79,25 @@
     display: block;
     height: 0;
 }
+
+.set-pointer {
+    cursor: pointer;
+}
+
+
+.bounce-img {
+    animation: bounce 1.5s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+
+  
+  

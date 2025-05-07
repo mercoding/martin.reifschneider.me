@@ -12,4 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class StartCenterComponent {
 
+  scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
