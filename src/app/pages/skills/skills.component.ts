@@ -11,5 +11,8 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-
+  scrollTo(id: string): void {
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
