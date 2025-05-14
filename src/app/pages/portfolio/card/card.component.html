@@ -1,0 +1,32 @@
+<section>
+    <mat-card class="card" appearance="outlined">
+        <mat-card-content class="card-content">
+            <div class="top">
+                <img src="assets/img/close_small.png" alt="" (click)="closeCard()">
+            </div>
+            <div class="center">
+                <div class="description">
+                    <div>
+                        <h1>{{projects[services.index].number}}</h1>
+                        <h2>{{projects[services.index].title}}</h2>
+                        <h3>What is the project about?</h3>
+                        <span>{{projects[services.index].description}}</span>
+                        <div class="types">
+                            <div  *ngFor="let skill of projects[services.index].skills.title; let i = index">
+                                <div>
+                                    <img [src]="projects[services.index].skills.src[i]" alt=""><span>{{skill}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div>
+                    <img src="{{projects[services.index].src}}" alt="">
+                </div>
+            </div>
+            <div class="bottom"></div>
+        </mat-card-content>
+    </mat-card>
+</section>

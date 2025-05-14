@@ -1,0 +1,10 @@
+<section *ngFor="let project of projects; let i = index" (mouseenter)="preview.setPreview(project.src, $event)"
+    (mouseleave)="preview.clearPreview()" class="set-pointer" (click)="openCard(i)">
+    <h3>{{project.title}}</h3>
+
+    <div>
+        <span *ngFor="let skill of project.skills.title">{{skill}}</span>
+    </div>
+</section>
+
+<app-card *ngIf="services.showCard" (close)="closeCard()"></app-card>

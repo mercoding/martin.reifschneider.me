@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { ElPolloLocoComponent } from './el-pollo-loco/el-pollo-loco.component';
 import { CommonModule } from '@angular/common';
 import { PreviewService } from './previewServices';
-import { JoinComponent } from './join/join.component';
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
+import { ProjectsComponent } from './projects/projects.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, JoinComponent, ElPolloLocoComponent],
+  imports: [CommonModule, ProjectsComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss'
 })
