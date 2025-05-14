@@ -16,7 +16,6 @@ nav {
         border-color: #3DCFB6;
         color: white;
     }
-
 }
 
 .en-btn {
@@ -27,6 +26,7 @@ nav {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 1440px;
     height: 98px;
     padding-right: 96px;
@@ -34,6 +34,7 @@ nav {
 
     div {
         padding-right: 32px;
+        padding-left: 16px !important;
     }
 }
 

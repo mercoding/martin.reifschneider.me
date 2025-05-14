@@ -1,8 +1,6 @@
 <nav>
     <div class="navbar">
-        <app-language-toggle [value]="selectedLang" (langChange)="onLangChange($event)">
-        </app-language-toggle>
-
+        <div><app-language-toggle [value]="selectedLang" (langChange)="onLangChange($event)"></app-language-toggle></div>
         <div>About Me</div>
         <div>Skills</div>
         <div>Projects</div>
