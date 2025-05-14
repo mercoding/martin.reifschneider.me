@@ -12,6 +12,8 @@ section {
     border-bottom: 1px solid rgba(61, 207, 182, 1);
 
 
+
+
     div {
         display: flex;
         align-items: center;
@@ -26,6 +28,7 @@ section {
         font-size: 24px;
         width: 400px;
         padding-top: 16px;
+        padding-left: 16px;
     }
 
     span {
@@ -45,10 +48,12 @@ section {
     }
 
     &:hover {
-        background-color: #3ecfb6;
+        background: rgba(61, 207, 182, 0.56);
+
     }
 }
 
 .is-hovered {
     background-color: #3ecfb6;
 }
+

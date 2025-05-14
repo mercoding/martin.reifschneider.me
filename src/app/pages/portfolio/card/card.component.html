@@ -2,7 +2,7 @@
     <mat-card class="card" appearance="outlined">
         <mat-card-content class="card-content">
             <div class="top">
-                <img src="assets/img/close_small.png" alt="" (click)="closeCard()">
+                <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
             </div>
             <div class="center">
                 <div class="description">
@@ -26,7 +26,17 @@
                     <img src="{{projects[services.index].src}}" alt="">
                 </div>
             </div>
-            <div class="bottom"></div>
+            <div class="bottom">
+                <div class="buttons">
+                    <button  mat-stroked-button>
+                        GitHub
+                    </button>
+                    <button  mat-stroked-button>
+                        Live Test
+                    </button>
+                </div>
+                <div (click)="nextProject()" class="next">Next project</div>
+            </div>
         </mat-card-content>
     </mat-card>
 </section>
