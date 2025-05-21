@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
+import { AppServices } from '../../app.services';
 
 @Component({
   selector: 'app-start-center',
@@ -11,9 +12,6 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './start-center.component.scss'
 })
 export class StartCenterComponent {
-
-  scrollTo(id: string): void {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  }
+  constructor(public services: AppServices) {}
+ 
 }

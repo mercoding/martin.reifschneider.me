@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { CommonModule } from '@angular/common';
-import { CardServices } from './card.services';
 import { projects } from '../projects/projects';
 import { MatButtonModule } from '@angular/material/button';
+import { AppServices } from '../../../app.services';
 
 @Component({
   selector: 'app-card',
@@ -17,12 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
 export class CardComponent {
   public projects = projects;
 
-  constructor(public services: CardServices) {  }
+  constructor(public services: AppServices) {  }
 
   closeCard() {
-    this.services.showCard = false;
-    console.log('close');
-    
+    this.services.showProjectPreviewCard = false;    
   }
 
   nextProject() {

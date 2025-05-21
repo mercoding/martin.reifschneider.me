@@ -1,5 +1,5 @@
-<section *ngFor="let project of projects; let i = index" (mouseenter)="preview.setPreview(project.src, $event)"
-    (mouseleave)="preview.clearPreview()" class="set-pointer" (click)="openCard(i)">
+<section *ngFor="let project of projects; let i = index" (mouseenter)="services.setPreview(project.src, $event)"
+    (mouseleave)="services.clearPreview()" class="set-pointer" (click)="openCard(i)">
     <h3>{{project.title}}</h3>
 
     <div>
@@ -7,4 +7,4 @@
     </div>
 </section>
 
-<app-card *ngIf="services.showCard" (close)="closeCard()"></app-card>
+<app-card *ngIf="services.showProjectPreviewCard" (close)="closeCard()"></app-card>

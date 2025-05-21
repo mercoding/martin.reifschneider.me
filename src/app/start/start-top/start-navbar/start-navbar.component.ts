@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { LanguageToggleComponent } from '../../../language-toggle/language-toggle.component';
+import { AppServices } from '../../../app.services';
 
 @Component({
   selector: 'app-start-navbar',
@@ -12,6 +13,7 @@ import { LanguageToggleComponent } from '../../../language-toggle/language-toggl
   styleUrl: './start-navbar.component.scss'
 })
 export class StartNavbarComponent {
+  constructor(public services: AppServices) {}
   selectedLang: 'en' | 'de' = 'en';
 
   onLangChange(lang: 'en' | 'de') {
@@ -23,10 +25,4 @@ export class StartNavbarComponent {
   reloadPage(): void {
     window.location.reload();
   }
-  
-  scrollTo(id: string): void {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  }
-  
 }

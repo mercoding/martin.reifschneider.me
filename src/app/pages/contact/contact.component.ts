@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http'; // Import hinzufügen
 import { HttpClientModule } from '@angular/common/http';
 import { log } from 'console';
+import { AppServices } from '../../app.services';
 
 @Component({
   selector: 'app-contact',
@@ -13,7 +14,7 @@ import { log } from 'console';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  constructor(private http: HttpClient) {} // Hier injizieren
+  constructor(private http: HttpClient, public services: AppServices) {} // Hier injizieren
 
   contactData = {
     name: "",

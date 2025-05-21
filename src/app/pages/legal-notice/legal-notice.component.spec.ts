@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StartRightComponent } from './start-right.component';
+import { LegalNoticeComponent } from './legal-notice.component';
 
-describe('StartRightComponent', () => {
-  let component: StartRightComponent;
-  let fixture: ComponentFixture<StartRightComponent>;
+describe('LegalNoticeComponent', () => {
+  let component: LegalNoticeComponent;
+  let fixture: ComponentFixture<LegalNoticeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StartRightComponent]
+      imports: [LegalNoticeComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(StartRightComponent);
+    fixture = TestBed.createComponent(LegalNoticeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

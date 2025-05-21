@@ -1,6 +1,6 @@
 <div class="end">
     <div class="left">
-        <div (click)="scrollTo('start')" class="logo set-pointer">
+        <div (click)="services.scrollTo('start')" class="logo set-pointer">
             <img src="assets/img/logo.png" alt="">
             <div class="logo-name">
                 <span>artin</span>
@@ -21,9 +21,10 @@
         <div class="links">
             <button mat-button>Github</button>
             <button mat-button>Linkedin</button>
-            <button mat-button>Email</button>
-            <button mat-button>Legal Notice</button>
+            <button (click)="services.scrollAndHighlight()" mat-button>Email</button>
+            <button (click)="openCard()" mat-button>Legal Notice</button>
 
         </div>
     </div>
 </div>
+<app-legal-notice *ngIf="services.showLegalNoticeCard" (close)="closeCard()"></app-legal-notice>

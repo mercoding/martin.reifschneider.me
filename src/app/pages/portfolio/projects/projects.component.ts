@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
-import { PreviewService } from '../previewServices';
 import { CardComponent } from '../card/card.component';
 import { Comment } from '@angular/compiler';
 import { CommonModule } from '@angular/common';
-import { CardServices } from '../card/card.services';
 import { projects } from './projects';
+import { AppServices } from '../../../app.services';
 
 
 @Component({
@@ -15,15 +14,15 @@ import { projects } from './projects';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  constructor(public services: CardServices, public preview: PreviewService) {}
+  constructor(public services: AppServices) {}
     public projects = projects;
 
     openCard(i: number) {
-      this.services.showCard = true;
+      this.services.showProjectPreviewCard = true;
       this.services.index = i;
     }
     
     closeCard() {
-      this.services.showCard = false;
+      this.services.showProjectPreviewCard = false;
     }
 }

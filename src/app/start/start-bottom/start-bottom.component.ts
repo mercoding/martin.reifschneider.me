@@ -3,6 +3,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { MarqueeComponent } from '../../marquee/marquee.component';
+import { AppServices } from '../../app.services';
 
 @Component({
   selector: 'app-start-bottom',
@@ -12,10 +13,7 @@ import { MarqueeComponent } from '../../marquee/marquee.component';
   styleUrl: './start-bottom.component.scss'
 })
 export class StartBottomComponent {
-  scrollTo(id: string): void {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  }
+  constructor(public services: AppServices) {}
 
   openGitHub(): void {
     window.open('https://github.com/mercoding', '_blank');

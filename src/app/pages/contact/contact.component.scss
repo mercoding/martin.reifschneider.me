@@ -2,10 +2,12 @@
     background-color: rgb(28, 28, 28);
     display: flex;
     justify-content: center;
+    height: 600px;
 }
 
 .headline {
     width: 568px;
+    margin-top: 64px;
 
     h1 {
         font-family: Fira Code;
@@ -39,10 +41,12 @@
 
 .contact-form {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 2rem;
     color: white;
     font-family: 'Inter', sans-serif;
+    padding: 64px;
   }
   
   .form-group {
@@ -122,4 +126,17 @@
       color: black;
     }
   }
+
+  .highlight {
+    animation: blink 1s ease;
+    border-radius: 30px;
+  }
+  
+  @keyframes blink {
+    0%   { background-color: rgba(61, 207, 182, 0.2); }
+    50%  { background-color: rgba(61, 207, 182, 0.4); }
+    100% { background-color: transparent; }
+  }
+  
+  
   

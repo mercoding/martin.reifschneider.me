@@ -1,18 +1,33 @@
 import { Component } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
+import { LegalNoticeComponent } from '../pages/legal-notice/legal-notice.component';
+import { CommonModule } from '@angular/common';
+import { AppServices } from '../app.services';
 
 @Component({
   selector: 'app-end',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [CommonModule, MatButtonModule, MatDividerModule, MatIconModule, LegalNoticeComponent],
   templateUrl: './end.component.html',
   styleUrl: './end.component.scss'
 })
 export class EndComponent {
-  scrollTo(id: string): void {
-    const el = document.getElementById(id);
-    el?.scrollIntoView({ behavior: 'smooth' });
+  constructor(public services: AppServices, private router: Router) {}
+
+  showLegalNotice = false;
+
+  openMail(): void {
+    window.location.href = 'mailto:martin@reifschneider.me?subject=Portfolio%20Anfrage&body=Hallo%20Martin,%0Aich%20habe%20Interesse%20an%20...';
+  }
+
+  closeCard() {
+    this.services.showLegalNoticeCard = false;
+  }
+
+  openCard() {
+    this.services.showLegalNoticeCard = true;
   }
 }

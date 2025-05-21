@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PreviewService } from './previewServices';
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
 import { ProjectsComponent } from './projects/projects.component';
+import { AppServices } from '../../app.services';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,7 +13,7 @@ import { ProjectsComponent } from './projects/projects.component';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
-    constructor(public preview: PreviewService, @Inject(PLATFORM_ID) private platformId: Object) {} 
+    constructor(public preview: AppServices, @Inject(PLATFORM_ID) private platformId: Object) {} 
     
     ngOnInit(): void {
       if (isPlatformBrowser(this.platformId)) {
