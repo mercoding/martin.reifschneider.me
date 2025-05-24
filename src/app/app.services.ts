@@ -43,9 +43,17 @@ export class AppServices {
     scrollAndHighlight() {
         this.scrollTo('contact');
         this.highlighted = true;
-    
+
         setTimeout(() => {
-          this.highlighted = false;
+            this.highlighted = false;
         }, 1000); // 1 Sekunde später wieder zurücksetzen
-      }
+    }
+
+    openGitHub(): void {
+        window.open('https://github.com/mercoding', '_blank');
+    }
+
+    openLinkedin(): void {
+        window.open('https://linkedin.com/in/martin-reifschneider', '_blank');
+    }
 }

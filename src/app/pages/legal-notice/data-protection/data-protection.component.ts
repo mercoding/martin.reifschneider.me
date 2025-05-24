@@ -1,0 +1,13 @@
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-data-protection',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './data-protection.component.html',
+  styleUrl: './data-protection.component.scss'
+})
+export class DataProtectionComponent {
+
+}

@@ -14,12 +14,4 @@ import { AppServices } from '../../app.services';
 })
 export class StartBottomComponent {
   constructor(public services: AppServices) {}
-
-  openGitHub(): void {
-    window.open('https://github.com/mercoding', '_blank');
-  }
-  
-  openLinkedin(): void {
-    window.open('https://linkedin.com/in/martin-reifschneider', '_blank');
-  }
 }

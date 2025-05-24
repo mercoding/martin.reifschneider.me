@@ -5,9 +5,10 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100wv;
     height: 100vh;
     background-color: black;
+    overflow-y: hidden;
 }
 
 .card {
@@ -19,9 +20,43 @@ section {
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     z-index: 999;
     opacity: 1;
-    width: 85%;
-    height: 650px;
-    border-radius: 30px;
+    width: 100wv;
+    height: 100vh;
+    overflow-y: hidden;
+    /*border-radius: 30px;
     border: 1px solid #3DCFB6;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);*/
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    /*margin-top: 64px;*/
+    height: 100vh;
+
+
+    .top {
+        display: flex;
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        justify-content: flex-end;
+        width: 64px;
+
+        img {
+            width: 18px;
+            height: 18px;
+            /*padding-right: 64px;*/
+        }
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        /*margin-top: 64px;*/
+        /*height: 75vh;*/
+        padding: 64px 0 64px 0;
+    }
+
 }
