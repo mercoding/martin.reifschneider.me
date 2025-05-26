@@ -1,1 +1,2 @@
-<app-start-navbar></app-start-navbar>
+<app-start-navbar *ngIf="!isMobile"></app-start-navbar>
+<app-mobile-navbar *ngIf="isMobile"></app-mobile-navbar>

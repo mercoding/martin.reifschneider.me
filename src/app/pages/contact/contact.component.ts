@@ -26,7 +26,7 @@ export class ContactComponent {
   policyChecked = false;
 
   post = {
-    endPoint: 'https://reifschneider.me/sendMail.php',
+    endPoint: 'https://martin.reifschneider.me/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {

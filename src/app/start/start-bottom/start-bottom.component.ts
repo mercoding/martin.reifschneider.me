@@ -4,14 +4,17 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { MarqueeComponent } from '../../marquee/marquee.component';
 import { AppServices } from '../../app.services';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-start-bottom',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule, MarqueeComponent],
+  imports: [CommonModule, MatButtonModule, MatDividerModule, MatIconModule, MarqueeComponent],
   templateUrl: './start-bottom.component.html',
   styleUrl: './start-bottom.component.scss'
 })
 export class StartBottomComponent {
   constructor(public services: AppServices) {}
+
+  isMobile = false;
 }
