@@ -9,7 +9,9 @@
         </div>
 
     </div>
-    <div *ngIf="preview.showPreview" [ngStyle]="{ top: preview.previewTop + 'px' }" class="preview preview-wrapper">
-        <img [src]="preview.loadImage" alt="">
+    <div *ngIf="!isMobile">
+        <div *ngIf="preview.showPreview" [ngStyle]="{ top: preview.previewTop + 'px' }" class="preview preview-wrapper">
+            <img [src]="preview.loadImage" alt="">
+        </div>
     </div>
 </div>

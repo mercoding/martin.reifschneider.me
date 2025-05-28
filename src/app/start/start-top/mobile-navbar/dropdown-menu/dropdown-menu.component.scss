@@ -1,3 +1,14 @@
+.navbar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
 nav {
     position: absolute;
     right: 32px;
@@ -14,6 +25,7 @@ nav {
     padding-left: 77px;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     user-select: none;
+    z-index: 12;
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;

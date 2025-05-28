@@ -10,9 +10,7 @@ import { AppServices } from '../../../../app.services';
   styleUrl: './dropdown-menu.component.scss'
 })
 export class DropdownMenuComponent {
-  constructor(public services: AppServices) {
-    document.body.style.overflow = 'hidden';
-  }
+  constructor(public services: AppServices) {}
 
   selectedLang: 'en' | 'de' = 'en';
   menuOpened = false;
@@ -29,6 +27,5 @@ export class DropdownMenuComponent {
 
   dropdownMenu() {
     this.services.menuActive = !this.services.menuActive;
-    document.body.style.overflow = 'auto';
   }
 }
