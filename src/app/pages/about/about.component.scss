@@ -43,29 +43,34 @@
     background: #3DCFB61A;
     border-radius: 24px;
     justify-content: center;
-    width: 568;
-    height: 540;
+    width: 568px;
+    height: 540px;
     border-radius: 30px;
     gap: 40px;
     border-width: 1px;
-    padding: 32px;
+    max-width: 600px;
 
-
+    .about-me-container {
+        padding: 32px;
+    }
 
     h1 {
         font-family: Fira Code;
         color: #3DCFB6;
+        padding: 0 16px 0 16px;
     }
 
     span {
         font-family: Karla;
         color: white;
+        padding: 0 16px 0 16px;
     }
 
     div {
         display: flex;
         justify-content: space-between;
         gap: 32px;
+        padding: 0 16px 0 16px;
     }
 
     img {
@@ -100,4 +105,33 @@
             #3dcfb6 12px);
     z-index: -1;
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 1450px) {
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 1300px;
+
+        .profile-image {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .about-me {
+            width: 500px;
+            margin: 0;
+            padding: 8px;
+
+            .about-me-box {
+                width: 500px;
+                padding: 0;
+
+                
+            }
+        }
+    }
 }

@@ -18,7 +18,7 @@ export class StartTopComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {
     this.breakpointObserver
-      .observe(['(max-width: 1230px)'])
+      .observe(['(max-width: 1450px)'])
       .subscribe(result => {
         this.isMobile = result.matches;
       });

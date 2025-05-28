@@ -1,0 +1,28 @@
+nav {
+    position: absolute;
+    right: 32px;
+    top: 100px;
+
+    border: 1px solid #3DCFB6;
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    gap: 10px;
+    border-width: 1px;
+    padding-top: 40px;
+    padding-right: 77px;
+    padding-bottom: 40px;
+    padding-left: 77px;
+    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+    user-select: none;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+ */
+
+    div {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}

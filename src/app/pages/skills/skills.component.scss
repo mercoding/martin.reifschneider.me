@@ -108,3 +108,23 @@
 
 }
 
+@media only screen and (max-width: 1450px) {
+    .skills {
+        display: flex;
+        flex-direction: column;
+        height: 1200px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+
+        .skills-description {
+            margin: 0;
+        }
+
+        .skills-box {
+            width: 500px;
+            margin: 0;
+        }
+    }
+}
+

@@ -4,8 +4,8 @@
     </div>
     <div class="menu">
         <div (click)="openMenu()" class="menu-bar-container">
-            <div  class="menu-bar" [class.active]="menuActive" ></div>
+            <div  class="menu-bar" [class.active]="services.menuActive" ></div>
         </div>
     </div>
-    
 </nav>
+<app-dropdown-menu *ngIf="services.menuActive"></app-dropdown-menu>

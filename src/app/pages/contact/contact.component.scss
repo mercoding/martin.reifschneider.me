@@ -139,6 +139,23 @@
     50%  { background-color: rgba(61, 207, 182, 0.4); }
     100% { background-color: transparent; }
   }
+
+
+  @media only screen and (max-width: 1450px) {
+    .contact {
+      display: flex;
+      flex-direction: column;
+      height: 1000px;
+      justify-content: center;
+      align-items: center;
+
+      .headline {
+        margin: 0;
+        padding: 0;
+        width: 650px;
+      }
+    }
+  }
   
   
   

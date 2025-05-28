@@ -7,7 +7,7 @@ export class AppServices {
     showProjectPreviewCard = false;
     showLegalNoticeCard = false;
     index = 0;
-
+    menuActive = false;
     showPreview = false;
     loadImage = '';
     previewTop = 0;
