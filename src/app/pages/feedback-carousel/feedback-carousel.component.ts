@@ -14,12 +14,32 @@ import { AppServices } from '../../app.services';
 })
 export class FeedbackCarouselComponent {
   constructor(public services: AppServices) {}
-  
+
   feedbacks = [
-    { message: 'Super Zusammenarbeit – jederzeit wieder!', author: 'Anna L.' },
-    { message: 'Tolles Design, schnelle Umsetzung.', author: 'Max M.' },
-    { message: 'Sehr zuverlässig, klare Kommunikation.', author: 'Lea K.' },
-    { message: 'Einfach großartig.', author: 'Tom S.' }
+    { message: 
+      {
+        en: 'Great cooperation - anytime again',
+        de: 'Super Zusammenarbeit – jederzeit wieder!'
+      }
+      , author: 'Anna L.' },
+    { message:
+      { 
+        en: 'Great design, fast implementation',
+        de: 'Tolles Design, schnelle Umsetzung.'
+      }, 
+      author: 'Max M.' },
+    { message: 
+      {
+        en: 'Very reliable, clear communication',
+        de: 'Sehr zuverlässig, klare Kommunikation.'
+      },
+      author: 'Lea K.' },
+    { message: 
+      {
+        en: 'Simply great',
+        de: 'Einfach großartig.'
+      }, 
+      author: 'Tom S.' }
   ];
 
   currentIndex = 0;

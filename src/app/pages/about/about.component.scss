@@ -16,7 +16,7 @@
 
 
         img {
-            height: 500px;
+            height: 568px;
             width: auto;
             border-radius: 30px;
         }
@@ -108,21 +108,23 @@
     border-radius: 20px;
 }
 
-@media only screen and (max-width: 1450px) {
-}
 
 @media only screen and (max-width: 1200px) {
     .about {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: auto;
         margin-top: 64px;
+        height: 725px;
 
         .profile-image {
-            width: 100%;
-            margin: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            margin: 0 0 0 64px;
             padding: 0;
 
             img {
@@ -132,11 +134,18 @@
             }
         }
 
+
         .about-me {
+            position: absolute;
+            top: 256px;
+            right: 64px;
             display: flex;
             justify-content: center;
             margin: 0;
             padding: 16px;
+            z-index: 3;
+            /*background-color: rgb(28, 28, 28);
+            border-radius: 30px;*/
 
             .about-me-container {
                 max-width: 500px;
@@ -145,9 +154,58 @@
             .about-me-box {
                 width: 100%;
                 padding: 0;
+                height: 456px;
+                width: 500px;
+
+                background: #3DCFB61A;
+                backdrop-filter: blur(80px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 646px) {
+    .about {
+        position: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 1000px;
+        margin: 64px 0 64px 0;
+
+        .profile-image {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0;
+            width: 100%;
+
+            img {
+                width: calc(100% - 128px);
+            }
+        }
+
+        .about-me {
+            position: relative;
+            top: 0;
+            right: 0;
+            left: 64px;
+            width: 100%;
+
+            .about-me-container {
+                width: 100%;
+                max-width: 100%;
                 height: auto;
+
+                .about-me-box {
+                    width: calc(100% - 128px);
+                    height: auto;
+                    padding: 16px 0 16px 0;
+                }
 
             }
         }
     }
+
 }

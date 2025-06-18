@@ -118,16 +118,30 @@
 
         .skills-description {
             margin: 64px 0 0 0;
-            max-height: 500px;
-            width: calc(100% - 32px);
-            max-width: 500px;
+            height: auto;
+            width: calc(100% - 128px);
+            max-width: 100%;
+
+            div {
+                max-width: 100%;
+            }
         }
 
         .skills-box {
-            max-width: 500px;
-            margin: 128px 0 128px 0;
-            width: calc(100% - 32px);
+            max-width: 100%;
+            margin: 32px 0 32px 0;
+            width: calc(100% - 128px);
+            height: auto;
         }
     }
 }
 
+@media only screen and (max-width: 646px) {
+    .skills {
+        .skills-description {
+            h1 {
+                font-size: 50px;
+            }
+        }
+    }
+}

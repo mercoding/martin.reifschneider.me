@@ -2,11 +2,11 @@
     <div class="profile-image"><img src="assets/img/me3.jpg" alt=""></div>
     <div class="about-me">
         <div class="about-me-container">
-            <h3>
+            <h3 *ngIf="isNotMobile">
                 {{services.language == "en" ? 'Who I am?' : 'Wer bin ich?'}} 
             </h3>
             <div class="about-me-box">
-                <h1>
+                <h1 >
                     {{services.language == "en" ? 'About Me' : 'Über mich'}} 
                 </h1>
                 <span>

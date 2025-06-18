@@ -6,7 +6,9 @@
         <div class="carousel-track">
             <div class="carousel-card" *ngFor="let feedback of feedbacks; let i = index" [ngClass]="getCardPosition(i)"
                 (click)="setIndex(i)">
-                <p class="message">"{{ feedback.message }}"</p>
+                <p *ngIf="services.language=='en'" class="message">"{{ feedback.message.en }}"</p>
+                <p *ngIf="services.language=='de'" class="message">"{{ feedback.message.de }}"</p>
+
                 <p class="author">– {{ feedback.author }}</p>
             </div>
         </div>
