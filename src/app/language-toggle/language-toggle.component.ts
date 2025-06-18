@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
+import { AppServices } from '../app.services';
 
 @Component({
   selector: 'app-language-toggle',
@@ -13,12 +14,12 @@ export class LanguageToggleComponent {
   @Input() value: 'en' | 'de' = 'en';
   @Output() langChange = new EventEmitter<'en' | 'de'>();
 
-  isGerman = false;
+  constructor(public services: AppServices) {}
 
   toggleLang() {
-    this.isGerman = !this.isGerman;
-    const lang = this.isGerman ? 'de' : 'en';
-    console.log('Sprache gewechselt zu:', lang);
+    this.services.isGerman = !this.services.isGerman;
+    const lang = this.services.isGerman ? 'de' : 'en';
+    this.services.language = lang;
   }
 
 }

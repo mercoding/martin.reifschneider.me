@@ -1,42 +1,52 @@
 <section>
-    <mat-card class="card" appearance="outlined">
+    <div class="card">
         <mat-card-content class="card-content">
             <div class="top">
                 <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
             </div>
             <div class="center">
+                <div class="title">
+                    <h1>{{projects[services.index].number}}</h1>
+                    <h2>{{projects[services.index].title}}</h2>
+                </div>
                 <div class="description">
                     <div>
-                        <h1>{{projects[services.index].number}}</h1>
-                        <h2>{{projects[services.index].title}}</h2>
-                        <h3>What is the project about?</h3>
-                        <span>{{projects[services.index].description}}</span>
-                        <div class="types">
-                            <div  *ngFor="let skill of projects[services.index].skills.title; let i = index">
-                                <div>
-                                    <img [src]="projects[services.index].skills.src[i]" alt=""><span>{{skill}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        
+
+                        <h3>
+                            {{services.language=="en" ? 'What is the project about?' : 'Worum geht es bei dem Projekt?'}}
+                        </h3>
+                        <span *ngIf="services.language=='en'">{{projects[services.index].description.en}}</span>
+                        <span *ngIf="services.language=='de'">{{projects[services.index].description.de}}</span>
+
+
                     </div>
                 </div>
 
-                <div>
+                <div class="types">
+                    <div *ngFor="let skill of projects[services.index].skills.title; let i = index">
+                        <div>
+                            <img [src]="projects[services.index].skills.src[i]" alt=""><span>{{skill}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-img">
                     <img src="{{projects[services.index].src}}" alt="">
                 </div>
             </div>
             <div class="bottom">
                 <div class="buttons">
-                    <button  mat-stroked-button>
+                    <button mat-stroked-button>
                         GitHub
                     </button>
-                    <button  mat-stroked-button>
+                    <button mat-stroked-button>
                         Live Test
                     </button>
                 </div>
-                <div (click)="nextProject()" class="next">Next project</div>
+                <div (click)="nextProject()" class="next">
+                    {{services.language=="en" ? 'Next project' : 'Nächstes Projekt'}}
+                </div>
             </div>
         </mat-card-content>
-    </mat-card>
+    </div>
 </section>

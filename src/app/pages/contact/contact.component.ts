@@ -5,11 +5,12 @@ import { HttpClient } from '@angular/common/http'; // Import hinzufügen
 import { HttpClientModule } from '@angular/common/http';
 import { log } from 'console';
 import { AppServices } from '../../app.services';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, MatButtonModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, MatButtonModule, HttpClientModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -54,5 +55,9 @@ export class ContactComponent {
       
       ngForm.resetForm();
     }
+  }
+
+  openCard() {
+    this.services.showLegalNoticeCard = true;
   }
 }

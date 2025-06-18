@@ -3,11 +3,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import { AppServices } from '../../app.services';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-start-center',
   standalone: true,
-  imports: [MatButtonModule, MatDividerModule, MatIconModule],
+  imports: [CommonModule ,MatButtonModule, MatDividerModule, MatIconModule],
   templateUrl: './start-center.component.html',
   styleUrl: './start-center.component.scss'
 })

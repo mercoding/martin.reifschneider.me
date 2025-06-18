@@ -12,6 +12,8 @@ export class AppServices {
     loadImage = '';
     previewTop = 0;
     highlighted = false;
+    isGerman = false;
+    language = "en";
 
 
 

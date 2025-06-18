@@ -1,13 +1,15 @@
 <div class="start-center">
     <div class="title">
-        <h3>Frontend Developer</h3>
+        <h3>
+            {{services.language == "en" ? 'Frontend Developer' : 'Frontend Entwickler'}} 
+        </h3>
         <h1>Martin Reifschneider</h1>
         <div class="buttons">
             <button (click)="services.scrollTo('portfolio')" mat-stroked-button>
-                Check my work
+                {{services.language == "en" ? 'Check my work' : 'Meine Projekte'}} 
             </button>
             <button (click)="services.scrollTo('contact')" mat-stroked-button>
-                Contact me
+                {{services.language == "en" ? 'Contact me' : 'Schreib mir'}} 
             </button>
         </div>
     </div>

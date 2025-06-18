@@ -17,7 +17,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 export class PortfolioComponent {
   isMobile = false;
 
-  constructor(private breakpointObserver: BreakpointObserver, public preview: AppServices, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(public services: AppServices, private breakpointObserver: BreakpointObserver, public preview: AppServices, @Inject(PLATFORM_ID) private platformId: Object) {
     this.breakpointObserver
       .observe(['(max-width: 1450px)'])
       .subscribe(result => {

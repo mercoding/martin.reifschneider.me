@@ -1,8 +1,20 @@
 <div class="navbar-container">
     <nav class="navbar">
-        <div class="set-pointer" (click)="services.scrollTo('about-me'); dropdownMenu()">About Me</div>
-        <div class="set-pointer" (click)="services.scrollTo('skills'); dropdownMenu()">Skills</div>
-        <div class="set-pointer" (click)="services.scrollTo('portfolio'); dropdownMenu()">Projects</div>
+        <div class="set-pointer" (click)="services.scrollTo('about-me'); dropdownMenu()">
+            {{services.language == "en" ?
+            "About Me" :
+            "Über mich" }}
+        </div>
+        <div class="set-pointer" (click)="services.scrollTo('skills'); dropdownMenu()">
+            {{services.language == "en" ?
+            "Skills" :
+            "Fähigkeiten" }}
+        </div>
+        <div class="set-pointer" (click)="services.scrollTo('portfolio'); dropdownMenu()">
+            {{services.language == "en" ?
+            "Projects" :
+            "Projekte" }}
+        </div>
         <div><app-language-toggle [value]="selectedLang" (langChange)="onLangChange($event); dropdownMenu()"> </app-language-toggle></div>
     </nav>
 </div>

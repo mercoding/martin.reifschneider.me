@@ -1,15 +1,21 @@
 <div class="end">
     <div class="left">
-        <div (click)="services.scrollTo('start')" class="logo set-pointer">
-            <img src="assets/img/logo.png" alt="">
-            <div class="logo-name">
-                <span>artin</span>
-                <span>eifschneider</span>
+        <div class="logo-container">
+            <div (click)="services.scrollTo('start')" class="logo set-pointer">
+                <img src="assets/img/logo.png" alt="">
+                <div class="logo-name">
+                    <span>artin</span>
+                    <span>eifschneider</span>
+                </div>
             </div>
-        </div>
-        <div class="description">
-            <span>Web Developer</span>
-            <span>Frankfurt Germany</span>
+            <div class="description">
+                <span>
+                    {{services.language == "en" ? 'Web Developer' : 'Webentwickler'}}
+                </span>
+                <span>
+                    {{services.language == "en" ? 'Frankfurt Germany' : 'Frankfurt Deutschland'}}
+                </span>
+            </div>
         </div>
     </div>
     <div class="center">
@@ -22,7 +28,9 @@
             <button (click)="services.openGitHub()" mat-button>Github</button>
             <button (click)="services.openLinkedin()" mat-button>Linkedin</button>
             <button (click)="services.scrollAndHighlight()" mat-button>Email</button>
-            <button (click)="openCard()" mat-button>Legal Notice</button>
+            <button (click)="openCard()" mat-button>
+                 {{services.language == "en" ? 'Legal Notice' : 'Rechtshinweis'}}
+            </button>
 
         </div>
     </div>

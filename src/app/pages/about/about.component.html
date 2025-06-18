@@ -2,13 +2,39 @@
     <div class="profile-image"><img src="assets/img/me3.jpg" alt=""></div>
     <div class="about-me">
         <div class="about-me-container">
-            <h3>Who I am?</h3>
+            <h3>
+                {{services.language == "en" ? 'Who I am?' : 'Wer bin ich?'}} 
+            </h3>
             <div class="about-me-box">
-                <h1>About Me</h1>
-                <span>Hey there, I'm Martin! Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?</span>
-                <div><img src="assets/img/location.png" alt=""><span>Where are you based? Would you be open to working remotely or potentially relocating?</span></div>
-                <div><img src="assets/img/about-me.png" alt=""><span>Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?</span></div>
-                <div><img src="assets/img/checked.png" alt=""><span>Do you learn from each challenge as you search for the most efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and  collaboration.</span></div>
+                <h1>
+                    {{services.language == "en" ? 'About Me' : 'Über mich'}} 
+                </h1>
+                <span>
+                    {{services.language == "en" ? 
+                    "Hey there, I'm Martin! Write some information about yourself that is IT related. Why are you passionate about coding? What is your source of inspiration for improving your programming skills?" : 
+                    "Hallo, ich bin Martin! Schreibe ein paar Informationen über dich, die etwas mit IT zu tun haben. Warum programmierst du leidenschaftlich gerne? Was ist deine Inspirationsquelle, um deine Programmierkenntnisse zu verbessern?"}} 
+                </span>
+                <div><img src="assets/img/location.png" alt="">
+                    <span>
+                        {{services.language == "en" ? 
+                        "Where are you based? Would you be open to working remotely or potentially relocating?" :
+                        "Wo sind Sie ansässig? Wären Sie bereit, aus der Ferne zu arbeiten oder möglicherweise umzuziehen?" }}
+                    </span>
+                </div>
+                <div><img src="assets/img/about-me.png" alt="">
+                    <span>
+                        {{services.language == "en" ? 
+                        "Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?" :
+                        "Zeigen Sie, dass Sie aufgeschlossen sind. Sind Sie begeistert davon, neue Technologien zu erlernen und Ihre Fähigkeiten ständig zu verbessern?" }}
+                    </span>
+                </div>
+                <div><img src="assets/img/checked.png" alt="">
+                    <span> 
+                         {{services.language == "en" ? 
+                         "Do you learn from each challenge as you search for the most efficient or elegant solution?" :
+                         "Lernen Sie aus jeder Herausforderung, wenn Sie nach der effizientesten oder elegantesten Lösung suchen?" }}
+                    </span>
+                </div>
             </div>
         </div>
     </div>

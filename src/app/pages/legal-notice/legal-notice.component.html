@@ -4,10 +4,12 @@
         <mat-card-content class="card-content">
             
             <div class="center">
-                <app-imprint></app-imprint>
+                <app-imprint *ngIf="services.language=='en'"></app-imprint>
+                <app-impressum *ngIf="services.language=='de'"></app-impressum>
             <!--</div>
             <div class="bottom">-->
-                <app-data-protection></app-data-protection>
+                <app-data-protection *ngIf="services.language=='en'"></app-data-protection>
+                <app-datenschutz *ngIf="services.language=='de'"></app-datenschutz>
             </div>
             <div class="top">
                 <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">

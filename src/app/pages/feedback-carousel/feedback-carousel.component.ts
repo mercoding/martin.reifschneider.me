@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AppServices } from '../../app.services';
 
 @Component({
   selector: 'app-feedback-carousel',
@@ -12,6 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./feedback-carousel.component.scss'],
 })
 export class FeedbackCarouselComponent {
+  constructor(public services: AppServices) {}
+  
   feedbacks = [
     { message: 'Super Zusammenarbeit – jederzeit wieder!', author: 'Anna L.' },
     { message: 'Tolles Design, schnelle Umsetzung.', author: 'Max M.' },

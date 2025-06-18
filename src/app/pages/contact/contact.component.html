@@ -1,41 +1,63 @@
 <div id="contact" class="contact">
   <div class="headline">
-    <h3>Contact me</h3>
-    <h1>Let's work</h1>
-    <h1>together</h1>
-    <h2>Got a problem to solve?</h2>
-    <span>Encourage people to contact you and describe what role you are interested in. Show that you will add value to
-      their projects through your work. </span>
+    <h3>
+      {{services.language == "en" ? 'Contact me' : 'Kontaktieren Sie mich'}}
+    </h3>
+    <h1>
+      {{services.language == "en" ? "Let's work" : 'Arbeiten wir'}}
+    </h1>
+    <h1>
+      {{services.language == "en" ? "together" : 'zusammen'}}
+    </h1>
+    <h2>
+      {{services.language == "en" ? "Got a problem to solve?" : 'Haben Sie ein Problem zu lösen?'}}
+    </h2>
+    <span>
+      {{services.language == "en" ? "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. " : 'Ermutigen Sie die Leute, mit Ihnen Kontakt aufzunehmen, und beschreiben Sie, an welcher Aufgabe Sie interessiert sind. Zeigen Sie, dass Ihre Arbeit einen Mehrwert für ihre Projekte durch Ihre Arbeit.'}}
+    </span>
   </div>
 
   <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" #contactSection
     [class.highlight]="services.highlighted">
     <div class="form-group">
-      <label>What's your name?</label>
-      <input type="text" [(ngModel)]="contactData.name" name="name" placeholder="Your name goes here" minlength="3"
-        required />
+      <label>
+        {{services.language == "en" ? "What's your name?" : 'Wie ist Ihr Name?'}}
+      </label>
+      <input *ngIf="services.language == 'en'" type="text" [(ngModel)]="contactData.name" name="name" placeholder="Your name goes here" minlength="3" required />
+      <input *ngIf="services.language == 'de'" type="text" [(ngModel)]="contactData.name" name="name" placeholder="Ihr Name steht hier" minlength="3" required />
+
     </div>
 
     <div class="form-group">
-      <label>What's your email?</label>
-      <input type="email" [(ngModel)]="contactData.email" name="email"
-        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="youremail@email.com" />
+      <label>
+        {{services.language == "en" ? "What's your email?" : 'Wie lautet Ihre E-Mail?'}}
+      </label>
+      <input *ngIf="services.language == 'en'" type="email" [(ngModel)]="contactData.email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="youremail@email.com" />
+      <input *ngIf="services.language == 'de'" type="email" [(ngModel)]="contactData.email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="deineemail@email.de" />
+
     </div>
 
     <div class="form-group">
-      <label>How can I help you?</label>
-      <textarea [(ngModel)]="contactData.message" name="message" placeholder="Hello Martin, I am interested in..."
-        minlength="4" required></textarea>
+      <label>
+        {{services.language == "en" ? "How can I help you?" : 'Wie kann ich Ihnen helfen?'}}
+      </label>
+      <textarea *ngIf="services.language == 'en'" [(ngModel)]="contactData.message" name="message" placeholder="Hello Martin, I am interested in..." minlength="4" required></textarea>
+      <textarea *ngIf="services.language == 'de'" [(ngModel)]="contactData.message" name="message" placeholder="Hallo Martin, ich bin interessiert an..." minlength="4" required></textarea>
+
     </div>
 
     <div class="form-group checkbox-group">
       <label>
         <input [(ngModel)]="policyChecked" name="policyChecked" type="checkbox" required />
-        I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
+          <div *ngIf="services.language == 'en'" class="policy-checkbox-text"> I've read the <a (click)="openCard()" class="set-pointer">privacy policy</a> and agree to the processing of my data as outlined.</div>
+          <div *ngIf="services.language == 'de'" class="policy-checkbox-text"> Ich habe die <a (click)="openCard()" class="set-pointer">Datenschutzbestimmungen</a> gelesen und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.</div>
+
       </label>
     </div>
 
-    <button class="submit-btn" mat-stroked-button type="submit" value="Submit">Say Hello ;)</button>
+    <button class="submit-btn" mat-stroked-button type="submit" value="Submit">
+      {{services.language == "en" ? "Say Hello ;)" : 'Sag Hallo ;)'}}
+    </button>
   </form>
 
 </div>

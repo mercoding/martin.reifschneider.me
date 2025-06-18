@@ -14,14 +14,14 @@
         padding-left: 64px;
         margin-top: -128px;
 
-        
+
         img {
             height: 500px;
             width: auto;
             border-radius: 30px;
         }
     }
-    
+
 
     h3 {
         font-family: Karla;
@@ -52,6 +52,7 @@
 
     .about-me-container {
         padding: 32px;
+        width: 100%;
     }
 
     h1 {
@@ -108,29 +109,44 @@
 }
 
 @media only screen and (max-width: 1450px) {
+}
+
+@media only screen and (max-width: 1200px) {
     .about {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 1300px;
+        height: auto;
+        margin-top: 64px;
 
         .profile-image {
             width: 100%;
             margin: 0;
             padding: 0;
+
+            img {
+                height: auto;
+                width: 500px;
+                object-fit: cover;
+            }
         }
 
         .about-me {
-            width: 500px;
+            display: flex;
+            justify-content: center;
             margin: 0;
-            padding: 8px;
+            padding: 16px;
+
+            .about-me-container {
+                max-width: 500px;
+            }
 
             .about-me-box {
-                width: 500px;
+                width: 100%;
                 padding: 0;
+                height: auto;
 
-                
             }
         }
     }

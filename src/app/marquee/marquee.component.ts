@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, PLATFORM_ID } from '@angular/core';
+import { AppServices } from '../app.services';
 
 
 @Component({
@@ -21,9 +22,16 @@ export class MarqueeComponent implements AfterViewInit {
     'Available for remote work'
   ];
 
+  itemsDe = [
+    'Frontend Entwickler',
+    'Offen für Arbeit',
+    'Sitz in Frankfurt',
+    'Verfügbar für Remote-Arbeit'
+  ];
+
   repeatCount = 2;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private services: AppServices) { }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -38,10 +46,16 @@ export class MarqueeComponent implements AfterViewInit {
   }
 
   get itemsWithDots() {
-    return this.items.flatMap((item) => [
-      { text: '•', isDot: true },
-      { text: item, isDot: false }
-    ]);
+    if (this.services.language == "en")
+      return this.items.flatMap((item) => [
+        { text: '•', isDot: true },
+        { text: item, isDot: false }
+      ]);
+    else {
+      return this.itemsDe.flatMap((item) => [
+        { text: '•', isDot: true },
+        { text: item, isDot: false }
+      ]);
+    }
   }
-  
 }

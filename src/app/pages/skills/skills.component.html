@@ -1,12 +1,36 @@
 <div id="skills" class="skills">
     <div class="skills-description">
-        <h3>Technologies</h3>
+        <h3>
+            {{services.language == "en" ?
+            "Technologies" :
+            "Technologien" }}
+        </h3>
         <div>
-            <h1>Skill Set</h1>
-            <span>A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development.</span>
-            <h3>You need <span>another skill?</span></h3>
-            <span>Feel free to contact me. I look forward to expanding on my previous knowledge.</span>
-            <button (click)="scrollTo('contact')" mat-stroked-button>Let's Talk</button>
+            <h1>
+                {{services.language == "en" ?
+                "Skill Set" :
+                "Fähigkeiten" }}
+            </h1>
+            <span>
+                {{services.language == "en" ?
+                "A short introduction of your skills. Highlight your experience of  using different front-end technologies and emphasise your openness to learning and adapting to new technologies. Show how important it is for you to keep up with the rapid changes in web development." :
+                "Eine kurze Vorstellung Ihrer Fähigkeiten. Heben Sie Ihre Erfahrung im Umgang mit verschiedenen Frontend-Technologien hervor und betonen Sie Ihre Bereitschaft, zu lernen und sich an neue Technologien anzupassen. Zeigen Sie, wie wichtig es für Sie ist, mit den schnellen Veränderungen in der Webentwicklung Schritt zu halten."
+                }}
+            </span>
+            <h3> 
+                {{ services.language == "en" ? "You need" : "Sie benötigen" }}
+                <span>
+                     {{ services.language == "en" ? "another skill?" : "eine andere Fähigkeit?" }}
+                </span>
+            </h3>
+            <span>
+                {{services.language == "en" ? 
+                "Feel free to contact me. I look forward to expanding on my previous knowledge." :
+                "Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu erweitern." }}
+            </span>
+            <button (click)="scrollTo('contact')" mat-stroked-button>
+                {{services.language == "en" ? "Let's Talk" : "Reden wir" }}
+            </button>
         </div>
     </div>
     <div class="skills-box">

@@ -1,8 +1,12 @@
 <div id="portfolio" class="portfolio">
     <div>
         <h3>Portfolio</h3>
-        <h1>Featured Projects</h1>
-        <span>Explore a selection of my work here - Interact with projects to see my skills in action.</span>
+        <h1>
+            {{services.language == "en" ? 'Featured Projects' : 'Besondere Projekte'}}
+        </h1>
+        <span>
+            {{services.language == "en" ? 'Explore a selection of my work here - Interact with projects to see my skills in action.' : 'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.'}}
+        </span>
 
         <div class="projects">
             <section><app-projects></app-projects></section>

@@ -3,12 +3,14 @@
     display: grid;
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: 1fr;
+    grid-template: "left center right" 1fr;
 }
 
 .left {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
+    grid-area: left;
 
     .description {
         display: flex;
@@ -23,26 +25,35 @@
     }
 }
 
-
-.logo {
-    padding-right: 96px;
+.right {
+    grid-area: right;
     display: flex;
-    margin-top: -16px;
+    justify-content: flex-end;
+}
 
-    img {
-        width: auto;
-        height: 80px;
-    }
+.logo-container {
 
-    .logo-name {
+    .logo {
+        padding-right: 96px;
         display: flex;
-        flex-direction: column;
-        margin-top: 24px;
-        margin-left: -26px;
-    }
+        margin-top: -16px;
+        
 
-    span {
-        color: white;
+        img {
+            width: auto;
+            height: 80px;
+        }
+
+        .logo-name {
+            display: flex;
+            flex-direction: column;
+            margin-top: 24px;
+            margin-left: -26px;
+        }
+
+        span {
+            color: white;
+        }
     }
 }
 
@@ -54,6 +65,7 @@
     font-family: Fira Code;
     font-size: 18px;
     color: #3DCFB6;
+    grid-area: center;
 }
 
 .links {
@@ -65,11 +77,34 @@
         color: white;
         text-align: end;
         width: 200px;
-        
+
     }
 
     .mdc-button {
         justify-content: flex-start !important;
     }
 }
-  
+
+@media only screen and (max-width: 1450px) {
+    .end {
+        display: grid;
+        grid-template: "left right" 200px
+            "bottom bottom" auto;
+
+        .left {
+            grid-area: left;
+        }
+
+        .right {
+            grid-area: right;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .center {
+            grid-area: bottom;
+            height: 64px;
+        }
+    }
+}

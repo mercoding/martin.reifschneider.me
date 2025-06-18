@@ -111,8 +111,26 @@
     .portfolio {
         display: flex;
         justify-content: center;
-        padding: 0;
-        margin-left: 80px;
-       
+        width: calc(100% - 128px);
+
+        div {
+            width: 100%;
+        }
+
+        .projects {
+            width: 100%;
+
+            section {
+                width: 100%;
+                
+            }
+            app-projects {
+                width: 100%;
+            }
+        }
+
+        span {
+            width: 100%;
+        }
     }
 }

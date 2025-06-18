@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { AppServices } from '../../app.services';
 import { ImprintComponent } from './imprint/imprint.component';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
+import { ImpressumComponent } from './impressum/impressum.component';
+import { DatenschutzComponent } from './datenschutz/datenschutz.component';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [CommonModule, MatCardModule, ImprintComponent, DataProtectionComponent],
+  imports: [CommonModule, MatCardModule, ImprintComponent, DataProtectionComponent, ImpressumComponent, DatenschutzComponent],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })

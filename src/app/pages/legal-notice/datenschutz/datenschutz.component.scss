@@ -1,0 +1,16 @@
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 64px 0 64px;
+    width: 90%;
+    margin-top: 64px;
+
+    a {
+        color: white;
+    }
+
+    div {
+        width: 100%;
+    }
+}
