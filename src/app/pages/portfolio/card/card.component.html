@@ -2,7 +2,8 @@
     <div class="card">
         <mat-card-content class="card-content">
             <div class="top">
-                <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
+                <div class="close-btn set-pointer" (click)="closeCard()"><img src="assets/img/close_small.png"
+                        alt="close image"></div>
             </div>
             <div class="center">
                 <div class="title">
@@ -13,7 +14,8 @@
                     <div>
 
                         <h3>
-                            {{services.language=="en" ? 'What is the project about?' : 'Worum geht es bei dem Projekt?'}}
+                            {{services.language=="en" ? 'What is the project about?' : 'Worum geht es bei dem
+                            Projekt?'}}
                         </h3>
                         <span *ngIf="services.language=='en'">{{projects[services.index].description.en}}</span>
                         <span *ngIf="services.language=='de'">{{projects[services.index].description.de}}</span>
@@ -43,8 +45,12 @@
                         Live Test
                     </button>
                 </div>
+
                 <div (click)="nextProject()" class="next">
-                    {{services.language=="en" ? 'Next project' : 'Nächstes Projekt'}}
+                    <div>
+                        <span>{{services.language=="en" ? 'Next project' : 'Nächstes Projekt'}}</span>
+                        <img src="assets/img/arrow_forward.png" alt="">
+                    </div>
                 </div>
             </div>
         </mat-card-content>

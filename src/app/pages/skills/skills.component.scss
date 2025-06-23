@@ -139,12 +139,19 @@
 @media only screen and (max-width: 646px) {
     .skills {
         .skills-description {
+            width: calc(100% - 64px);
+
             div {
                 height: auto;
             }
+
             h1 {
                 font-size: 50px;
             }
+        }
+
+        .skills-box {
+            width: calc(100% - 64px);
         }
     }
 }

@@ -190,6 +190,18 @@
 @media only screen and (max-width: 1000px) {
   .contact {
     .headline {
+      width: calc(100% - 128px);
+    }
+
+    .contact-form {
+      width: calc(100% - 128px);
+    }
+  }
+}
+
+@media only screen and (max-width: 646px) {
+  .contact {
+    .headline {
       width: calc(100% - 64px);
     }
 

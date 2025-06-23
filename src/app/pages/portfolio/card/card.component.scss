@@ -36,11 +36,16 @@ section {
         display: flex;
         justify-content: flex-end;
 
-        img {
-            width: 18px;
-            height: 18px;
-            padding-right: 64px;
-            padding-top: 64px;
+        .close-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 128px;
+
+            img {
+                width: 18px;
+                height: 18px;
+            }
         }
     }
 
@@ -129,12 +134,22 @@ section {
     }
 
     .next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 64px;
         margin-right: 64px;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         &:hover {
             cursor: pointer;
         }
+
     }
 }
 
@@ -144,6 +159,7 @@ section {
         height: 100vh;
 
     }
+
     .card {
         background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
         z-index: 999;
@@ -157,29 +173,31 @@ section {
 
         backdrop-filter: blur(4px);
 
-        .top {
-            grid-area: top;
-        }
         .card-content {
             display: grid;
             grid-template-areas: "top"
-                                "center"
-                                "bottom";
+                "center"
+                "bottom";
             grid-template-columns: 1fr;
-            grid-template-rows: 128px 700px 128px;
-            
+            grid-template-rows: 128px 400px 128px;
+
         }
     }
 
     .center {
         display: grid;
-        grid-template: "title"
+        /*grid-template: "title"
             "card_image"
             "card_image"
             "desc"
-            "types" !important;
-            grid-area: center;
-            grid-template-rows: 128px 128px 128px;
+            "types" !important;*/
+
+        grid-template: "title card_image"
+            "desc card_image"
+            "desc card_image"
+            "types card_image" !important;
+        grid-area: center;
+        grid-template-rows: 128px 64px 64px 64px !important;
 
         .title {
             height: 64px !important;
@@ -194,5 +212,71 @@ section {
 
     .bottom {
         grid-area: bottom;
+
+
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .card {
+        grid-template-rows: 128px 700px 128px;
+
+        .card-content {
+            grid-template-rows: 128px 700px 228px;
+
+        }
+
+        .top {
+            grid-area: top;
+            display: flex;
+            position: absolute;
+            right: 24px;
+            top: 54px;
+            justify-content: flex-end;
+            width: 64px;
+
+
+        }
+
+        .center {
+            display: grid;
+            grid-template: "title"
+                "card_image"
+                "card_image"
+                "desc"
+                "types" !important;
+            grid-template-rows: 128px 150px 200px 128px 64px !important;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 660px) {
+    .card {
+        .center {
+            grid-template-rows: 128px 150px 150px 128px 64px !important;
+
+            .card-img {
+                img {
+                    width: 400px;
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+
+        .next {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 895px;
+            right: 0px;
+        }
     }
 }
