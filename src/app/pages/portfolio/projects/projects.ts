@@ -10,7 +10,9 @@ export const projects = [
         skills: {
             title: ["HTML", "CSS", "JavaScript", "Firebase"],
             src: ["assets/img/html.png", "assets/img/css.png", "assets/img/javascript.png", "assets/img/firebase.png"]
-        }
+        },
+        gitHub: "https://github.com/mercoding/join",
+        liveTest: "https://join.reifschneider.me"
     },
     {
         number: "02",
@@ -23,6 +25,8 @@ export const projects = [
         skills: {
             title: ["HTML", "CSS", "JavaScript"],
             src: ["assets/img/html.png", "assets/img/css.png", "assets/img/javascript.png"]
-        }
+        },
+        gitHub: "https://github.com/mercoding/el_pollo_loco",
+        liveTest: "https://el-pollo-loco.reifschneider.me"
     }
 ]
