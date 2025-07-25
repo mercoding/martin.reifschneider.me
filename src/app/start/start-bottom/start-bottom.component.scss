@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 96px;
+    left: 32px;
     margin-top: 80px;
 
     button {
@@ -46,7 +46,8 @@
     grid-template-columns: 32px;
     justify-content: center;
     align-items: center;
-    right: 1312px;
+    position: relative;
+    right: -32px;
     bottom: 0px;
     margin-right: 96px;
     margin-top: -100px;

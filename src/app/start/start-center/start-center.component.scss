@@ -45,12 +45,34 @@
     .title {
         display: flex;
         justify-content: center;
+        margin-top: 128px;
+
         h1 {
             font-size: 40px;
         }
 
         h3 {
             font-size: 24px;
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .start-center {
+        height: 300px;
+
+        .title {
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
         }
     }
 }
