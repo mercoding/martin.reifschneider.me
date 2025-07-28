@@ -38,7 +38,7 @@ section {
     .top {
         display: flex;
         position: absolute;
-        right: 32px;
+        right: 16px;
         top: 16px;
         justify-content: flex-end;
         width: 64px;
@@ -54,8 +54,9 @@ section {
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
-        margin-bottom: 16px;
-        margin-top: 16px;
+        margin-bottom: 0px;
+        margin-top: 48px;
+        margin: 48px 0 0 16px;
         /*height: 75vh;*/
     }
 
@@ -67,6 +68,10 @@ section {
         padding: 0;
     }
 
+}
+
+.mat-mdc-card-content {
+    padding: 0;
 }
 
 .mat-mdc-card-content:last-child {
