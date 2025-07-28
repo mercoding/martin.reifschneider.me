@@ -39,7 +39,7 @@ section {
         display: flex;
         position: absolute;
         right: 32px;
-        top: 32px;
+        top: 16px;
         justify-content: flex-end;
         width: 64px;
 
@@ -54,9 +54,25 @@ section {
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
-        /*margin-top: 64px;*/
+        margin-bottom: 16px;
+        margin-top: 16px;
         /*height: 75vh;*/
-        padding: 64px 0 64px 0;
     }
 
+    :first-child {
+        padding: 0;
+    }
+
+    :last-child {
+        padding: 0;
+    }
+
+}
+
+.mat-mdc-card-content:last-child {
+    padding-bottom: 0px;
+}
+
+.mat-mdc-card-content:first-child {
+    padding-top: 0px;
 }
