@@ -39,10 +39,11 @@
                 <div class="buttons-container">
                     <div class="buttons">
                         <button mat-stroked-button (click)="openRepository()">
-                            GitHub
+                            <div> <span>GitHub</span><img class="next-arrow" src="assets/img/arrow_forward.png" alt=""></div>
                         </button>
                         <button mat-stroked-button (click)="openProject()">
-                            Live Test
+                            <div><span>Live Test</span><img class="next-arrow" src="assets/img/arrow_forward.png" alt=""></div>
+                            
                         </button>
                     </div>
                 </div>
@@ -52,7 +53,7 @@
                 <div class="next set-pointer" (click)="nextProject()">
                     <div>
                         <span>{{services.language=="en" ? 'Next project' : 'Nächstes Projekt'}}</span>
-                        <img src="assets/img/arrow_forward.png" alt="">
+                        <img class="next-arrow" src="assets/img/arrow_forward.png" alt="">
                     </div>
                 </div>
             </div>
