@@ -39,7 +39,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-55%);
+      transform: translateX(calc(-70% - 32px));
     }
   }
   

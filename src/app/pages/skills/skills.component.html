@@ -13,23 +13,42 @@
             </h1>
             <span>
                 {{services.language == "en" ?
-                "I have a broad skillset in modern web and software development: From solid basics in HTML, CSS and JavaScript to frameworks such as Angular and TypeScript to material design for appealing UI design. I am experienced in working with Firebase, REST APIs and GIT in agile Scrum teams. My strong growth mindset motivates me to constantly learn new things - including in the area of game development with C# and Unity, which has been my passion for many years." :
-                "Ich bringe ein breites Skillset aus der modernen Web- und Softwareentwicklung mit: Von soliden Grundlagen in HTML, CSS und JavaScript über Frameworks wie Angular und TypeScript bis hin zu Material Design für ansprechende UI-Gestaltung. Ich arbeite routiniert mit Firebase, REST-APIs und GIT in agilen Scrum-Teams. Mein ausgeprägtes Growth Mindset motiviert mich, stetig Neues zu lernen – unter anderem auch im Bereich Game Development mit C# und Unity, meiner langjährigen Leidenschaft."
+                "I have a broad skillset in modern web and software development: From solid basics in HTML, CSS and
+                JavaScript to frameworks such as Angular and TypeScript to material design for appealing UI design. I am
+                experienced in working with Firebase, REST APIs and GIT in agile Scrum teams. My strong growth mindset
+                motivates me to constantly learn new things - including in the area of game development with C# and
+                Unity, which has been my passion for many years." :
+                "Ich bringe ein breites Skillset aus der modernen Web- und Softwareentwicklung mit: Von soliden
+                Grundlagen in HTML, CSS und JavaScript über Frameworks wie Angular und TypeScript bis hin zu Material
+                Design für ansprechende UI-Gestaltung. Ich arbeite routiniert mit Firebase, REST-APIs und GIT in agilen
+                Scrum-Teams. Mein ausgeprägtes Growth Mindset motiviert mich, stetig Neues zu lernen – unter anderem
+                auch im Bereich Game Development mit C# und Unity, meiner langjährigen Leidenschaft."
                 }}
             </span>
-            <h3> 
+            <h3>
                 {{ services.language == "en" ? "You need" : "Sie benötigen" }}
                 <span>
-                     {{ services.language == "en" ? "another skill?" : "eine andere Fähigkeit?" }}
+                    {{ services.language == "en" ? "another skill?" : "eine andere Fähigkeit?" }}
                 </span>
             </h3>
             <span>
-                {{services.language == "en" ? 
-                "Feel free to contact me. I look forward to expanding on my previous knowledge." :
-                "Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu erweitern." }}
+                {{services.language == "en" ? "Feel free to contact me. I look forward to expanding on my previous
+                knowledge." : "Nehmen Sie Kontakt mit mir auf. Ich freue mich darauf, mein bisheriges Wissen zu
+                erweitern." }}
             </span>
             <button (click)="scrollTo('contact')" mat-stroked-button>
-                {{services.language == "en" ? "Let's Talk" : "Reden wir" }}
+                <span class="marquee-wrapper">
+
+                    <span class="marquee-label">
+                        {{ services.language == "en" ? "Let's Talk" : "Reden wir" }}
+                    </span>
+                    <span class="marquee-text">
+                        {{ services.language == "en" ? "Let's Talk" : "Reden wir" }}
+                    </span>
+                     <span class="marquee-text">
+                        {{ services.language == "en" ? "Let's Talk" : "Reden wir" }}
+                    </span>
+                </span>
             </button>
         </div>
     </div>
