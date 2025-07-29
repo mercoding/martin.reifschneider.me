@@ -1,15 +1,37 @@
 <div class="start-center">
     <div class="title">
         <h3>
-            {{services.language == "en" ? 'Frontend Developer' : 'Frontend Entwickler'}} 
+            {{services.language == "en" ? 'Frontend Developer' : 'Frontend Entwickler'}}
         </h3>
         <h1>Martin Reifschneider</h1>
         <div class="buttons">
             <button (click)="services.scrollTo('portfolio')" mat-stroked-button>
-                {{services.language == "en" ? 'Check my work' : 'Meine Projekte'}} 
+                <span class="marquee-wrapper">
+
+                    <span class="marquee-label">
+                        {{services.language == "en" ? 'Check my work' : 'Meine Projekte'}}
+                    </span>
+                    <span class="marquee-text">
+                        {{services.language == "en" ? 'Check my work' : 'Meine Projekte'}}
+                    </span>
+                    <span class="marquee-text">
+                        {{services.language == "en" ? 'Check my work' : 'Meine Projekte'}}
+                    </span>
+                </span>
             </button>
             <button (click)="services.scrollTo('contact')" mat-stroked-button>
-                {{services.language == "en" ? 'Contact me' : 'Schreib mir'}} 
+                <span class="marquee-wrapper">
+
+                    <span class="marquee-label">
+                        {{services.language == "en" ? 'Contact me' : 'Schreib mir'}}
+                    </span>
+                    <span class="marquee-text">
+                        {{services.language == "en" ? 'Contact me' : 'Schreib mir'}}
+                    </span>
+                    <span class="marquee-text">
+                        {{services.language == "en" ? 'Contact me' : 'Schreib mir'}}
+                    </span>
+                </span>
             </button>
         </div>
     </div>

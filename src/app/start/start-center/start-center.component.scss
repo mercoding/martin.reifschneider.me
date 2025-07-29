@@ -30,13 +30,70 @@
 .buttons {
     display: flex;
     justify-content: space-between;
-    width: 300px;
+    width: 400px;
     margin-top: 32px;
 
     button {
         border-color: white;
         color: white;
         --mdc-outlined-button-container-shape: 24px;
+        overflow: hidden;
+        position: relative;
+        width: 156px;
+        height: 48px;
+        white-space: nowrap;
+
+        &:hover {
+            border-color: rgba(61, 207, 182, 1);
+        }
+    }
+}
+
+
+.marquee-wrapper {
+    --gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    width: fit-content;
+    min-width: 100%;
+
+
+    &:hover .marquee-text {
+        animation: marquee-loop 4s linear infinite;
+        color: rgba(61, 207, 182, 1);
+    }
+
+}
+
+.marquee-text {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0 128px 0 128px; // Abstand zwischen den Loops
+}
+
+.marquee-label {
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 256px;
+
+    &:hover {
+        display: none;
+    }
+}
+
+@keyframes marquee-loop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+
     }
 }
 
