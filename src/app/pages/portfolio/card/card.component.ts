@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 import { projects } from '../projects/projects';
 import { MatButtonModule } from '@angular/material/button';
 import { AppServices } from '../../../app.services';
+import { CardTopComponent } from './card-top/card-top.component';
+import { CardCenterComponent } from './card-center/card-center.component';
+import { CardBottomComponent } from './card-bottom/card-bottom.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [MatCardModule, CommonModule, MatButtonModule],
+  imports: [MatCardModule, CommonModule, MatButtonModule, CardTopComponent, CardCenterComponent, CardBottomComponent],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

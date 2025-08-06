@@ -1,0 +1,11 @@
+<div class="description">
+    <div>
+
+        <h3>
+            {{services.language=="en" ? 'What is the project about?' : 'Worum geht es bei dem Projekt?'}}
+        </h3>
+        <span *ngIf="services.language=='en'">{{projects[services.index].description.en}}</span>
+        <span *ngIf="services.language=='de'">{{projects[services.index].description.de}}</span>
+
+    </div>
+</div>

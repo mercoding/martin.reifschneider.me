@@ -1,0 +1,32 @@
+.top {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 32px;
+
+    .close-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 18px;
+
+        img {
+            width: 18px;
+            height: 18px;
+            transition: 0.2s;
+
+            &:hover {
+                transform: scale(1.5);
+                filter: invert(46%) sepia(42%) saturate(464%) hue-rotate(124deg) brightness(98%) contrast(92%);
+
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .top {
+        height: 80px;
+
+        grid-area: top;
+    }
+}

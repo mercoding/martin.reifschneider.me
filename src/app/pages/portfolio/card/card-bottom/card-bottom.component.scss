@@ -1,0 +1,42 @@
+.bottom {
+    position: relative;
+    height: 100%;
+
+    .next {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        margin-right: 32px;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(61, 207, 182, 1);
+
+            img {
+                filter: invert(56%) sepia(82%) saturate(264%) hue-rotate(124deg) brightness(198%) contrast(92%);
+                transition: 0.2s;
+            }
+
+            span {
+                transition: 0.2s;
+            }
+
+            &:hover img {
+                transform: translateX(5px);
+            }
+
+            &:hover span {
+                color: #fff
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .next {
+        bottom: 24px !important;
+    }
+}

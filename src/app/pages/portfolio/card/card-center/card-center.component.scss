@@ -1,0 +1,104 @@
+.center {
+    display: grid;
+    grid-template:
+        "title card_image"
+        "title card_image"
+        "desc card_image"
+        "types types"
+        "buttons buttons";
+    grid-template-rows: 100px 60px 110px 64px 64px;
+    
+    overflow: hidden;
+    gap: 16px;
+
+    .title {
+        grid-area: title;
+    }
+
+    .description {
+        grid-area: desc;
+    }
+
+    .card-img {
+        grid-area: card_image;
+    }
+
+    .types {
+        grid-area: types;
+    }
+
+    .card-buttons {
+        grid-area: buttons;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .center {
+        display: grid;
+        grid-template:
+            "title card_image"
+            "title card_image"
+            "desc desc"
+            "types types"
+            "buttons buttons" !important;
+        grid-area: center;
+        
+        overflow-y: scroll;
+        margin-top: 0;
+    }
+
+    .center-bottom {
+        grid-area: bottom;
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .center {
+        grid-area: center;
+        display: grid;
+        grid-template: "title card_image" "title card_image" "desc desc" "types types" "buttons buttons" !important;
+        grid-template-rows: 150px 166px 100px 40px 80px;
+        grid-template-columns: 60% 40%;
+        margin-top: 0 !important;
+
+        .buttons-container {
+            grid-area: buttons;
+        }
+    }
+}
+
+@media only screen and (max-width: 1054px) {
+    .center {
+        grid-area: center;
+        display: grid;
+        grid-template-rows: 15% 15% 15% 7% 10%;
+    }
+}
+
+@media only screen and (max-width: 827px) {
+    .center {
+        grid-area: center;
+        display: grid;
+        grid-template: "card_image" "card_image" "title" "desc" "types" "buttons" !important;
+        grid-template-rows: 15% 15% 8% 20% 5% 10%;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .center {
+        grid-template-rows: 12% 12% 8% 18% 8% 10%;
+    }
+}
+
+@media only screen and (min-height: 1024px) and (max-width: 1300px) {
+    .center {
+        grid-template-rows: 10% 10% 10% 10% 5% 10%;
+        grid-template-rows: 10% 6% 8% 5% 5% 10%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .center {
+        gap: 8px;
+    }
+}

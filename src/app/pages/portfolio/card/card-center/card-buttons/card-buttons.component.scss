@@ -1,0 +1,69 @@
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    .buttons {
+        display: flex;
+        width: 300px;
+        align-items: center;
+        margin-left: 64px;
+        gap: 16px;
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-color: white;
+            --mdc-outlined-button-container-shape: 24px;
+            width: 150px;
+            height: 50px;
+            transition: 0.2s;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: rgba(61, 207, 182, 1);
+
+                span {
+                    margin-left: 8px;
+                    color: white;
+                }
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    filter: invert(56%) sepia(82%) saturate(264%) hue-rotate(124deg) brightness(198%) contrast(92%);
+                    rotate: -45deg;
+                    transition: 0.2s;
+                }
+            }
+
+            &:hover {
+                border-color: rgba(61, 207, 182, 1);
+                color: white;
+
+                div span {
+                    color: rgba(61, 207, 182, 1);
+                }
+
+                div img {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 495px) {
+    .buttons-container {
+        display: flex;
+        justify-content: center;
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+    }
+}

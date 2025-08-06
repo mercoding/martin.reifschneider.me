@@ -1,0 +1,9 @@
+<div class="types">
+    <div class="type-container">
+        <div *ngFor="let skill of projects[services.index].skills.title; let i = index">
+            <div>
+                <img [src]="projects[services.index].skills.src[i]" alt=""><span>{{skill}}</span>
+            </div>
+        </div>
+    </div>
+</div>

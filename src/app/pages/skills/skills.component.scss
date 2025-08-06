@@ -3,15 +3,10 @@
     height: 695px;
     top: 1896px;
     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.85) 0%, #1C1C1C 100%);
-    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */
-
-    /*background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);*/
     display: flex;
     justify-content: center;
     gap: 32px;
     margin-top: 64px;
-
-
 }
 
 .skills-description {
@@ -77,7 +72,6 @@
     }
 }
 
-
 .skills-description button {
     overflow: hidden;
     position: relative;
@@ -132,7 +126,6 @@
 
     }
 }
-
 
 .skills-box {
     width: 632px;

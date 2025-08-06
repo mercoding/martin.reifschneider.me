@@ -2,6 +2,7 @@
     background-color: rgb(28, 28, 28);
     display: flex;
     height: 900px;
+    height: 100vh;
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -14,16 +15,12 @@
         padding-left: 64px;
         margin-top: -128px;
 
-
         img {
             height: 568px;
             width: auto;
             border-radius: 30px;
         }
-
-
     }
-
 
     h3 {
         font-family: Karla;
@@ -34,7 +31,6 @@
 .about-me {
     margin-top: 128px;
     padding-right: 64px;
-
 }
 
 .about-me-box {
@@ -150,8 +146,6 @@
             margin: 0;
             padding: 16px;
             z-index: 3;
-            /*background-color: rgb(28, 28, 28);
-            border-radius: 30px;*/
 
             .about-me-container {
                 max-width: 600px;
@@ -216,9 +210,7 @@
                     height: auto;
                     padding: 16px 0 16px 0;
                 }
-
             }
         }
     }
-
 }
