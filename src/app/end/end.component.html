@@ -25,13 +25,30 @@
     </div>
     <div class="right">
         <div class="links">
-            <button (click)="services.openGitHub()" mat-button>Github</button>
-            <button (click)="services.openLinkedin()" mat-button>Linkedin</button>
-            <button (click)="services.scrollAndHighlight()" mat-button>Email</button>
-            <button (click)="openCard()" mat-button>
-                 {{services.language == "en" ? 'Legal Notice' : 'Rechtshinweis'}}
+            <button (click)="services.openGitHub()" mat-button>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+                <span> Github</span>
             </button>
-
+            <button (click)="services.openLinkedin()" mat-button>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+                <span> Linkedin</span>
+            </button>
+            <button (click)="services.scrollAndHighlight()" mat-button>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+                <span> Email</span>
+            </button>
+            <button (click)="openCard()" mat-button>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+                <span> {{services.language == "en" ? 'Legal Notice' : 'Rechtshinweis'}}</span>
+            </button>
         </div>
     </div>
 </div>

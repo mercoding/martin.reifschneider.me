@@ -12,6 +12,11 @@
     cursor: pointer;
     user-select: none;
     background-color: transparent;
+    transition: 0.3s ease;
+
+    &:hover {
+      border-color: white;
+    }
   
     .thumb {
       position: absolute;
@@ -35,21 +40,37 @@
       align-items: center;
       justify-content: center;
       color: #3dcfb6;
+      opacity: 0.5;
       font-weight: 500;
       transition: color 0.3s ease;
+
+      &:hover {
+        transition: 0.3s ease;
+        opacity: 1;
+      }
     }
   
     .option:nth-child(2) {
       color: white; // EN default aktiv
+      font-weight: 700;
+      opacity: 1;
     }
   
     .thumb.right ~ .option:nth-child(2) {
       color: #3dcfb6; // EN wird inaktiv
+      font-weight: 500;
+      opacity: 0.5;
+      &:hover {
+        transition: 0.3s ease;
+        opacity: 1;
+      }
     }
   
     .thumb.right ~ .option:nth-child(3) {
       color: white; // DE wird aktiv
       font-weight: 700;
+      transition: 0.3s ease;
+      opacity: 1;
     }
   }
   

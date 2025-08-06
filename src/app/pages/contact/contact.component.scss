@@ -40,6 +40,10 @@
   }
 }
 
+.policy-not-checked {
+  margin-top: -48px;
+  color: red;
+}
 
 .contact-form {
   display: flex;
@@ -62,12 +66,16 @@
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   input,
   textarea {
     background: transparent;
-    border: none;
+    border: 1px;
     color: white;
     font-size: 1rem;
     outline: none;
@@ -77,6 +85,22 @@
 
     &::placeholder {
       color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.error::placeholder,
+    textarea.error::placeholder {
+      color: red;
+      opacity: 1;
+    }
+
+    &.valid::placeholder,
+    textarea.error::placeholder {
+      color: white;
+      opacity: 1;
     }
   }
 
@@ -106,18 +130,50 @@
       text-decoration: none;
       font-weight: 500;
 
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
+.checkbox-group label input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #3dcfb6;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-group label input[type='checkbox']:checked {
+  background: transparent;
+  /* Optional: eigenes Häkchen einblenden */
+}
+
+.checkbox-group label input[type='checkbox']:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: -3px;
+  width: 6px;
+  height: 12px;
+  border: solid #3dcfb6;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: block;
+}
+
 .policy-checkbox-text {
-  margin-top: -24px !important;
+  margin-top: -26px !important;
   margin-left: 32px !important;
   color: white;
 
   a {
     color: #3dcfb6;
-    ;
   }
 }
 
@@ -160,7 +216,6 @@
     background-color: transparent;
   }
 }
-
 
 @media only screen and (max-width: 1450px) {
   .contact {
