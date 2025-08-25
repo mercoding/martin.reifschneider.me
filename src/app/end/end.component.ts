@@ -30,8 +30,10 @@ export class EndComponent {
   }
 
   openCard(str: string) {
-    if(str == 'legalNotice')
+    if(str == 'legalNotice') {
       this.services.showLegalNoticeCard = true;
+      this.services.policyChecked = true;
+    }
     else
       this.services.showImprintCard = true;
   }

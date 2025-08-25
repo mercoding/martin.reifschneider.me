@@ -56,14 +56,14 @@
 
     <div class="form-group checkbox-group">
       <label>
-        <input class="set-pointer" [(ngModel)]="policyChecked" name="policyChecked" type="checkbox" required />
-          <div *ngIf="services.language == 'en'" class="policy-checkbox-text"> I've read the <a (click)="openCard()" class="set-pointer">privacy policy</a> and agree to the processing of my data as outlined.</div>
-          <div *ngIf="services.language == 'de'" class="policy-checkbox-text"> Ich habe die <a (click)="openCard()" class="set-pointer">Datenschutzbestimmungen</a> gelesen und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.</div>
+        <input class="set-pointer" [(ngModel)]="services.policyChecked" name="policyChecked" type="checkbox" required />
+          <div *ngIf="services.language == 'en'" class="policy-checkbox-text"> I've read the <a (click)="openCard(); $event.preventDefault(); $event.stopPropagation()" class="set-pointer">privacy policy</a> and agree to the processing of my data as outlined.</div>
+          <div *ngIf="services.language == 'de'" class="policy-checkbox-text"> Ich habe die <a (click)="openCard(); $event.preventDefault(); $event.stopPropagation()" class="set-pointer">Datenschutzbestimmungen</a> gelesen und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.</div>
 
       </label>
     </div>
-    <div class="policy-not-checked" *ngIf="contactForm.submitted && !policyChecked && services.language == 'en'">Please accept the privacy police.</div>
-    <div class="policy-not-checked" *ngIf="contactForm.submitted && !policyChecked && services.language == 'de'">Bitte akzeptieren Sie die Datenschutzrichtlinie.</div>
+    <div class="policy-not-checked" *ngIf="contactForm.submitted && !services.policyChecked && services.language == 'en'">Please accept the privacy police.</div>
+    <div class="policy-not-checked" *ngIf="contactForm.submitted && !services.policyChecked && services.language == 'de'">Bitte akzeptieren Sie die Datenschutzrichtlinie.</div>
 
     <button class="submit-btn" mat-stroked-button type="submit" value="Submit">
       {{services.language == "en" ? "Say Hello ;)" : 'Sag Hallo ;)'}}

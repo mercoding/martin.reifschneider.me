@@ -24,7 +24,7 @@ export class ContactComponent {
   }
 
   mailTest = false;
-  policyChecked = false;
+  //policyChecked = false;
 
   post = {
     endPoint: 'https://martin.reifschneider.me/sendMail.php',
@@ -59,5 +59,6 @@ export class ContactComponent {
 
   openCard() {
     this.services.showLegalNoticeCard = true;
+    this.services.policyChecked = true;
   }
 }
