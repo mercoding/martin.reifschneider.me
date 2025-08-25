@@ -6,11 +6,12 @@ import { Router } from '@angular/router';
 import { LegalNoticeComponent } from '../pages/legal-notice/legal-notice.component';
 import { CommonModule } from '@angular/common';
 import { AppServices } from '../app.services';
+import { CreatorComponent } from '../pages/creator/creator.component';
 
 @Component({
   selector: 'app-end',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatDividerModule, MatIconModule, LegalNoticeComponent],
+  imports: [CommonModule, MatButtonModule, MatDividerModule, MatIconModule, LegalNoticeComponent, CreatorComponent],
   templateUrl: './end.component.html',
   styleUrl: './end.component.scss'
 })
@@ -24,10 +25,14 @@ export class EndComponent {
   }
 
   closeCard() {
-    this.services.showLegalNoticeCard = false;
+      this.services.showLegalNoticeCard = false;
+      this.services.showImprintCard = false;
   }
 
-  openCard() {
-    this.services.showLegalNoticeCard = true;
+  openCard(str: string) {
+    if(str == 'legalNotice')
+      this.services.showLegalNoticeCard = true;
+    else
+      this.services.showImprintCard = true;
   }
 }

@@ -2,12 +2,12 @@
     <mat-card class="card" appearance="outlined">
 
         <mat-card-content class="card-content">
-             <div class="top">
+            <div class="top">
                 <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
             </div>
             <div class="center">
-                <app-data-protection *ngIf="services.language=='en'"></app-data-protection>
-                <app-datenschutz *ngIf="services.language=='de'"></app-datenschutz>
+                <app-imprint *ngIf="services.language=='en'"></app-imprint>
+                <app-impressum *ngIf="services.language=='de'"></app-impressum>
             </div>
         </mat-card-content>
     </mat-card>

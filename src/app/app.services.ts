@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AppServices {
     showProjectPreviewCard = false;
     showLegalNoticeCard = false;
+    showImprintCard = false;
     index = 0;
     menuActive = false;
     showPreview = false;

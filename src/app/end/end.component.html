@@ -43,13 +43,20 @@
                 </svg>
                 <span> Email</span>
             </button>
-            <button (click)="openCard()" mat-button>
+            <button (click)="openCard('legalNotice')" mat-button>
                 <svg width="8" height="8" viewBox="0 0 8 8">
                     <circle cx="4" cy="4" r="3" fill="currentColor" />
                 </svg>
                 <span> {{services.language == "en" ? 'Legal Notice' : 'Rechtshinweis'}}</span>
             </button>
+            <button (click)="openCard('imprint')" mat-button>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+                <span> {{services.language == "en" ? 'Imprint' : 'Impressum'}}</span>
+            </button>
         </div>
     </div>
 </div>
 <app-legal-notice *ngIf="services.showLegalNoticeCard" (close)="closeCard()"></app-legal-notice>
+<app-creator *ngIf="services.showImprintCard" (close)="closeCard()"></app-creator>

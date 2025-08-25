@@ -6,6 +6,25 @@
     font-size: 20px;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
     height: calc(100vh + 164px);
+    min-height: calc(100vh + 164px);
+    max-height:calc(100vh + 164px);
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    flex-shrink: 0;
+}
+
+.center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom {
+    flex-shrink: 0;
 }
 
 
