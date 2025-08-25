@@ -4,19 +4,19 @@
         </app-language-toggle>
 
         <div class="set-pointer" (click)="services.scrollTo('about-me')">
-            <span>{{services.language == "en" ? 'About Me' : 'Über mich'}}</span>
+            <a>{{services.language == "en" ? 'About Me' : 'Über mich'}}</a>
             <svg width="8" height="8" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="3" fill="currentColor" />
             </svg>
         </div>
         <div class="set-pointer" (click)="services.scrollTo('skills')">
-            <span>{{services.language == "en" ? 'Skills' : 'Fähigkeiten'}}</span>
+            <a>{{services.language == "en" ? 'Skills' : 'Fähigkeiten'}}</a>
             <svg width="8" height="8" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="3" fill="currentColor" />
             </svg>
         </div>
         <div class="set-pointer" (click)="services.scrollTo('portfolio')">
-            <span>{{services.language == "en" ? 'Projects' : 'Projekte'}}</span>
+            <a>{{services.language == "en" ? 'Projects' : 'Projekte'}}</a>
             <svg width="8" height="8" viewBox="0 0 8 8">
                 <circle cx="4" cy="4" r="3" fill="currentColor" />
             </svg>

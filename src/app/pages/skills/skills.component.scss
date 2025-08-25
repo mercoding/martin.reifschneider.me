@@ -25,13 +25,11 @@
         border: 1px solid #3DCFB6;
         backdrop-filter: blur(4px);
         background: #3DCFB61A;
-        border-radius: 24px;
+        border-radius: 30px;
         justify-content: center;
         max-width: 568px;
         height: 540px;
-        border-radius: 30px;
         gap: 40px;
-        border-width: 1px;
         padding: 32px;
 
         h1 {
@@ -46,8 +44,6 @@
             color: white;
 
             span {
-                font-family: Fira Code;
-                font-size: 24px;
                 color: rgba(61, 207, 182, 1);
             }
         }
@@ -64,6 +60,9 @@
             --mdc-outlined-button-container-shape: 24px;
             width: 122px;
             height: 48px;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
 
             &:hover {
                 border-color: rgba(61, 207, 182, 1);
@@ -72,28 +71,17 @@
     }
 }
 
-.skills-description button {
-    overflow: hidden;
-    position: relative;
-    width: 122px;
-    height: 48px;
-    white-space: nowrap;
-}
-
 .marquee-wrapper {
-    --gap: 1rem;
     display: flex;
     justify-content: center;
     flex-shrink: 0;
     width: fit-content;
     min-width: 100%;
-    
 
     &:hover .marquee-text {
         animation: marquee-loop 4s linear infinite;
         color: rgba(61, 207, 182, 1);
     }
-
 }
 
 .marquee-text {
@@ -101,7 +89,7 @@
     justify-content: center;
     white-space: nowrap;
     flex-shrink: 0;
-    padding: 0 64px 0 64px; // Abstand zwischen den Loops
+    padding: 0 64px;
 }
 
 .marquee-label {
@@ -117,14 +105,8 @@
 }
 
 @keyframes marquee-loop {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 .skills-box {
@@ -144,10 +126,12 @@
         justify-content: center;
         align-items: center;
         width: 100px;
+        position: relative;
 
         img {
             width: 64px;
             height: 64px;
+            transition: filter 0.3s ease;
         }
 
         span {
@@ -156,9 +140,20 @@
             color: white;
             width: 100px;
             text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        &:hover {
+            img {
+                filter: invert(66%) sepia(72%) saturate(464%) hue-rotate(124deg) brightness(94%) contrast(92%);
+                scale: 1.1;
+            }
+
+            span {
+                color: rgba(61, 207, 182, 1);
+            }
         }
     }
-
 }
 
 @media only screen and (max-width: 1200px) {
@@ -166,7 +161,7 @@
         display: flex;
         flex-direction: column;
         height: auto;
-        margin: 64px 0 64px 0;
+        margin: 64px 0;
         justify-content: center;
         align-items: center;
 
@@ -183,7 +178,7 @@
 
         .skills-box {
             max-width: 100%;
-            margin: 32px 0 32px 0;
+            margin: 32px 0;
             width: calc(100% - 128px);
             height: auto;
         }
@@ -220,14 +215,10 @@
             h3 {
                 font-size: 16px;
 
-                span {
-                    font-size: 16px;
-                }
+                span { font-size: 16px; }
             }
 
-            span {
-                font-size: 16px;
-            }
+            span { font-size: 16px; }
         }
     }
 }

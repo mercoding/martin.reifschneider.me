@@ -44,7 +44,7 @@
     width: 568px;
     height: 540px;
     border-radius: 30px;
-    gap: 40px;
+    gap: 32px;
     border-width: 1px;
     max-width: 600px;
 
@@ -57,11 +57,13 @@
         font-family: Fira Code;
         color: #3DCFB6;
         padding: 0 16px 0 16px;
+        font-size: 24px;
     }
 
     span {
         font-family: Karla;
         color: white;
+        font-size: 18px;
         padding: 0 16px 0 16px;
     }
 
