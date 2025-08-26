@@ -20,6 +20,7 @@ export class LanguageToggleComponent {
     this.services.isGerman = !this.services.isGerman;
     const lang = this.services.isGerman ? 'de' : 'en';
     this.services.language = lang;
+    this.services.setLanguage(lang);
   }
 
 }

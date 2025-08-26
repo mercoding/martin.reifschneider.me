@@ -5,6 +5,7 @@ import { Inject, PLATFORM_ID } from '@angular/core';
 import { ProjectsComponent } from './projects/projects.component';
 import { AppServices } from '../../app.services';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { projects } from './projects/projects';
 
 
 @Component({
@@ -16,6 +17,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 })
 export class PortfolioComponent {
   isMobile = false;
+  public projects = projects;
+
 
   constructor(public services: AppServices, private breakpointObserver: BreakpointObserver, public preview: AppServices, @Inject(PLATFORM_ID) private platformId: Object) {
     this.breakpointObserver
@@ -41,4 +44,16 @@ export class PortfolioComponent {
   clearPreviewOnScroll = () => {
     this.preview.clearPreview();
   };
+
+  // Methode um object-position basierend auf dem aktuellen Projekt zu bestimmen
+  getImagePosition(): string {
+    const currentProject = this.projects[this.services.index];
+
+    // Beispiel: Verschiedene Positionen für verschiedene Projekte
+    switch (currentProject?.number) {
+      case '01': return 'left center';    // Zeigt linke Seite
+      case '02': return 'center';   // Zeigt rechte Seite
+      default: return 'center';                 // Standard zentriert
+    }
+  }
 }

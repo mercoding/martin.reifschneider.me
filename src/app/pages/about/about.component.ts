@@ -17,7 +17,7 @@ export class AboutComponent {
   isNotMobile: boolean = false;
 
   ngOnInit() {
-    this.breakpointObserver.observe(['(min-width: 1150px)'])
+    this.breakpointObserver.observe(['(min-width: 1185px)'])
       .subscribe(result => this.isNotMobile = result.matches);
 
     this.breakpointObserver.observe(['(min-width: 646px)'])

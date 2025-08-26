@@ -15,7 +15,8 @@
     </div>
     <div *ngIf="!isMobile">
         <div *ngIf="preview.showPreview" [ngStyle]="{ top: preview.previewTop + 'px' }" class="preview preview-wrapper">
-            <img [src]="preview.loadImage" alt="">
+            <img [src]="preview.loadImage"[style.object-position]="getImagePosition()"
+                alt="Project Preview">  
         </div>
     </div>
 </div>

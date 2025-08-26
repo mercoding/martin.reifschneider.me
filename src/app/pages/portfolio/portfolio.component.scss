@@ -70,6 +70,10 @@
             width: 400px;
             height: 250px;
             border-radius: 30px;
+            object-fit: cover;
+            /* Verhindert Verzerrung */
+            object-position: center;
+            /* Zentriert das Bild */
         }
     }
 }
@@ -123,8 +127,9 @@
 
             section {
                 width: 100%;
-                
+
             }
+
             app-projects {
                 width: 100%;
             }
@@ -141,20 +146,20 @@
         width: calc(100% - 64px);
         padding-left: 32px;
     }
-} 
+}
 
 @media only screen and (max-width: 400px) {
     .portfolio {
-         h1 {
+        h1 {
             font-size: 24px;
-         }
+        }
 
-         h3 {
+        h3 {
             font-size: 18px;
-         }
+        }
 
-         span {
+        span {
             font-size: 16px;
-         }
+        }
     }
 }

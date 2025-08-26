@@ -13,4 +13,16 @@ export class CardProjectImgComponent {
   public projects = projects;
 
   constructor(public services: AppServices) {  }
+
+  // Methode um object-position basierend auf dem aktuellen Projekt zu bestimmen
+  getImagePosition(): string {
+    const currentProject = this.projects[this.services.index];
+    
+    // Beispiel: Verschiedene Positionen für verschiedene Projekte
+    switch (currentProject?.number) {
+      case '01': return 'left center';    // Zeigt linke Seite
+      case '02': return 'center';   // Zeigt rechte Seite
+      default: return 'center';                 // Standard zentriert
+    }
+  }
 }

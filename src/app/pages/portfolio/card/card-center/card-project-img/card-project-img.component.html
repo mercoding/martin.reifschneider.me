@@ -1,3 +1,7 @@
+<!-- card-project-img.component.html -->
 <div class="card-img">
-    <img src="{{projects[services.index].src}}" alt="">
+  <img 
+    [src]="projects[services.index].src" 
+    [alt]="projects[services.index].title"
+    [style.object-position]="getImagePosition()">
 </div>
