@@ -84,8 +84,7 @@
 
     <div class="form-group checkbox-group">
       <label>
-        <input class="set-pointer" [(ngModel)]="services.policyChecked" name="policyChecked" type="checkbox"
-          [checked]="services.policyChecked" (change)="togglePolicy()" id="policy-checkbox" required />
+        <input class="set-pointer" [(ngModel)]="services.policyChecked" name="policyChecked" type="checkbox" [checked]="services.policyChecked" (change)="togglePolicy()" id="policy-checkbox" required />
         <div *ngIf="services.language == 'en'" class="policy-checkbox-text"> I've read the <a
             (click)="openCard(); $event.preventDefault(); $event.stopPropagation()" class="set-pointer">privacy
             policy</a> and agree to the processing of my data as outlined.</div>
