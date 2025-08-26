@@ -11,8 +11,8 @@ export const projects = [
             title: ["HTML", "CSS", "JavaScript", "Firebase"],
             src: ["assets/img/html.png", "assets/img/css.png", "assets/img/javascript.png", "assets/img/firebase.png"]
         },
-        gitHub: "https://join.reifschneider.me/html/login.html",
-        liveTest: "https://join.reifschneider.me"
+        gitHub: "https://github.com/mercoding/join",
+        liveTest: "https://join.reifschneider.me/html/login.html"
     },
     {
         number: "02",

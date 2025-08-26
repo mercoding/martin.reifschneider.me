@@ -13,7 +13,9 @@
       {{services.language == "en" ? "Got a problem to solve?" : 'Haben Sie ein Problem zu lösen?'}}
     </h2>
     <span>
-      {{services.language == "en" ? "I am looking for exciting projects in web development. With modern technologies and passion, I bring real added value to the team." : 'Ich suche spannende Projekte in der Webentwicklung. Mit modernen Technologien und Leidenschaft bringe ich echten Mehrwert ins Team.'}}
+      {{services.language == "en" ? "I am looking for exciting projects in web development. With modern technologies and
+      passion, I bring real added value to the team." : 'Ich suche spannende Projekte in der Webentwicklung. Mit
+      modernen Technologien und Leidenschaft bringe ich echten Mehrwert ins Team.'}}
     </span>
   </div>
 
@@ -23,11 +25,18 @@
       <label>
         {{services.language == "en" ? "What's your name?" : 'Wie ist Ihr Name?'}}
       </label>
-      <input *ngIf="!contactForm.submitted && services.language == 'en'" type="text" [(ngModel)]="contactData.name" name="name" placeholder="Your name goes here" minlength="3" required />
-      <input class="error" *ngIf="contactForm.submitted && contactData.name==''  && services.language == 'en'" type="text" [(ngModel)]="contactData.name" name="name" placeholder="Ooops it seems your name is missing." minlength="3" required />
-      <input *ngIf="!contactForm.submitted && services.language == 'de'" type="text" [(ngModel)]="contactData.name" name="name" placeholder="Ihr Name steht hier" minlength="3" required />
-      <input class="error" *ngIf="contactForm.submitted && contactData.name==''  && services.language == 'de'" type="text" [(ngModel)]="contactData.name" name="name" placeholder="Ups, Ihr Name scheint zu fehlen." minlength="3" required />
-      <input class="valid" *ngIf="contactForm.submitted && contactData.name!==''" type="text" [(ngModel)]="contactData.name" name="name" placeholder="{{contactData.name}}" minlength="3" required />
+      <input *ngIf="!contactForm.submitted && services.language == 'en'" type="text" [(ngModel)]="contactData.name"
+        name="name" placeholder="Your name goes here" minlength="3" required />
+      <input class="error" *ngIf="contactForm.submitted && contactData.name==''  && services.language == 'en'"
+        type="text" [(ngModel)]="contactData.name" name="name" placeholder="Ooops it seems your name is missing."
+        minlength="3" required />
+      <input *ngIf="!contactForm.submitted && services.language == 'de'" type="text" [(ngModel)]="contactData.name"
+        name="name" placeholder="Ihr Name steht hier" minlength="3" required />
+      <input class="error" *ngIf="contactForm.submitted && contactData.name==''  && services.language == 'de'"
+        type="text" [(ngModel)]="contactData.name" name="name" placeholder="Ups, Ihr Name scheint zu fehlen."
+        minlength="3" required />
+      <input class="valid" *ngIf="contactForm.submitted && contactData.name!==''" type="text"
+        [(ngModel)]="contactData.name" name="name" placeholder="{{contactData.name}}" minlength="3" required />
 
     </div>
 
@@ -35,11 +44,22 @@
       <label>
         {{services.language == "en" ? "What's your email?" : 'Wie lautet Ihre E-Mail?'}}
       </label>
-      <input *ngIf="!contactForm.submitted && services.language == 'en'" type="email" [(ngModel)]="contactData.email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="youremail@email.com" />
-      <input class="error" *ngIf="contactForm.submitted && contactData.email==''  && services.language == 'en'" type="email" [(ngModel)]="contactData.email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="Hoppla! Your email is required." />
-      <input *ngIf="!contactForm.submitted && services.language == 'de'" type="email" [(ngModel)]="contactData.email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="deineemail@email.de" />
-      <input class="error" *ngIf="contactForm.submitted && contactData.email==''  && services.language == 'de'" type="email" [(ngModel)]="contactData.email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required placeholder="Hoppla! Ihre E-Mail-Adresse ist erforderlich." />
-      <input class="valid" *ngIf="contactForm.submitted && contactData.email!==''" [(ngModel)]="contactData.email" placeholder="{{contactData.email}}" />
+      <input *ngIf="!contactForm.submitted && services.language == 'en'" type="email" [(ngModel)]="contactData.email"
+        name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
+        placeholder="youremail@email.com" />
+      <input class="error" *ngIf="contactForm.submitted && contactData.email==''  && services.language == 'en'"
+        type="email" [(ngModel)]="contactData.email" name="email"
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
+        placeholder="Hoppla! Your email is required." />
+      <input *ngIf="!contactForm.submitted && services.language == 'de'" type="email" [(ngModel)]="contactData.email"
+        name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
+        placeholder="deineemail@email.de" />
+      <input class="error" *ngIf="contactForm.submitted && contactData.email==''  && services.language == 'de'"
+        type="email" [(ngModel)]="contactData.email" name="email"
+        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" required
+        placeholder="Hoppla! Ihre E-Mail-Adresse ist erforderlich." />
+      <input class="valid" *ngIf="contactForm.submitted && contactData.email!==''" [(ngModel)]="contactData.email"
+        placeholder="{{contactData.email}}" />
 
     </div>
 
@@ -47,23 +67,41 @@
       <label>
         {{services.language == "en" ? "How can I help you?" : 'Wie kann ich Ihnen helfen?'}}
       </label>
-      <textarea *ngIf="!contactForm.submitted && services.language == 'en'" [(ngModel)]="contactData.message" name="message" placeholder="Hello Martin, I am interested in..." minlength="4" required></textarea>
-      <textarea class="error" *ngIf="contactForm.submitted && contactData.message==''  && services.language == 'en'" [(ngModel)]="contactData.message" name="message" placeholder="What do you need to develop?" minlength="4" required></textarea>
-      <textarea *ngIf="!contactForm.submitted && services.language == 'de'" [(ngModel)]="contactData.message" name="message" placeholder="Hallo Martin, ich bin interessiert an..." minlength="4" required></textarea>
-      <textarea class="error" *ngIf="contactForm.submitted && contactData.message==''  && services.language == 'de'" [(ngModel)]="contactData.message" name="message" placeholder="Was möchten Sie entwickeln?" minlength="4" required></textarea>
-      <textarea class="valid" *ngIf="contactForm.submitted && contactData.message!==''" [(ngModel)]="contactData.message" name="message" placeholder="{{contactData.message}}" minlength="4" required></textarea>
+      <textarea *ngIf="!contactForm.submitted && services.language == 'en'" [(ngModel)]="contactData.message"
+        name="message" placeholder="Hello Martin, I am interested in..." minlength="4" required></textarea>
+      <textarea class="error" *ngIf="contactForm.submitted && contactData.message==''  && services.language == 'en'"
+        [(ngModel)]="contactData.message" name="message" placeholder="What do you need to develop?" minlength="4"
+        required></textarea>
+      <textarea *ngIf="!contactForm.submitted && services.language == 'de'" [(ngModel)]="contactData.message"
+        name="message" placeholder="Hallo Martin, ich bin interessiert an..." minlength="4" required></textarea>
+      <textarea class="error" *ngIf="contactForm.submitted && contactData.message==''  && services.language == 'de'"
+        [(ngModel)]="contactData.message" name="message" placeholder="Was möchten Sie entwickeln?" minlength="4"
+        required></textarea>
+      <textarea class="valid" *ngIf="contactForm.submitted && contactData.message!==''"
+        [(ngModel)]="contactData.message" name="message" placeholder="{{contactData.message}}" minlength="4"
+        required></textarea>
     </div>
 
     <div class="form-group checkbox-group">
       <label>
-        <input class="set-pointer" [(ngModel)]="services.policyChecked" name="policyChecked" type="checkbox" required />
-          <div *ngIf="services.language == 'en'" class="policy-checkbox-text"> I've read the <a (click)="openCard(); $event.preventDefault(); $event.stopPropagation()" class="set-pointer">privacy policy</a> and agree to the processing of my data as outlined.</div>
-          <div *ngIf="services.language == 'de'" class="policy-checkbox-text"> Ich habe die <a (click)="openCard(); $event.preventDefault(); $event.stopPropagation()" class="set-pointer">Datenschutzbestimmungen</a> gelesen und erkläre mich mit der Verarbeitung meiner Daten wie beschrieben einverstanden.</div>
+        <input class="set-pointer" [(ngModel)]="services.policyChecked" name="policyChecked" type="checkbox"
+          [checked]="services.policyChecked" (change)="togglePolicy()" id="policy-checkbox" required />
+        <div *ngIf="services.language == 'en'" class="policy-checkbox-text"> I've read the <a
+            (click)="openCard(); $event.preventDefault(); $event.stopPropagation()" class="set-pointer">privacy
+            policy</a> and agree to the processing of my data as outlined.</div>
+        <div *ngIf="services.language == 'de'" class="policy-checkbox-text"> Ich habe die <a
+            (click)="openCard(); $event.preventDefault(); $event.stopPropagation()"
+            class="set-pointer">Datenschutzbestimmungen</a> gelesen und erkläre mich mit der Verarbeitung meiner Daten
+          wie beschrieben einverstanden.</div>
 
       </label>
     </div>
-    <div class="policy-not-checked" *ngIf="contactForm.submitted && !services.policyChecked && services.language == 'en'">Please accept the privacy police.</div>
-    <div class="policy-not-checked" *ngIf="contactForm.submitted && !services.policyChecked && services.language == 'de'">Bitte akzeptieren Sie die Datenschutzrichtlinie.</div>
+    <div class="policy-not-checked"
+      *ngIf="contactForm.submitted && !services.policyChecked && services.language == 'en'">Please accept the privacy
+      police.</div>
+    <div class="policy-not-checked"
+      *ngIf="contactForm.submitted && !services.policyChecked && services.language == 'de'">Bitte akzeptieren Sie die
+      Datenschutzrichtlinie.</div>
 
     <button class="submit-btn" mat-stroked-button type="submit" value="Submit">
       {{services.language == "en" ? "Say Hello ;)" : 'Sag Hallo ;)'}}

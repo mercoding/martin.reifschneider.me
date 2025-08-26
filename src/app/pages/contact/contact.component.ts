@@ -57,6 +57,11 @@ export class ContactComponent {
     }
   }
 
+  // Neue Methode für Checkbox-Toggle
+  togglePolicy() {
+    this.services.setPolicyChecked(!this.services.policyChecked);
+  }
+
   openCard() {
     this.services.modal.showLegalNoticeCard = true;
     this.services.modal.policyChecked = true;

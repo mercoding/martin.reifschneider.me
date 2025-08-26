@@ -17,6 +17,7 @@ export class LegalNoticeComponent {
 
   closeCard() {
     this.services.setLegalNoticeCard(false);
+    this.services.modal.policyChecked = true;
   }
 
   // Datenschutz öffnen
@@ -29,5 +30,15 @@ export class LegalNoticeComponent {
   openImprint() {
     this.services.setImprintCard(true);
     this.services.setLegalNoticeCard(false); // Datenschutz schließen
+  }
+
+  // Neue Methode für Policy Toggle
+  togglePolicy() {
+    this.services.setPolicyChecked(!this.services.policyChecked);
+  }
+
+  // Oder falls du es direkt setzen willst
+  setPolicyChecked(checked: boolean) {
+    this.services.setPolicyChecked(checked);
   }
 }
