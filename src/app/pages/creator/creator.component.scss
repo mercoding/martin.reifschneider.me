@@ -46,7 +46,14 @@ section {
         img {
             width: 18px;
             height: 18px;
+            transition: transform 0.3s, filter 0.3s;
             /*padding-right: 64px;*/
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.5);
+                filter: invert(46%) sepia(42%) saturate(464%) hue-rotate(124deg) brightness(98%) contrast(92%);
+            }
         }
     }
 

@@ -6,8 +6,8 @@
                 <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
             </div>
             <div class="center">
-                <app-data-protection *ngIf="services.language=='en'"></app-data-protection>
-                <app-datenschutz *ngIf="services.language=='de'"></app-datenschutz>
+                <app-data-protection *ngIf="services.language"></app-data-protection>
+                <app-datenschutz *ngIf="services.language"></app-datenschutz>
             </div>
         </mat-card-content>
     </mat-card>

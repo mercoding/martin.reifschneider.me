@@ -15,6 +15,6 @@ export class CardBottomComponent {
   constructor(public services: AppServices) {  }
 
   nextProject(): void {
-    this.services.index = (this.services.index + 1) % this.projects.length;
+    this.services.projectCard.index = (this.services.index + 1) % this.projects.length;
   }
 }

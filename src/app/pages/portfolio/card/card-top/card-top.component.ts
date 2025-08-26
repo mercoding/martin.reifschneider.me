@@ -12,6 +12,7 @@ export class CardTopComponent {
   constructor(public services: AppServices) {  }
   
   closeCard(): void {
-    this.services.showProjectPreviewCard = false;
+    this.services.projectCard.showProjectPreviewCard = false;
+    this.services.closeProjectCard();
   }
 }

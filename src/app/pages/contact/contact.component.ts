@@ -58,7 +58,7 @@ export class ContactComponent {
   }
 
   openCard() {
-    this.services.showLegalNoticeCard = true;
-    this.services.policyChecked = true;
+    this.services.modal.showLegalNoticeCard = true;
+    this.services.modal.policyChecked = true;
   }
 }

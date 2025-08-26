@@ -18,11 +18,10 @@ export class ProjectsComponent {
     public projects = projects;
 
     openCard(i: number) {
-      this.services.showProjectPreviewCard = true;
-      this.services.index = i;
+      this.services.setProjectCard(true, i);
     }
     
     closeCard() {
-      this.services.showProjectPreviewCard = false;
+      this.services.closeProjectCard();
     }
 }

@@ -23,10 +23,10 @@ export class CardCenterComponent {
 
   constructor(public services: AppServices) {  }
   closeCard(): void {
-    this.services.showProjectPreviewCard = false;    
+    this.services.projectCard.showProjectPreviewCard = false;    
   }
   nextProject(): void {
-    this.services.index = (this.services.index + 1) % projects.length;    
+    this.services.projectCard.index = (this.services.index + 1) % projects.length;    
   }
   openProject(): void {
     window.open(this.projects[this.services.index].liveTest, '_blank');

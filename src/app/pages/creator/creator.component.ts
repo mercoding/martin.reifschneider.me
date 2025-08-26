@@ -17,7 +17,10 @@ export class CreatorComponent {
   constructor(public services: AppServices) { }
 
   closeCard() {
-    this.services.showLegalNoticeCard = false;
-    this.services.showImprintCard = false;
+    this.services.setCreatorCard(false);
+  }
+
+  openCreator() {
+    this.services.setCreatorCard(true);
   }
 }

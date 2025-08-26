@@ -25,16 +25,14 @@ export class EndComponent {
   }
 
   closeCard() {
-      this.services.showLegalNoticeCard = false;
-      this.services.showImprintCard = false;
+      this.services.closeAllCards();
   }
 
   openCard(str: string) {
     if(str == 'legalNotice') {
-      this.services.showLegalNoticeCard = true;
-      this.services.policyChecked = true;
+      this.services.setLegalNoticeCard(true);
     }
     else
-      this.services.showImprintCard = true;
+      this.services.setCreatorCard(true);
   }
 }

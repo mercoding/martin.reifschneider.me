@@ -1,4 +1,4 @@
-<div id="end" class="end">
+<footer id="end" class="end">
     <div class="left">
         <div class="logo-container">
             <div (click)="services.scrollTo('start')" class="logo set-pointer">
@@ -57,6 +57,6 @@
             </button>
         </div>
     </div>
-</div>
+</footer>
 <app-legal-notice *ngIf="services.showLegalNoticeCard" (close)="closeCard()"></app-legal-notice>
 <app-creator *ngIf="services.showImprintCard" (close)="closeCard()"></app-creator>

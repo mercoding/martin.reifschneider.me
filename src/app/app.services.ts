@@ -1,148 +1,118 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Injectable } from '@angular/core';
+import { NavigationService } from './services/navigation.service';
+import { LanguageService } from './services/language.service';
+import { ProjectCardService } from './services/project-card.service';
+import { ModalService } from './services/modal.service'; // Neue Import
+
 
 @Injectable({
-    providedIn: 'root'  // <-- DAS HINZUFÜGEN
+  providedIn: 'root'
 })
 export class AppServices {
-    showProjectPreviewCard = false;
-    showLegalNoticeCard = false;
-    policyChecked = false;
-    showImprintCard = false;
-    index = 0;
-    menuActive = false;
-    showPreview = false;
-    loadImage = '';
-    previewTop = 0;
-    highlighted = false;
-    isGerman = false;
-    language = "en";
-    currentSection = 'start';
+  // UI State
+  /*
+  showLegalNoticeCard = false;
+  policyChecked = false;
+  showImprintCard = false;*/
+  menuActive = false;
+  showPreview = false;
+  loadImage = '';
+  previewTop = 0;
+  highlighted = false;
 
-    constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-        // Sprache nur im Browser laden
-        if (isPlatformBrowser(this.platformId)) {
-            this.loadLanguageFromStorage();
-            this.loadCurrentSection();
-        }
-    }
+  constructor(
+    public navigation: NavigationService,
+    public languageService: LanguageService,
+    public projectCard: ProjectCardService,
+    public modal: ModalService
+  ) {}
 
-    setLanguage(language: 'en' | 'de') {
-        this.language = language;
-        this.isGerman = language === 'de';
+  // Preview Methods
+  setImage(img: string) {
+    this.loadImage = img;
+    this.showPreview = true;
+  }
 
-        // Nur im Browser speichern
-        if (isPlatformBrowser(this.platformId)) {
-            this.saveLanguageToStorage(language);
-        }
-    }
+  setPreview(imagePath: string, event: MouseEvent) {
+    this.loadImage = imagePath;
+    this.showPreview = true;
+    const element = event.target as HTMLElement;
+    const rect = element.getBoundingClientRect();
+    this.previewTop = rect.top + window.scrollY - 250;
+  }
 
-    private saveLanguageToStorage(language: 'en' | 'de') {
-        try {
-            if (isPlatformBrowser(this.platformId) && typeof localStorage !== 'undefined') {
-                localStorage.setItem('preferredLanguage', language);
-            }
-        } catch (error) {
-            console.warn('LocalStorage not available:', error);
-        }
-    }
+  clearPreview() {
+    this.showPreview = false;
+  }
 
-    private loadLanguageFromStorage() {
-        try {
-            if (isPlatformBrowser(this.platformId) && typeof localStorage !== 'undefined') {
-                const savedLanguage = localStorage.getItem('preferredLanguage') as 'en' | 'de';
-                if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'de')) {
-                    this.language = savedLanguage;
-                    this.isGerman = savedLanguage === 'de';
-                }
-            }
-        } catch (error) {
-            console.warn('LocalStorage not available:', error);
-        }
-    }
+  // Highlight Feature
+  scrollAndHighlight() {
+    this.navigation.scrollAndHighlight(
+      () => this.highlighted = true,
+      () => this.highlighted = false
+    );
+  }
 
-    setImage(img: string) {
-        this.loadImage = img;
-        this.showPreview = true;
-    }
+  // External Links
+  openGitHub(): void {
+    window.open('https://github.com/mercoding', '_blank');
+  }
 
-    setPreview(imagePath: string, event: MouseEvent) {
-        this.loadImage = imagePath;
-        this.showPreview = true;
-        const element = event.target as HTMLElement;
-        const rect = element.getBoundingClientRect();
-        this.previewTop = rect.top + window.scrollY - 250;
-    }
+  openLinkedin(): void {
+    window.open('https://linkedin.com/in/martin-reifschneider', '_blank');
+  }
 
-    clearPreview() {
-        this.showPreview = false;
-    }
+  // Backward Compatibility Getters
+  get currentSection() { return this.navigation.currentSection; }
+  get isGerman() { return this.languageService.isGerman; }
+  get language() { return this.languageService.language; }
+  public get showProjectPreviewCard() { return this.projectCard.showProjectPreviewCard; }
+  get index() { return this.projectCard.index; }
 
-    // Erweiterte setCurrentSection
-    setCurrentSection(section: string, actionType: 'auto' | 'navigation' | 'scroll' = 'auto') {
-        this.currentSection = section;
+  get showLegalNoticeCard() { return this.modal.showLegalNoticeCard; }
+  get showImprintCard() { return this.modal.showImprintCard; }
+  get policyChecked() { return this.modal.policyChecked; }
+  get showCreatorCard() { return this.modal.showCreatorCard; }
 
-        // Nur bei expliziter Navigation oder manuellem Scroll-Ende speichern
-        if (isPlatformBrowser(this.platformId) && (actionType === 'navigation' || actionType === 'scroll')) {
-            this.saveCurrentSection(section);
-        }
-    }
+  // Backward Compatibility Methods
+  setCurrentSection(section: string, actionType: 'auto' | 'navigation' | 'scroll' = 'auto') {
+    this.navigation.setCurrentSection(section, actionType);
+  }
 
-    private loadCurrentSection() {
-        try {
-            if (isPlatformBrowser(this.platformId) && typeof localStorage !== 'undefined') {
-                const savedSection = localStorage.getItem('currentSection');
-                if (savedSection) {
-                    this.currentSection = savedSection;
-                    this.scrollToInstant(savedSection);
-                }
-            }
-        } catch (error) {
-            console.warn('Could not load current section:', error);
-        }
-    }
+  scrollTo(id: string) {
+    this.navigation.scrollTo(id);
+  }
 
-    // Navigation (Button-Klicks)
-    scrollTo(id: string): void {
-        const el = document.getElementById(id);
-        el?.scrollIntoView({ behavior: 'smooth' });
-        this.setCurrentSection(id, 'navigation'); // Navigation-Flag
-    }
+  setLanguage(language: 'en' | 'de') {
+    this.languageService.setLanguage(language);
+  }
 
-    // Direktes Springen (beim Laden)
-    private scrollToInstant(id: string): void {
-        const el = document.getElementById(id);
-        el?.scrollIntoView({ behavior: 'instant' });
-        // Hier KEIN setCurrentSection, da es vom geladenen Zustand kommt
-    }
+  setProjectCard(show: boolean, projectIndex: number = 0) {
+    this.projectCard.setProjectCard(show, projectIndex);
+  }
 
-    // Private Methode zum direkten Speichern
-    private saveCurrentSection(section: string) {
-        try {
-            if (isPlatformBrowser(this.platformId) && typeof localStorage !== 'undefined') {
-                localStorage.setItem('currentSection', section);
-                //console.log('✅ Saved to localStorage:', section); // Debug
-            }
-        } catch (error) {
-            console.warn('Could not save current section:', error);
-        }
-    }
+  closeProjectCard() {
+    this.projectCard.closeProjectCard();
+  }
 
+  // Neue Modal Methods
+  setLegalNoticeCard(show: boolean) {
+    this.modal.setLegalNoticeCard(show);
+  }
 
-    scrollAndHighlight() {
-        this.scrollTo('contact');
-        this.highlighted = true;
+  setImprintCard(show: boolean) {
+    this.modal.setImprintCard(show);
+  }
 
-        setTimeout(() => {
-            this.highlighted = false;
-        }, 1000); // 1 Sekunde später wieder zurücksetzen
-    }
+  setCreatorCard(show: boolean) {
+    this.modal.setImprintCard(show);
+  }
 
-    openGitHub(): void {
-        window.open('https://github.com/mercoding', '_blank');
-    }
+  setPolicyChecked(checked: boolean) {
+    this.modal.setPolicyChecked(checked);
+  }
 
-    openLinkedin(): void {
-        window.open('https://linkedin.com/in/martin-reifschneider', '_blank');
-    }
+  closeAllCards() {
+    this.modal.closeAllCards();
+  }
 }

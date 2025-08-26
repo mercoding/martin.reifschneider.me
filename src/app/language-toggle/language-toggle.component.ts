@@ -17,9 +17,9 @@ export class LanguageToggleComponent {
   constructor(public services: AppServices) {}
 
   toggleLang() {
-    this.services.isGerman = !this.services.isGerman;
+    this.services.languageService.isGerman = !this.services.isGerman;
     const lang = this.services.isGerman ? 'de' : 'en';
-    this.services.language = lang;
+    this.services.languageService.language = lang;
     this.services.setLanguage(lang);
   }
 

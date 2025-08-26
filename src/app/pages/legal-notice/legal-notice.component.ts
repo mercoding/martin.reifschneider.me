@@ -16,7 +16,18 @@ export class LegalNoticeComponent {
   constructor(public services: AppServices) {}
 
   closeCard() {
-    this.services.showLegalNoticeCard = false;  
-    this.services.showImprintCard = false;  
+    this.services.setLegalNoticeCard(false);
+  }
+
+  // Datenschutz öffnen
+  openDataProtection() {
+    this.services.setLegalNoticeCard(true);
+    this.services.setImprintCard(false); // Imprint schließen
+  }
+
+  // Impressum öffnen
+  openImprint() {
+    this.services.setImprintCard(true);
+    this.services.setLegalNoticeCard(false); // Datenschutz schließen
   }
 }
