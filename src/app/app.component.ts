@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { AppServices } from './app.services';
+import { OrientationWarningComponent } from './orientation-warning/orientation-warning.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, OrientationWarningComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
