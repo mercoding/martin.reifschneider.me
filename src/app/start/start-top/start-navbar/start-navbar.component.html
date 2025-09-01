@@ -1,33 +1,35 @@
-<nav>
-    <div class="navbar">
-        <app-language-toggle [value]="selectedLang" (langChange)="onLangChange($event)">
-        </app-language-toggle>
+<header class="header">
+    <section class="header-container">
+        <div class="navbar">
+            <app-language-toggle [value]="selectedLang" (langChange)="onLangChange($event)">
+            </app-language-toggle>
 
-        <div class="set-pointer" (click)="services.scrollTo('about-me')">
-            <a>{{services.language == "en" ? 'About Me' : 'Über mich'}}</a>
-            <svg width="8" height="8" viewBox="0 0 8 8">
-                <circle cx="4" cy="4" r="3" fill="currentColor" />
-            </svg>
+            <a href="#" class="set-pointer" (click)="services.scrollTo('about-me')">
+                <span>{{services.language == "en" ? 'About Me' : 'Über mich'}}</span>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+            </a>
+            <a href="#" class="set-pointer" (click)="services.scrollTo('skills')">
+                <span>{{services.language == "en" ? 'Skills' : 'Fähigkeiten'}}</span>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+            </a>
+            <a href="#" class="set-pointer" (click)="services.scrollTo('portfolio')">
+                <span>{{services.language == "en" ? 'Projects' : 'Projekte'}}</span>
+                <svg width="8" height="8" viewBox="0 0 8 8">
+                    <circle cx="4" cy="4" r="3" fill="currentColor" />
+                </svg>
+            </a>
+            <div></div>
         </div>
-        <div class="set-pointer" (click)="services.scrollTo('skills')">
-            <a>{{services.language == "en" ? 'Skills' : 'Fähigkeiten'}}</a>
-            <svg width="8" height="8" viewBox="0 0 8 8">
-                <circle cx="4" cy="4" r="3" fill="currentColor" />
-            </svg>
+        <div class="logo">
+            <a href="#" (click)="reloadPage()"><img class="set-pointer" src="assets/img/logo.png" alt=""></a>
+            <a (click)="reloadPage()" class="logo-name set-pointer">
+                <span>artin</span>
+                <span>eifschneider</span>
+            </a>
         </div>
-        <div class="set-pointer" (click)="services.scrollTo('portfolio')">
-            <a>{{services.language == "en" ? 'Projects' : 'Projekte'}}</a>
-            <svg width="8" height="8" viewBox="0 0 8 8">
-                <circle cx="4" cy="4" r="3" fill="currentColor" />
-            </svg>
-        </div>
-        <div></div>
-    </div>
-    <header class="logo">
-        <img class="set-pointer" (click)="reloadPage()" src="assets/img/logo.png" alt="">
-        <div (click)="reloadPage()" class="logo-name">
-            <span class="set-pointer">artin</span>
-            <span class="set-pointer">eifschneider</span>
-        </div>
-    </header>
-</nav>
+    </section>
+</header>

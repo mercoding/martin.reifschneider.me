@@ -34,7 +34,7 @@ export class ProjectCardService {
       } else {
         this.storage.removeItem('projectIndex');
       }
-      console.log('💾 Project card state saved:', { show, projectIndex });
+      //console.log('💾 Project card state saved:', { show, projectIndex });
     }
   }
 
@@ -46,10 +46,10 @@ export class ProjectCardService {
       if (showCard === 'true' && projectIndex !== null) {
         this.showProjectPreviewCard = true;
         this.index = parseInt(projectIndex, 10) || 0;
-        console.log('📖 Loaded project card state:', { 
+        /*console.log('📖 Loaded project card state:', { 
           show: this.showProjectPreviewCard, 
           index: this.index 
-        });
+        });*/
       } else {
         this.showProjectPreviewCard = false;
         this.index = 0;

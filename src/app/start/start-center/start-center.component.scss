@@ -32,6 +32,8 @@
     justify-content: space-between;
     width: 400px;
     margin-top: 32px;
+    position: relative; // Füge Position hinzu
+    z-index: 10; // Stelle sicher, dass Buttons über anderen Elementen liegen
 
     button {
         border-color: white;
@@ -42,9 +44,16 @@
         width: 156px;
         height: 48px;
         white-space: nowrap;
+        cursor: pointer;
+        z-index: 11; // Button über allem anderen
 
         &:hover {
             border-color: rgba(61, 207, 182, 1);
+
+            .marquee-text {
+                animation: marquee-loop 4s linear infinite;
+                color: rgba(61, 207, 182, 1);
+            }
         }
     }
 }
@@ -56,14 +65,9 @@
     justify-content: center;
     flex-shrink: 0;
     width: fit-content;
+    height: 100%;
     min-width: 100%;
-
-
-    &:hover .marquee-text {
-        animation: marquee-loop 4s linear infinite;
-        color: rgba(61, 207, 182, 1);
-    }
-
+    pointer-events: none;
 }
 
 .marquee-text {
@@ -81,7 +85,7 @@
 
 .marquee-text-short {
     padding: 0 120px 0 120px; // Abstand zwischen den Loops
-}   
+}
 
 .marquee-text-long {
     padding: 0 75px 0 75px; // Abstand zwischen den Loops
@@ -93,10 +97,6 @@
     white-space: nowrap;
     flex-shrink: 0;
     margin-left: 256px;
-
-    &:hover {
-        display: none;
-    }
 }
 
 @keyframes marquee-loop {

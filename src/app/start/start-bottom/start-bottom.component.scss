@@ -129,3 +129,19 @@
         display: block;
     }
 }
+
+@media only screen and (min-width: 2000px) {
+    .bottom {
+        max-width: 1800px; // Maximale Breite des Containers
+        margin: 0 auto; // Zentrieren
+        padding: 0 100px; // Seitlicher Abstand
+    }
+
+    .left {
+        left: 100px; // Fester Abstand vom Container-Rand
+    }
+
+    .right {
+        right: 100px; // Fester Abstand vom Container-Rand
+    }
+}

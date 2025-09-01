@@ -1,11 +1,11 @@
 <nav>
     <div class="logo">
-        <img class="set-pointer" (click)="reloadPage()" src="assets/img/logo.png" alt="">
+        <a href="#" (click)="reloadPage()"><img class="set-pointer" src="assets/img/logo.png" alt=""></a>
     </div>
     <div class="menu">
-        <div (click)="openMenu()" class="menu-bar-container">
+        <a (click)="openMenu()" class="menu-bar-container">
             <div  class="menu-bar" [class.active]="services.menuActive" ></div>
-        </div>
+        </a>
     </div>
 </nav>
 <app-dropdown-menu *ngIf="services.menuActive"></app-dropdown-menu>

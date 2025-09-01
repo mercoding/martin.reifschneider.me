@@ -63,7 +63,7 @@ export class ModalService {
   private saveModalState(key: string, value: boolean) {
     if (isPlatformBrowser(this.platformId)) {
       this.storage.setItem(key, value.toString());
-      console.log(`💾 ${key} saved:`, value);
+      //console.log(`💾 ${key} saved:`, value);
     }
   }
 
@@ -74,12 +74,13 @@ export class ModalService {
       this.showCreatorCard = this.storage.getItem('showCreatorCard') === 'true';
       this.policyChecked = this.storage.getItem('policyChecked') === 'true';
 
+      /*
       console.log('📖 Loaded modal states:', {
         legalNotice: this.showLegalNoticeCard,
         imprint: this.showImprintCard,
         creator: this.showCreatorCard,
         policy: this.policyChecked
-      });
+      });*/
     }
   }
 }

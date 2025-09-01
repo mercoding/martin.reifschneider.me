@@ -1,4 +1,10 @@
-nav {
+.header {
+  width: 100%;
+  height: 98px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
+}
+
+.header-container {
   width: 100%;
   height: 98px;
   position: relative;
@@ -8,7 +14,6 @@ nav {
   align-items: center;
   justify-content: space-between;
 
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 13.56%, rgba(0, 0, 0, 0.6) 84.01%);
 
   button {
     border-color: white;
@@ -31,7 +36,7 @@ nav {
   padding-right: 96px;
   padding-left: 96px;
 
-  div {
+  a {
     margin-top: 12px;
     padding-right: 16px;
     padding-left: 16px;
@@ -39,6 +44,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 
     svg {
       margin-top: 4px;
@@ -51,7 +57,7 @@ nav {
         color: #3DCFB6;
       }
     }
-    a {
+    span {
       font-family: 'Fira-Code', sans-serif;
       font-weight: 500;
       font-size: 18px;
@@ -144,4 +150,13 @@ nav {
 
 .set-pointer {
   cursor: pointer;
+}
+
+
+@media only screen and (min-width: 2000px) {
+    .header-container {
+        max-width: 1800px; // Maximale Breite des Containers
+        margin: 0 auto; // Zentrieren
+        padding: 0 100px; // Seitlicher Abstand
+    }
 }

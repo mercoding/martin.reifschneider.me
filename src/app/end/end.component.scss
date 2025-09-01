@@ -4,6 +4,7 @@
     grid-template-columns: 200px 1fr 200px;
     grid-template-rows: 1fr;
     grid-template: "left center right" 1fr;
+    padding-bottom: 32px;
 }
 
 .left {
@@ -11,6 +12,8 @@
     flex-direction: column;
     justify-content: center;
     grid-area: left;
+    padding-left: 10%;
+
 
     .description {
         display: flex;
@@ -34,6 +37,7 @@
     grid-area: right;
     display: flex;
     justify-content: flex-end;
+    padding-right: 5%;
 }
 
 .logo-container {
@@ -42,7 +46,7 @@
         padding-right: 96px;
         display: flex;
         margin-top: -16px;
-        
+
 
         img {
             width: auto;
@@ -78,18 +82,32 @@
     flex-direction: column;
     width: 150px;
 
-    button {
+    a {
         color: white;
         text-align: end;
         width: 200px;
         display: flex;
+        justify-content: flex-start;
+        align-items: center;
         transition: color 0.3s ease;
+        background-color: transparent;
+        cursor: pointer;
+        padding-bottom: 8px;
+
+        span {
+            font-family: Karla;
+            font-size: 16px;
+            padding-left: 4px;
+            color: white;
+            transition: color 0.3s ease;
+        }
 
         svg {
-            color: transparent
+            color: transparent;
         }
 
         &:hover {
+            background-color: transparent;
             color: #3DCFB6;
 
             svg {
@@ -131,6 +149,12 @@
     }
 }
 
-@media only screen and (max-width: 646px) {
+@media only screen and (max-width: 646px) {}
 
+@media only screen and (min-width: 2000px) {
+    .footer {
+        max-width: 1800px; // Maximale Breite des Containers
+        margin: 0 auto; // Zentrieren
+        padding: 0 100px; // Seitlicher Abstand
+    }
 }

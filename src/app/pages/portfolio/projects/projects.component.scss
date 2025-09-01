@@ -1,17 +1,16 @@
-section:first-child section {
+a:first-child section {
     border-top: 1px solid rgba(61, 207, 182, 1);
 
 }
 
-section {
+a {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 680px;
     height: 64px;
     border-bottom: 1px solid rgba(61, 207, 182, 1);
-
-
+    text-decoration: none;
 
 
     div {
@@ -60,11 +59,11 @@ section {
 
 
 @media only screen and (max-width: 1450px) {
-    section {
+    a {
         width: 100%;
 
         h3 {
-            font-size: 16px;
+            font-size: 20px;
         }
 
         span {
@@ -73,10 +72,10 @@ section {
     }
 }
 
-@media only screen and (max-width: 400px) {
-    section {
+@media only screen and (max-width: 500px) {
+    a {
         h3 {
-            font-size: 14px;
+            font-size: 16px;
             padding: 16px 0 0 8px;
         }
 

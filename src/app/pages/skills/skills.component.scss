@@ -76,9 +76,15 @@
             overflow: hidden;
             position: relative;
             white-space: nowrap;
+            cursor: pointer;
 
             &:hover {
                 border-color: rgba(61, 207, 182, 1);
+
+                .marquee-text {
+                    animation: marquee-loop 4s linear infinite;
+                    color: rgba(61, 207, 182, 1);
+                }
             }
         }
     }
@@ -90,11 +96,6 @@
     flex-shrink: 0;
     width: fit-content;
     min-width: 100%;
-
-    &:hover .marquee-text {
-        animation: marquee-loop 4s linear infinite;
-        color: rgba(61, 207, 182, 1);
-    }
 }
 
 .marquee-text {
@@ -111,10 +112,6 @@
     white-space: nowrap;
     flex-shrink: 0;
     margin-left: 128px;
-
-    &:hover {
-        display: none;
-    }
 }
 
 @keyframes marquee-loop {

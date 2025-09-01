@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
-  constructor(private http: HttpClient, public services: AppServices) {} // Hier injizieren
+  constructor(private http: HttpClient, public services: AppServices) { } // Hier injizieren
 
   contactData = {
     name: "",
@@ -52,7 +52,7 @@ export class ContactComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log("send");
-      
+
       ngForm.resetForm();
     }
   }
@@ -60,6 +60,10 @@ export class ContactComponent {
   // Neue Methode für Checkbox-Toggle
   togglePolicy() {
     this.services.setPolicyChecked(!this.services.policyChecked);
+  }
+
+  setPolicyChecked(checked: boolean) {
+    this.services.setPolicyChecked(checked);
   }
 
   openCard() {
