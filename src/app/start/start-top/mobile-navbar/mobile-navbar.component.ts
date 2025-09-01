@@ -20,8 +20,7 @@ export class MobileNavbarComponent {
   openMenu() {
     this.services.menuActive = !this.services.menuActive;
 
-    console.log('checked');
-    
+    //console.log('checked');
   }
 
   reloadPage(): void {
@@ -30,7 +29,7 @@ export class MobileNavbarComponent {
 
   onToggle(event: Event) {
     const isChecked = (event.target as HTMLInputElement).checked;
-    console.log('Checked?', isChecked);
+    //console.log('Checked?', isChecked);
   }
   
   isOpen = false;
