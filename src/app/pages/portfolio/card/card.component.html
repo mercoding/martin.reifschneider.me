@@ -1,5 +1,5 @@
-<section>
-    <div class="card">
+<section class="card-overlay" (click)="onOverlayClick($event)">
+    <div class="card" (click)="$event.stopPropagation()">
         <mat-card-content class="card-content">
             <app-card-top class="top"></app-card-top>
             <app-card-center class="center"></app-card-center>

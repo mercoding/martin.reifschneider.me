@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, EventEmitter, Output } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
+import { Component, ChangeDetectionStrategy, EventEmitter, Output, HostListener } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { projects } from '../projects/projects';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,14 +20,30 @@ import { CardBottomComponent } from './card-bottom/card-bottom.component';
 export class CardComponent {
   public projects = projects;
 
-  constructor(public services: AppServices) {  }
+  constructor(public services: AppServices) { }
+
+  // Klick auf Overlay (außerhalb der Karte)
+  onOverlayClick(event: Event): void {
+    this.closeCard();
+  }
+
+  // Verhindere das Schließen beim Klick auf die Karte selbst
+  onCardClick(event: Event): void {
+    event.stopPropagation();
+  }
+
+  // Optional: ESC-Taste zum Schließen
+  @HostListener('document:keydown.escape', ['$event'])
+  onEscapeKey(event: KeyboardEvent): void {
+    this.closeCard();
+  }
 
   closeCard(): void {
-    this.services.projectCard.showProjectPreviewCard = false;    
+    this.services.projectCard.showProjectPreviewCard = false;
   }
- 
+
   nextProject(): void {
-    this.services.projectCard.index = (this.services.index + 1) % projects.length;    
+    this.services.projectCard.index = (this.services.index + 1) % projects.length;
   }
 
   openProject(): void {
@@ -35,6 +51,6 @@ export class CardComponent {
   }
 
   openRepository(): void {
-     window.open(this.projects[this.services.index].gitHub, '_blank');
+    window.open(this.projects[this.services.index].gitHub, '_blank');
   }
 }

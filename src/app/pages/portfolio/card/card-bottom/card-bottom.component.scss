@@ -1,6 +1,8 @@
 .bottom {
     position: relative;
     height: 100%;
+    display: flex;
+    justify-content: flex-end;
 
     .next {
         display: flex;
@@ -8,13 +10,14 @@
         align-items: center;
         height: 100%;
         margin-right: 32px;
+        width: 150px;
 
         div {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
             color: rgba(61, 207, 182, 1);
-
+            
             img {
                 filter: invert(56%) sepia(82%) saturate(264%) hue-rotate(124deg) brightness(198%) contrast(92%);
                 transition: 0.2s;

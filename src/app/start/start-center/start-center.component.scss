@@ -33,7 +33,7 @@
     width: 400px;
     margin-top: 32px;
     position: relative; // Füge Position hinzu
-    z-index: 10; // Stelle sicher, dass Buttons über anderen Elementen liegen
+    z-index: 1; // Stelle sicher, dass Buttons über anderen Elementen liegen
 
     button {
         border-color: white;
@@ -45,7 +45,7 @@
         height: 48px;
         white-space: nowrap;
         cursor: pointer;
-        z-index: 11; // Button über allem anderen
+        z-index: 2; // Button über allem anderen
 
         &:hover {
             border-color: rgba(61, 207, 182, 1);
