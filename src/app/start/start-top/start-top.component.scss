@@ -1,0 +1,16 @@
+// start-top.component.scss
+.desktop-nav {
+  display: block;
+  
+  @media (max-width: 1450px) {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  
+  @media (max-width: 1450px) {
+    display: block;
+  }
+}

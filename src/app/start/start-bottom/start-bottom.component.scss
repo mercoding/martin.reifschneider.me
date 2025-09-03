@@ -1,3 +1,4 @@
+/*
 .bottom {
     display: flex;
     justify-content: space-between;
@@ -36,9 +37,9 @@
 .left-line {
     width: 1px;
     /* dünn wie eine Linie */
-    height: 280px;
+    //height: 280px;
     /* gewünschte Höhe */
-    background-color: #3DCFB6;
+    /*background-color: #3DCFB6;
     margin-top: 40px;
 }
 
@@ -78,11 +79,114 @@
 .right-line {
     width: 1px;
     /* dünn wie eine Linie */
-    height: 190px;
+    //height: 190px;
     /* gewünschte Höhe */
-    background-color: white;
+    /*background-color: white;
     margin-top: 14px;
     margin-left: 16px;
+}*/
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    //height: 100vh; // Definiere Container-Höhe
+    bottom: 0;
+    //height: 450px;
+    overflow: hidden; // Verhindere Überlauf
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; // Ändere zu flex-start
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    left: 32px;
+    
+    //margin-top: 80px;
+    //height: calc(100% - 80px); // Nimm verfügbare Höhe
+
+    button {
+        border-color: #3DCFB6;
+        color: white;
+        --mdc-outlined-button-container-shape: 24px;
+        width: 16px;
+        height: 40px;
+        rotate: 90deg;
+        margin-top: 64px;
+
+        img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: -32px;
+            rotate: -90deg;
+            width: 8px;
+        }
+    }
+}
+
+.left-line {
+    width: 1px;
+    //flex: 1; // Nimm den verfügbaren Raum
+    height: 100%;
+    background-color: #3DCFB6;
+    margin-top: 40px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column; // Ändere zu column
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    right: -32px;
+    bottom: 0;
+    margin-right: 96px;
+    //margin-top: 108px;
+    //height: calc(100% - 108px);
+        display: grid;
+    grid-template-rows: 256px 40px 40px 128px;
+    grid-template-columns: 32px;
+
+    a {
+        text-decoration: none;
+        color: white;
+        height: auto;
+
+        span {
+            display: flex;
+            justify-content: center;
+            rotate: -90deg;
+        }
+    }
+
+
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+.right-line-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+.right-line {
+    width: 1px;
+    //flex: 1; // Nimm den verfügbaren Raum
+    min-height: 150px;
+    background-color: white;
+    margin-top: 14px;
+    height: 100%;
 }
 
 .marquee {
@@ -114,11 +218,10 @@
 
 
 @media only screen and (max-width: 1230px) {
-    .right {
+   .right {
         display: grid;
         grid-template-rows: 40px 40px 40px 200px;
         grid-template-columns: 32px;
-        margin-top: 108px;
     }
 
 

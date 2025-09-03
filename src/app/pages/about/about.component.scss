@@ -3,7 +3,7 @@
     display: flex;
     height: 900px;
    
-    width: 100vw;
+    width: 100%;
     align-items: center;
     justify-content: center;
     gap: 64px;
@@ -41,13 +41,13 @@
     background: #3DCFB61A;
     border-radius: 24px;
     justify-content: center;
-    width: 568px;
+    width: 500px;
     height: auto;
     padding: 16px;
     border-radius: 30px;
     gap: 32px;
     border-width: 1px;
-    max-width: 600px;
+    
 
     .about-me-container {
         padding: 32px;
@@ -156,7 +156,7 @@
 
             .about-me-box {
                 width: 100%;
-                width: 500px;
+                width: 470px;
 
                 background: #3DCFB61A;
                 backdrop-filter: blur(80px);

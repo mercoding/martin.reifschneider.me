@@ -1,45 +1,51 @@
 .marquee-wrapper {
-    overflow: hidden;
-    width: 100vw;
-    transform: rotate(-3deg);
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(5.3px);
-    padding: 12px 32px;
-    box-sizing: border-box;
-    position: relative;
-    bottom: 128px;
+  overflow: hidden;
+  width: 100%;
+  transform: rotate(-1.5deg);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5.3px);
+  padding: 12px 32px;
+  box-sizing: border-box;
+  position: relative;
+  bottom: 110px;
+
+  // Wichtig: Verhindere Scrollbalken
+  &::-webkit-scrollbar {
+    display: none;
   }
-  
-  .marquee-track {
-    display: flex;
-    width: max-content;
-    animation: scroll 50s linear infinite;
-    will-change: transform;
-  }
-  
-  .marquee-content {
-    display: flex;
-    gap: 56px;
-    flex-shrink: 0;
-  }
-  
-  .marquee-content li {
-    list-style: none;
-    white-space: nowrap;
-    color: #3DCFB6;
-    font-size: 1rem;
-    font-family: Karla;
-    font-size: 32px;
-  }
+}
+
+.marquee-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 50s linear infinite;
+  will-change: transform;
+  transform: translateX(0);
+}
+
+.marquee-content {
+  display: flex;
+  gap: 56px;
+  flex-shrink: 0;
+}
+
+.marquee-content li {
+  list-style: none;
+  white-space: nowrap;
+  color: #3DCFB6;
+  font-size: 1rem;
+  font-family: Karla;
+  font-size: 32px;
+}
 
 
-  
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-  
+
+  to {
+    transform: translateX(-50%);
+  }
+}
