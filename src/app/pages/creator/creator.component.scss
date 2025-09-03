@@ -1,90 +1,123 @@
-section {
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    overflow-y: hidden;
+// creator.component.scss - SINGLE PAGE STYLES
+.creator-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  color: white;
 }
 
-.card {
+.content {
+  flex: 1;
+  padding: 100px 0 60px; // Platz für Header/Footer
+  
+  @media (max-width: 768px) {
+    padding: 80px 0 40px;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  @media (max-width: 768px) {
+    padding: 0 16px;
+  }
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 60px;
+  
+  h1 {
+    font-family: 'Karla', sans-serif;
+    font-size: clamp(32px, 6vw, 48px);
+    font-weight: bold;
+    color: #3DCFB6;
     margin: 0;
-    color: #fff;
-    font-family: 'Fira-Code', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
-    z-index: 999;
-    opacity: 1;
-    width: 100%;
-    height: 100vh;
-    overflow-y: hidden;
-    /*border-radius: 30px;
-    border: 1px solid #3DCFB6;
-    backdrop-filter: blur(4px);*/
+    
+    @media (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
 }
 
-.card-content {
-    display: flex;
-    flex-direction: row;
-    /*margin-top: 64px;*/
-    height: 100vh;
-
-
-    .top {
-        display: flex;
-        position: absolute;
-        right: 16px;
-        top: 16px;
-        justify-content: flex-end;
-        width: 64px;
-
-        img {
-            width: 18px;
-            height: 18px;
-            transition: transform 0.3s, filter 0.3s;
-            /*padding-right: 64px;*/
-
-            &:hover {
-                cursor: pointer;
-                transform: scale(1.5);
-                filter: invert(46%) sepia(42%) saturate(464%) hue-rotate(124deg) brightness(98%) contrast(92%);
-            }
+// Styles für die Impressum-Components
+:host ::ng-deep {
+  app-impressum,
+  app-imprint {
+    display: block;
+    max-width: none;
+    
+    h2, h3, h4 {
+      color: #3DCFB6;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    
+    p, li {
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #e0e0e0;
+    }
+    
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    
+    a {
+      color: #3DCFB6;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    
+    .contact-info {
+      background-color: rgba(61, 207, 182, 0.1);
+      border: 1px solid #3DCFB6;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      
+      p {
+        margin-bottom: 8px;
+        
+        &:last-child {
+          margin-bottom: 0;
         }
+      }
     }
-
-    .center {
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        margin-bottom: 0px;
-        margin-top: 48px;
-        margin: 48px 0 0 16px;
-        /*height: 75vh;*/
-    }
-
-    :first-child {
-        padding: 0;
-    }
-
-    :last-child {
-        padding: 0;
-    }
-
+  }
 }
 
-.mat-mdc-card-content {
-    padding: 0;
-}
-
-.mat-mdc-card-content:last-child {
-    padding-bottom: 0px;
-}
-
-.mat-mdc-card-content:first-child {
-    padding-top: 0px;
+// Responsive Design
+@media (max-width: 768px) {
+  .creator-page {
+    font-size: 14px;
+  }
+  
+  :host ::ng-deep {
+    app-impressum,
+    app-imprint {
+      h2 {
+        font-size: 24px;
+      }
+      
+      h3 {
+        font-size: 20px;
+      }
+      
+      h4 {
+        font-size: 18px;
+      }
+      
+      .contact-info {
+        padding: 15px;
+      }
+    }
+  }
 }

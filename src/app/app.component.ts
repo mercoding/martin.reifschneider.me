@@ -21,8 +21,9 @@ export class AppComponent implements OnInit {
     @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
-  ngOnInit() {
+  ngOnInit() {//#endregion
     if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
       // Kurz warten, bis alle Komponenten geladen sind
       setTimeout(() => {
         this.detectCurrentSection();

@@ -1,4 +1,4 @@
-<a href="#" *ngFor="let project of projects; let i = index" (mouseenter)="services.setPreview(project.src, $event)"
+<a *ngFor="let project of projects; let i = index" (mouseenter)="services.setPreview(project.src, $event)"
     (mouseleave)="services.clearPreview()" class="set-pointer" (click)="openCard(i)">
     <h3>{{project.title}}</h3>
 

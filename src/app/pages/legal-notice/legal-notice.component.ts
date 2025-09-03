@@ -1,44 +1,33 @@
+// legal-notice.component.ts - ANPASSEN
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { AppServices } from '../../app.services';
 import { DataProtectionComponent } from './data-protection/data-protection.component';
 import { DatenschutzComponent } from './datenschutz/datenschutz.component';
+import { HeaderComponent } from '../../header/header.component';
+import { FooterComponent } from '../../footer/footer.component';
 
 @Component({
   selector: 'app-legal-notice',
   standalone: true,
-  imports: [CommonModule, MatCardModule, DataProtectionComponent, DatenschutzComponent],
+  imports: [
+    CommonModule, 
+    DataProtectionComponent, 
+    DatenschutzComponent,
+    HeaderComponent,
+    FooterComponent
+  ],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })
 export class LegalNoticeComponent {
   constructor(public services: AppServices) {}
 
-  closeCard() {
-    this.services.setLegalNoticeCard(false);
-    this.services.modal.policyChecked = true;
-  }
-
-  // Datenschutz öffnen
-  openDataProtection() {
-    this.services.setLegalNoticeCard(true);
-    this.services.setImprintCard(false); // Imprint schließen
-  }
-
-  // Impressum öffnen
-  openImprint() {
-    this.services.setImprintCard(true);
-    this.services.setLegalNoticeCard(false); // Datenschutz schließen
-  }
-
-  // Neue Methode für Policy Toggle
-  togglePolicy() {
-    this.services.setPolicyChecked(!this.services.policyChecked);
-  }
-
-  // Oder falls du es direkt setzen willst
-  setPolicyChecked(checked: boolean) {
-    this.services.setPolicyChecked(checked);
+  ngOnInit() {
+    // ✅ Scroll to top beim Laden der Seite
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
+    // Alternative ohne Animation:
+    // window.scrollTo(0, 0);
   }
 }

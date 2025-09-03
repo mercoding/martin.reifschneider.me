@@ -1,14 +1,19 @@
-<section>
-    <mat-card class="card" appearance="outlined">
-
-        <mat-card-content class="card-content">
-            <div class="top">
-                <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
-            </div>
-            <div class="center">
-                <app-imprint *ngIf="services.language=='en'"></app-imprint>
-                <app-impressum *ngIf="services.language=='de'"></app-impressum>
-            </div>
-        </mat-card-content>
-    </mat-card>
-</section>
+<!-- creator.component.html - SINGLE PAGE TEMPLATE -->
+<div class="creator-page">
+  <app-header></app-header>
+  
+  <main class="content">
+    <div class="container">
+      <div class="headline">
+        <h1 *ngIf="services.isGerman">Impressum</h1>
+        <h1 *ngIf="!services.isGerman">Imprint</h1>
+      </div>
+      
+      <!-- Sprachbasierte Anzeige der Impressum-Komponenten -->
+      <app-impressum *ngIf="services.isGerman"></app-impressum>
+      <app-imprint *ngIf="!services.isGerman"></app-imprint>
+    </div>
+  </main>
+  
+  <app-footer></app-footer>
+</div>

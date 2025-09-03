@@ -1,14 +1,19 @@
-<section>
-    <mat-card class="card" appearance="outlined">
-
-        <mat-card-content class="card-content">
-             <div class="top">
-                <img class="set-pointer" src="assets/img/close_small.png" alt="" (click)="closeCard()">
-            </div>
-            <div class="center">
-                <app-data-protection *ngIf="services.language == 'en'"></app-data-protection>
-                <app-datenschutz *ngIf="services.language == 'de'"></app-datenschutz>
-            </div>
-        </mat-card-content>
-    </mat-card>
-</section>
+<!-- legal-notice.component.html - ERSTELLEN -->
+<div class="legal-notice-page">
+  <app-header></app-header>
+  
+  <main class="content">
+    <div class="container">
+      <div class="headline">
+        <h1 *ngIf="services.isGerman">Datenschutzerklärung</h1>
+        <h1 *ngIf="!services.isGerman">Privacy Policy</h1>
+      </div>
+      
+      <!-- Sprachbasierte Anzeige der Datenschutz-Komponenten -->
+      <app-datenschutz *ngIf="services.isGerman"></app-datenschutz>
+      <app-data-protection *ngIf="!services.isGerman"></app-data-protection>
+    </div>
+  </main>
+  
+  <app-footer></app-footer>
+</div>
