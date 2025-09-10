@@ -7,7 +7,8 @@ import { SkillsComponent } from '../pages/skills/skills.component';
 import { PortfolioComponent } from '../pages/portfolio/portfolio.component';
 import { FeedbackCarouselComponent } from '../pages/feedback-carousel/feedback-carousel.component';
 import { ContactComponent } from '../pages/contact/contact.component';
-import { EndComponent } from '../end/end.component';
+//import { EndComponent } from '../end/end.component';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-start',
@@ -16,7 +17,7 @@ import { EndComponent } from '../end/end.component';
     StartBottomComponent, AboutComponent, 
     SkillsComponent, PortfolioComponent, 
     FeedbackCarouselComponent, ContactComponent,
-    EndComponent],
+    FooterComponent],
   templateUrl: './start.component.html',
   styleUrl: './start.component.scss'
 })

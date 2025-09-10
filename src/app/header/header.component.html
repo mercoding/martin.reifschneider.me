@@ -1,1 +1,7 @@
-<p>header works!</p>
+<header class="header">
+    <section class="header-container">
+        <app-desktop-nav class="desktop-nav" *ngIf="!isMobile"></app-desktop-nav>
+        <app-mobile-nav class="mobile-nav" *ngIf="isMobile"></app-mobile-nav>
+        <app-logo class="logo" *ngIf="!isMobile"></app-logo>
+    </section>
+</header>

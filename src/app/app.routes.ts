@@ -5,9 +5,9 @@ import { AboutComponent } from './pages/about/about.component';
 import { SkillsComponent } from './pages/skills/skills.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { EndComponent } from './end/end.component';
 import { CreatorComponent } from './pages/creator/creator.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
+import { FooterComponent } from './footer/footer.component';
 
 export const routes: Routes = [
     { path: '', component: StartComponent },
@@ -15,24 +15,23 @@ export const routes: Routes = [
     { path: 'skills', component: SkillsComponent },
     { path: 'portfolio', component: PortfolioComponent },
     { path: 'contact', component: ContactComponent },
-    { path: 'end', component: EndComponent },
-    
-    // ✅ CREATOR/IMPRINT ROUTEN
+    { path: 'footer', component: FooterComponent },
+
     { 
-        path: 'creator', 
+        path: 'impressum', 
         component: CreatorComponent,
-        title: 'Impressum | Imprint - Martin Reifschneider'
+        title: 'Impressum - Martin Reifschneider'
     },
     { 
         path: 'imprint', 
         component: CreatorComponent,
         title: 'Imprint - Martin Reifschneider'
     },
-    { 
-        path: 'impressum', 
+    /*{ 
+        path: 'creator', 
         component: CreatorComponent,
-        title: 'Impressum - Martin Reifschneider'
-    },
+        title: 'Impressum | Imprint - Martin Reifschneider'
+    },*/
     
     // LEGAL NOTICE ROUTEN
     { 

@@ -1,16 +1,16 @@
 <div class="navbar-container">
     <nav class="navbar">
-        <a class="set-pointer" (click)="services.scrollTo('about-me'); dropdownMenu()">
+        <a class="set-pointer" (click)="services.scrollTo('about-me'); navigateToSection('about-me');">
             {{services.language == "en" ?
             "About Me" :
             "Über mich" }}
         </a>
-        <a class="set-pointer" (click)="services.scrollTo('skills'); dropdownMenu()">
+        <a class="set-pointer" (click)="services.scrollTo('skills'); navigateToSection('skills');">
             {{services.language == "en" ?
             "Skills" :
             "Fähigkeiten" }}
         </a>
-        <a class="set-pointer" (click)="services.scrollTo('portfolio'); dropdownMenu()">
+        <a class="set-pointer" (click)="services.scrollTo('portfolio'); navigateToSection('portfolio');">
             {{services.language == "en" ?
             "Projects" :
             "Projekte" }}

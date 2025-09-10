@@ -50,6 +50,28 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+/* styles.scss - GLOBALE SCROLL-PREVENTION */
+/* ✅ DIESE KLASSEN IN DIE GLOBALE styles.scss DATEI */
+
+body.menu-open {
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    touch-action: none !important;
+    -webkit-overflow-scrolling: auto !important;
+}
+
+html.menu-open {
+    overflow: hidden !important;
+    height: 100% !important;
+}
+
+/* Zusätzliche Sicherheit für alle Elemente */
+.scroll-locked * {
+    overflow: hidden !important;
+}
+
 // styles.scss - Temporäre Debug-Styles hinzufügen
 
 * {

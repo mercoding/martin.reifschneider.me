@@ -1,1 +1,64 @@
-<p>footer works!</p>
+<footer class="footer">
+    <section class="end" id="end">
+        <div class="left">
+            <div class="logo-container">
+                <a (click)="navigateToPage(''); services.scrollTo('start')" class="logo set-pointer">
+                    <img src="assets/img/logo.png" alt="">
+                    <div class="logo-name">
+                        <span>artin</span>
+                        <span>eifschneider</span>
+                    </div>
+                </a>
+                <div class="description">
+                    <span>
+                        {{services.language == "en" ? 'Web Developer' : 'Webentwickler'}}
+                    </span>
+                    <span>
+                        {{services.language == "en" ? 'Frankfurt Germany' : 'Frankfurt Deutschland'}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="copyright">
+                © Martin Reifschneider 2025
+            </div>
+        </div>
+        <div class="right">
+            <div class="links">
+                <a (click)="services.openGitHub()">
+                    <svg width="8" height="8" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3" fill="currentColor" />
+                    </svg>
+                    <span>Github</span>
+                </a >
+                <a (click)="services.openLinkedin()">
+                    <svg width="8" height="8" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3" fill="currentColor" />
+                    </svg>
+                    <span>Linkedin</span>
+                </a>
+                <a (click)="navigateToPage(''); services.scrollAndHighlight()">
+                    <svg width="8" height="8" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3" fill="currentColor" />
+                    </svg>
+                    <span>Email</span>
+                </a>
+                <a (click)="openCard('legalNotice')">
+                    <svg width="8" height="8" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3" fill="currentColor" />
+                    </svg>
+                    <span> {{services.language == "en" ? 'Legal Notice' : 'Rechtshinweis'}}</span>
+                </a>
+                <a (click)="openCard('imprint')">
+                    <svg width="8" height="8" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3" fill="currentColor" />
+                    </svg>
+                    <span> {{services.language == "en" ? 'Imprint' : 'Impressum'}}</span>
+                </a>
+            </div>
+        </div>
+    </section>
+</footer>
+<!--<app-legal-notice *ngIf="services.showLegalNoticeCard" (close)="closeCard()"></app-legal-notice>-->
+<!--<app-creator *ngIf="services.showImprintCard" (close)="closeCard()"></app-creator>-->

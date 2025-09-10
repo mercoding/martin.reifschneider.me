@@ -115,4 +115,7 @@ export class AppServices {
   closeAllCards() {
     this.modal.closeAllCards();
   }
+
+
+  
 }
