@@ -30,7 +30,7 @@
 
 .about-me {
     margin-top: 128px;
-    padding-right: 64px;
+    //padding-right: 64px;
 }
 
 .about-me-box {
@@ -147,7 +147,7 @@
             display: flex;
             justify-content: center;
             margin: 0;
-            padding: 16px;
+            //padding: 16px;
             z-index: 3;
 
             .about-me-container {
@@ -198,8 +198,10 @@
             position: relative;
             top: 0 !important;
             right: 0;
-            left: 32px;
+            left: 0px;
             width: 100%;
+            display: flex;
+            justify-content: center;
 
             .about-me-container {
                 width: 100%;
@@ -207,7 +209,7 @@
                 height: auto;
 
                 .about-me-box {
-                    width: calc(100% - 64px);
+                    width: 100%;
                     height: auto;
                     padding: 16px 0 16px 0;
                 }

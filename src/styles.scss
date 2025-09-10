@@ -72,14 +72,10 @@ html.menu-open {
     overflow: hidden !important;
 }
 
-// styles.scss - Temporäre Debug-Styles hinzufügen
-
+/* Browser DevTools Console - Füge das ein: */
+/*
 * {
-    //outline: 1px solid red !important; // Zeigt alle Element-Grenzen
-}
+    outline: 2px solid red !important;
+    outline-offset: -1px !important;
+}*/
 
-// Oder spezifischer:
-*:not(html):not(body) {
-    //max-width: 100%;
-    //box-sizing: border-box;
-}
