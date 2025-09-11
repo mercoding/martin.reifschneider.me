@@ -8,7 +8,7 @@ a {
     justify-content: space-between;
     align-items: center;
     width: 680px;
-    height: 64px;
+    height: auto;
     border-bottom: 1px solid rgba(61, 207, 182, 1);
     text-decoration: none;
 
@@ -17,8 +17,20 @@ a {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        height: 64px;
-        width: 400px;
+        height: auto;
+        width: 900px;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px 0 8px 0;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(32px, max-content));
+        gap: 8px;
+        align-items: center;
+        justify-content: flex-end;
+        height: auto;
+        width: 900px;
+        padding: 8px 0 8px 0;
     }
 
     h3 {
@@ -36,9 +48,9 @@ a {
         width: fit-content;
         height: 18px;
         font-size: 16px;
-        padding: 0 16px 0 16px;
+        padding: 0 8px 0 0px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         text-align: center;
         border-right: 1px solid rgba(61, 207, 182, 1);
 
@@ -79,13 +91,21 @@ a {
             padding: 16px 0 0 8px;
         }
 
-        span {
-            font-size: 16px;
+        div {
+            // ✅ Bei kleinen Bildschirmen: Single-Column Grid
+            grid-template-columns: 1fr;
+            justify-content: flex-end;
+            width: calc(100% - 300px);
+            gap: 4px;
         }
 
-        div {
-            span {
-                padding: 0 8px 0 8px;
+        span {
+            border-right: none !important;
+            padding: 4px 16px;
+
+            // Optional: Subtile Trennung
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(61, 207, 182, 0.2);
             }
         }
     }

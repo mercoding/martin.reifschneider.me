@@ -1,5 +1,5 @@
 .skills {
-    width: 100vw;
+    width: 100%;
     height: 695px;
     top: 1896px;
     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.85) 0%, #1C1C1C 100%);
@@ -128,8 +128,8 @@
     width: 632px;
     height: 428px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 16px;
     justify-items: center;
     align-items: start;
     padding: 32px 0;
@@ -140,7 +140,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100px;
+        width: 120px;
         position: relative;
 
         img {
@@ -153,7 +153,7 @@
             font-family: Fira Code;
             font-size: 18px;
             color: white;
-            width: 100px;
+            width: 120px;
             text-align: center;
             transition: color 0.3s ease;
         }
@@ -202,9 +202,13 @@
 
 @media only screen and (max-width: 646px) {
     .skills {
-        margin-top: 128px;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        margin-top: 0px;
         .skills-description {
             width: calc(100% - 64px);
+            margin-left: 32px;
 
             div {
                 height: auto;
@@ -217,6 +221,7 @@
 
         .skills-box {
             width: calc(100% - 64px);
+            margin-left: 32px;
         }
     }
 }

@@ -1,5 +1,14 @@
+// contact.component.scss - OPTIMIERT UNTER 4KB
+:host {
+  --primary: #3dcfb6;
+  --bg: rgb(28,28,28);
+  --text: white;
+  --placeholder: rgba(255,255,255,.6);
+  --error: red;
+}
+
 .contact {
-  background-color: rgb(28, 28, 28);
+  background: var(--bg);
   display: flex;
   justify-content: center;
   height: 600px;
@@ -7,174 +16,142 @@
 
 .headline {
   width: 668px;
-  margin-top: 64px;
-  margin-left: 64px;
+  margin: 64px 0 0 64px;
 
-
-  h1 {
+  h1,h2,h3 {
     font-family: Fira Code;
-    font-size: 64px;
-    color: rgba(61, 207, 182, 1);
-    height: 64px;
-
+    color: var(--primary);
+    margin: 0;
   }
-
-  h2 {
-    font-family: Fira Code;
-    font-size: 24px;
-    color: rgba(61, 207, 182, 1);
-
-  }
-
-  h3 {
-    font-family: Karla;
-    font-size: 24px;
-    color: rgba(61, 207, 182, 1);
-    padding-bottom: 16px;
-  }
-
-  span {
-    font-family: Karla;
-    font-size: 16px;
-    color: white;
-  }
-}
-
-.policy-not-checked {
-  margin-top: -48px;
-  color: red;
+  h1 { font-size: 64px; height: 64px; }
+  h2 { font-size: 24px; }
+  h3 { font-family: Karla; font-size: 24px; padding-bottom: 16px; }
+  span { font-family: Karla; font-size: 16px; color: var(--text); }
 }
 
 .contact-form {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   gap: 2rem;
-  color: white;
-  font-family: 'Inter', sans-serif;
-  padding: 64px;
+  color: var(--text);
+  font-family: Inter,sans-serif;
+  padding: 32px 16px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #3dcfb6;
+  border-bottom: 1px solid var(--primary);
   padding-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 
   label {
-    color: #3dcfb6;
+    color: var(--primary);
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
-
-    &:hover {
-      cursor: pointer;
-    }
+    margin-bottom: .5rem;
+    cursor: pointer;
   }
+}
 
-  input,
-  textarea {
-    background: transparent;
-    border: 1px;
-    color: white;
-    font-size: 1rem;
-    outline: none;
-    resize: none;
-    font-family: inherit;
-    padding: 0.25rem 0;
+input,textarea {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  padding: .25rem 0;
+  cursor: text;
+  position: relative;
 
-    &::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
+  &:focus { z-index: 9999; }
+  &::placeholder { color: var(--placeholder); pointer-events: none; }
+  &.error::placeholder { color: var(--error); opacity: 1; }
+  &.valid::placeholder { color: var(--text); opacity: 1; }
+}
 
-    &:hover {
-      cursor: pointer;
-    }
+// Autofill styles
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--bg) inset!important;
+  -webkit-text-fill-color: var(--text)!important;
+  background-color: var(--bg)!important;
+  border: none!important;
+  font: inherit!important;
+  pointer-events: auto!important;
+}
 
-    &.error::placeholder,
-    textarea.error::placeholder {
-      color: red;
-      opacity: 1;
-    }
+input:-moz-autofill,textarea:-moz-autofill {
+  background: var(--bg)!important;
+  color: var(--text)!important;
+  box-shadow: 0 0 0 30px var(--bg) inset!important;
+}
 
-    &.valid::placeholder,
-    textarea.error::placeholder {
-      color: white;
-      opacity: 1;
-    }
-  }
+textarea { min-height: 60px; }
 
-  textarea {
-    min-height: 60px;
-  }
+.form-group:focus-within { z-index: 9999!important; }
+
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  visibility: visible!important;
+  display: block!important;
+  pointer-events: auto!important;
 }
 
 .checkbox-group {
   border: none;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: .95rem;
+  color: rgba(255,255,255,.9);
 
-  label {
-    /*display: flex;
-      align-items: center;*/
-    gap: 0.5rem;
+  label { gap: .5rem; }
 
-    input[type='checkbox'] {
-      accent-color: #3dcfb6;
-      width: 18px;
-      height: 18px;
-    }
+  input[type=checkbox] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
 
-    a {
-      color: #3dcfb6;
-      text-decoration: none;
-      font-weight: 500;
-
-      &:hover {
-        text-decoration: underline;
-      }
+    &:checked::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: -3px;
+      width: 6px;
+      height: 12px;
+      border: solid var(--primary);
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      display: block;
     }
   }
-}
 
-.checkbox-group label input[type='checkbox'] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
-  border: 2px solid #3dcfb6;
-  border-radius: 4px;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-}
-
-.checkbox-group label input[type='checkbox']:checked {
-  background: transparent;
-  /* Optional: eigenes Häkchen einblenden */
-}
-
-.checkbox-group label input[type='checkbox']:checked::after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  top: -3px;
-  width: 6px;
-  height: 12px;
-  border: solid #3dcfb6;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  display: block;
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    &:hover { text-decoration: underline; }
+  }
 }
 
 .policy-checkbox-text {
-  margin-top: -26px !important;
-  margin-left: 32px !important;
-  color: white;
+  margin: -26px 0 0 32px!important;
+  color: var(--text);
+  a { color: var(--primary); }
+}
 
-  a {
-    color: #3dcfb6;
-  }
+.policy-not-checked {
+  margin-top: -48px;
+  color: var(--error);
 }
 
 .submit-btn {
@@ -184,16 +161,16 @@
   margin-top: 1rem;
   align-self: center;
   background: transparent;
-  color: white !important;
-  border: 1px solid white !important;
-  padding: 0.6rem 1.6rem;
+  color: var(--text)!important;
+  border: 1px solid var(--text)!important;
+  padding: .6rem 1.6rem;
   border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all .2s ease;
 
   &:hover {
-    background: #3dcfb6;
+    background: var(--primary);
     color: black;
   }
 }
@@ -204,82 +181,31 @@
 }
 
 @keyframes blink {
-  0% {
-    background-color: rgba(61, 207, 182, 0.2);
-  }
-
-  50% {
-    background-color: rgba(61, 207, 182, 0.4);
-  }
-
-  100% {
-    background-color: transparent;
-  }
+  0%,100% { background: transparent; }
+  50% { background: rgba(61,207,182,.4); }
 }
 
-@media only screen and (max-width: 1450px) {
+@media (max-width:1450px) {
   .contact {
-    display: flex;
     flex-direction: column;
     height: 1000px;
     justify-content: center;
     align-items: center;
-
-    .headline {
-      margin: 0;
-      padding: 0;
-      width: calc(100% - 128px);
-
-      h1 {
-        font-size: 56px;
-      }
-
-    }
-
-    .contact-form {
-      width: calc(100% - 128px);
-    }
   }
+  .headline {
+    margin: 0;
+    width: calc(100% - 128px);
+  }
+  .headline h1 { font-size: 56px; }
+  .contact-form { width: calc(100% - 128px); }
 }
 
-@media only screen and (max-width: 1000px) {
-  .contact {
-    .headline {
-      width: calc(100% - 128px);
-    }
-
-    .contact-form {
-      width: calc(100% - 128px);
-    }
-  }
+@media (max-width:646px) {
+  .headline { width: calc(100% - 32px); }
+  .contact-form { width: auto; }
 }
 
-@media only screen and (max-width: 646px) {
-  .contact {
-    .headline {
-      width: calc(100% - 64px);
-    }
-
-    .contact-form {
-      width: auto;
-    }
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .contact {
-    .headline {
-      h1 {
-        font-size: 40px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
-
-      h3 {
-        font-size: 20px;
-      }
-    }
-  }
+@media (max-width:400px) {
+  .headline h1 { font-size: 40px; }
+  .headline h2,.headline h3 { font-size: 20px; }
 }

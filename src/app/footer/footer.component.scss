@@ -12,7 +12,8 @@
     flex-direction: column;
     justify-content: center;
     grid-area: left;
-    padding-left: 10%;
+    padding-left: 0%;
+    width: 150px;
 
 
     .description {
@@ -30,14 +31,14 @@
 }
 
 .copyright {
-    cursor: default
+    cursor: default;
 }
 
 .right {
     grid-area: right;
     display: flex;
     justify-content: flex-end;
-    padding-right: 5%;
+    padding-right: 0%;
 }
 
 .logo-container {
@@ -75,17 +76,19 @@
     font-size: 18px;
     color: #3DCFB6;
     grid-area: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .links {
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 128px;
 
     a {
         color: white;
         text-align: end;
-        width: 150px;
+        width: 128px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -128,7 +131,7 @@
 @media only screen and (max-width: 1450px) {
     .end {
         display: grid;
-        grid-template: "left right" 150px
+        grid-template: "left right" auto
             "bottom bottom" auto;
 
         .left {
@@ -149,7 +152,11 @@
     }
 }
 
-@media only screen and (max-width: 646px) {}
+@media only screen and (max-width: 646px) {
+    .copyright {
+        font-size: 16px;
+    }
+}
 
 @media only screen and (min-width: 2000px) {
     .footer {

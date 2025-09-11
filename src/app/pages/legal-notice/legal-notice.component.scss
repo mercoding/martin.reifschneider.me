@@ -1,103 +1,110 @@
 // legal-notice.component.scss - ERSTELLEN
 .legal-notice-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #000000;
-  color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+    color: white;
 }
 
 .content {
-  flex: 1;
-  padding: 100px 0 60px; // Platz für Header/Footer
-  
-  @media (max-width: 768px) {
-    padding: 80px 0 40px;
-  }
+    flex: 1;
+    padding: 100px 0 60px; // Platz für Header/Footer
+
+    @media (max-width: 768px) {
+        padding: 80px 0 40px;
+    }
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  
-  @media (max-width: 768px) {
-    padding: 0 16px;
-  }
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media (max-width: 768px) {
+        padding: 0 16px;
+    }
 }
 
 .headline {
-  text-align: center;
-  margin-bottom: 60px;
-  
-  h1 {
-    font-family: 'Karla', sans-serif;
-    font-size: clamp(32px, 6vw, 48px);
-    font-weight: bold;
-    color: #3DCFB6;
-    margin: 0;
-    
-    @media (max-width: 768px) {
-      margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+
+    h1 {
+        font-family: 'Karla', sans-serif;
+        font-size: clamp(32px, 6vw, 48px);
+        font-weight: bold;
+        color: #3DCFB6;
+        margin: 0;
+
+        @media (max-width: 768px) {
+            margin-bottom: 30px;
+        }
     }
-  }
 }
 
 // Styles für die Datenschutz-Components
 :host ::ng-deep {
-  app-datenschutz,
-  app-data-protection {
-    display: block;
-    max-width: none;
-    
-    h2, h3, h4 {
-      color: #3DCFB6;
-      margin-top: 40px;
-      margin-bottom: 20px;
+
+    app-datenschutz,
+    app-data-protection {
+        display: block;
+        max-width: none;
+
+        h2,
+        h3,
+        h4 {
+            color: #3DCFB6;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        p,
+        li {
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: #e0e0e0;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3DCFB6;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
-    
-    p, li {
-      line-height: 1.6;
-      margin-bottom: 16px;
-      color: #e0e0e0;
-    }
-    
-    ul, ol {
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-    
-    a {
-      color: #3DCFB6;
-      text-decoration: none;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
 }
 
 // Responsive Design
 @media (max-width: 768px) {
-  .legal-notice-page {
-    font-size: 14px;
-  }
-  
-  :host ::ng-deep {
-    app-datenschutz,
-    app-data-protection {
-      h2 {
-        font-size: 24px;
-      }
-      
-      h3 {
-        font-size: 20px;
-      }
-      
-      h4 {
-        font-size: 18px;
-      }
+    .legal-notice-page {
+        font-size: 14px;
     }
-  }
+
+    :host ::ng-deep {
+
+        app-datenschutz,
+        app-data-protection {
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
 }

@@ -40,6 +40,7 @@ export class CardComponent {
 
   closeCard(): void {
     this.services.projectCard.showProjectPreviewCard = false;
+    document.body.style.overflow = 'auto';
   }
 
   nextProject(): void {

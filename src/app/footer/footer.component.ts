@@ -57,6 +57,7 @@ export class FooterComponent implements OnInit {
     if (str == 'legalNotice') {
       // Navigiere zur Datenschutz-Seite
       const route = this.services.isGerman ? '/datenschutz' : '/privacy-policy';
+      this.services.setPolicyChecked(!this.services.policyChecked); // Datenschutz-Hinweis als gelesen markieren
       this.router.navigate([route]);
     } else {
       // ✅ Navigiere zur Creator/Imprint-Seite

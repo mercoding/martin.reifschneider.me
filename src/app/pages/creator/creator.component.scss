@@ -1,123 +1,141 @@
 // creator.component.scss - SINGLE PAGE STYLES
 .creator-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #000000;
-  color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(5.22deg, #1C1C1C 36.26%, #08463B 93.28%);
+
+    color: white;
 }
 
 .content {
-  flex: 1;
-  padding: 100px 0 60px; // Platz für Header/Footer
-  
-  @media (max-width: 768px) {
-    padding: 80px 0 40px;
-  }
+    flex: 1;
+    padding: 100px 0 60px; // Platz für Header/Footer
+
+    @media (max-width: 768px) {
+        padding: 80px 0 40px;
+    }
+}
+
+app-imprint {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  
-  @media (max-width: 768px) {
-    padding: 0 16px;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    //padding: 0 20px;
+
+    @media (max-width: 768px) {
+        padding: 0 16px;
+    }
 }
 
 .headline {
-  text-align: center;
-  margin-bottom: 60px;
-  
-  h1 {
-    font-family: 'Karla', sans-serif;
-    font-size: clamp(32px, 6vw, 48px);
-    font-weight: bold;
-    color: #3DCFB6;
-    margin: 0;
-    
-    @media (max-width: 768px) {
-      margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 64px;
+    width: 300px;
+
+    h1 {
+        font-family: 'Karla', sans-serif;
+        font-size: clamp(32px, 6vw, 48px);
+        font-weight: bold;
+        color: #3DCFB6;
+        margin: 0;
+
+        @media (max-width: 768px) {
+            margin-bottom: 30px;
+        }
     }
-  }
 }
 
 // Styles für die Impressum-Components
 :host ::ng-deep {
-  app-impressum,
-  app-imprint {
-    display: block;
-    max-width: none;
-    
-    h2, h3, h4 {
-      color: #3DCFB6;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-    
-    p, li {
-      line-height: 1.6;
-      margin-bottom: 16px;
-      color: #e0e0e0;
-    }
-    
-    ul, ol {
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
-    
-    a {
-      color: #3DCFB6;
-      text-decoration: none;
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-    
-    .contact-info {
-      background-color: rgba(61, 207, 182, 0.1);
-      border: 1px solid #3DCFB6;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0;
-      
-      p {
-        margin-bottom: 8px;
-        
-        &:last-child {
-          margin-bottom: 0;
+
+    app-impressum,
+    app-imprint {
+        display: flex;
+        justify-content: center;
+        max-width: none;
+
+        h2,
+        h3,
+        h4 {
+            color: #3DCFB6;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
-      }
+
+        p,
+        li {
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: #e0e0e0;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #3DCFB6;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .contact-info {
+            background-color: rgba(61, 207, 182, 0.1);
+            border: 1px solid #3DCFB6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+
+            p {
+                margin-bottom: 8px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
-  }
 }
 
 // Responsive Design
 @media (max-width: 768px) {
-  .creator-page {
-    font-size: 14px;
-  }
-  
-  :host ::ng-deep {
-    app-impressum,
-    app-imprint {
-      h2 {
-        font-size: 24px;
-      }
-      
-      h3 {
-        font-size: 20px;
-      }
-      
-      h4 {
-        font-size: 18px;
-      }
-      
-      .contact-info {
-        padding: 15px;
-      }
+    .creator-page {
+        font-size: 16px;
     }
-  }
+
+    :host ::ng-deep {
+
+        app-impressum,
+        app-imprint {
+            h2 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            .contact-info {
+                padding: 15px;
+            }
+        }
+    }
 }

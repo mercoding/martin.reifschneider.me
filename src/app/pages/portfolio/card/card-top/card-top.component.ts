@@ -9,10 +9,12 @@ import { AppServices } from '../../../../app.services';
   styleUrl: './card-top.component.scss'
 })
 export class CardTopComponent {
-  constructor(public services: AppServices) {  }
-  
+  constructor(public services: AppServices) { }
+
   closeCard(): void {
     this.services.projectCard.showProjectPreviewCard = false;
     this.services.closeProjectCard();
+    document.body.style.overflow = 'auto';
+
   }
 }

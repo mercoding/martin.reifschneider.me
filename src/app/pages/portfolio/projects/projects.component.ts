@@ -19,9 +19,11 @@ export class ProjectsComponent {
 
     openCard(i: number) {
       this.services.setProjectCard(true, i);
+      document.body.style.overflow = 'hidden';
     }
     
     closeCard() {
       this.services.closeProjectCard();
+      document.body.style.overflow = 'auto';
     }
 }
