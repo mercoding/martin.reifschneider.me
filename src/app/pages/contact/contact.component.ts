@@ -62,8 +62,8 @@ export class ContactComponent {
           this.httpOptions)
           .subscribe({
             next: (response) => {
-              this.sendMessage.showSuccessAnimation();
               this.resetForm(ngForm);
+              this.sendMessage.showSuccessAnimation();
             },
             error: (error) => {
               console.error('Error sending email:', error);
