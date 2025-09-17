@@ -15,6 +15,5 @@ export class CardTopComponent {
     this.services.projectCard.showProjectPreviewCard = false;
     this.services.closeProjectCard();
     document.body.style.overflow = 'auto';
-
   }
 }
