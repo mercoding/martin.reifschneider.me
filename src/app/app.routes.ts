@@ -1,21 +1,11 @@
 // app.routes.ts - CREATOR ROUTEN HINZUFÜGEN
 import { Routes } from '@angular/router';
-import { StartComponent } from './start/start.component';
-import { AboutComponent } from './pages/about/about.component';
-import { SkillsComponent } from './pages/skills/skills.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { ContactComponent } from './pages/contact/contact.component';
 import { CreatorComponent } from './pages/creator/creator.component';
 import { LegalNoticeComponent } from './pages/legal-notice/legal-notice.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-    { path: '', component: StartComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'skills', component: SkillsComponent },
-    { path: 'portfolio', component: PortfolioComponent },
-    { path: 'contact', component: ContactComponent },
-    { path: 'footer', component: FooterComponent },
+    { path: '', component: HomeComponent },
 
     { 
         path: 'impressum', 
@@ -27,12 +17,7 @@ export const routes: Routes = [
         component: CreatorComponent,
         title: 'Imprint - Martin Reifschneider'
     },
-    /*{ 
-        path: 'creator', 
-        component: CreatorComponent,
-        title: 'Impressum | Imprint - Martin Reifschneider'
-    },*/
-    
+
     // LEGAL NOTICE ROUTEN
     { 
         path: 'legal-notice', 
